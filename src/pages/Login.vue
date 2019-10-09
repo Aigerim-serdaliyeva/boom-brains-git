@@ -1,0 +1,31 @@
+<template>
+  <Form>
+    <Input name="email" placeholder="Email" type="email" />
+    <Input name="password" placeholder="Password" type="password" />
+    <div class="login__links">
+      <router-link to="forget">Забыли пароль?</router-link>
+      <router-link to="registration">Регистрация</router-link>
+    </div>
+    <SocialIcons />
+    <Button text="Войти" />
+  </Form>
+</template>
+
+<script>
+import Form from '../components/Form'
+import Input from '../components/Input'
+import Button from '../components/Button'
+import SocialIcons from '../components/SocialIcons'
+export default {
+  components: {
+    Form,
+    Input, 
+    Button,
+    SocialIcons
+  }  
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>
