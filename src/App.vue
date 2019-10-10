@@ -16,6 +16,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;  
+  
 }
 </style>

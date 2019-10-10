@@ -16,26 +16,41 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
-  .button {
-    background: #5ACC02;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 57px;
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-    padding: 12px 15px;
-    max-width: 186px;
+  .form {
     width: 100%;
-    font-size: 14px;
-    line-height: 1;
-    text-align: center;
-    color: #fff !important;
-    white-space: nowrap;
-    border: none;
-    cursor: pointer;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__img {
+      margin-bottom: 40px;
+    }
+
+    &__block {
+      background: #FFFFFF;
+      box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      max-width: 403px;
+      width: 100%;
+      padding: 40px 55px 55px;
+    }
+
+    &__title {
+      font-size: 24px;
+      font-weight: normal;
+      text-align: center;
+      color: #292929;
+      margin-bottom: 35px;
+    }
+
+    &__content {
+      max-width: 294px;
+      width: 100%;
+    }
   }
 
 </style>

@@ -1,10 +1,20 @@
 <template>
   <div class="layout">
-    <Header />
-    <Sidebar />
-    <main class="main">
-      <router-view></router-view>
-    </main>
+    <div class="container">
+      <div class="row">    
+        <div class="col-md-3">
+          <Sidebar />
+        </div>    
+       <div class="col-md-9">
+         <div class="layout__content">
+            <Header />
+            <main class="main">
+              <router-view></router-view>
+            </main>
+          </div> 
+       </div>               
+      </div>      
+    </div>    
   </div>
 </template>
 
@@ -20,5 +30,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .layout {
+    width: 100%;
+    height: 100vh;
+    padding: 90px 0; 
+    color: #888888;
 
+    &__content {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .main {
+      padding: 20px;
+    }
+  }
 </style>

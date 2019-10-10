@@ -3,8 +3,8 @@
     <Input name="email" placeholder="Email" type="email" />
     <Input name="password" placeholder="Password" type="password" />
     <div class="login__links">
-      <router-link to="forget">Забыли пароль?</router-link>
-      <router-link to="registration">Регистрация</router-link>
+      <router-link class="login__link" to="forget">Забыли пароль?</router-link>
+      <router-link class="login__link" to="registration">Регистрация</router-link>
     </div>
     <SocialIcons />
     <Button text="Войти" />
@@ -27,5 +27,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  .login {
+    &__links {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+    &__link {
+      color: #B4B4B4;
+      text-decoration: underline;
+      font-size: 14px;
+      font-weight: normal;
+    }
+  }
 </style>
