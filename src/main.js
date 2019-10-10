@@ -1,14 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import BootstrapVue from 'bootstrap-vue'
 import App from './App.vue'
 import {routes} from './routes'
 import VueApexCharts from 'vue-apexcharts'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faVk, faFacebookF, faGoogle, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import './main.scss'
 
 library.add(faVk, faFacebookF, faGoogle, faTwitter)
 
@@ -21,7 +19,6 @@ const router = new VueRouter({
 })
 
 Vue.use(VueRouter)
-Vue.use(BootstrapVue)
 Vue.use(VueApexCharts)
 Vue.config.productionTip = false
 
