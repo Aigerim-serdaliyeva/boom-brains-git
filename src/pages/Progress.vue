@@ -1,21 +1,18 @@
 <template>
   <div>
-    <Grid>
-      <ProgressMenu />
+    <!-- <Grid> -->
       <router-view></router-view>  
-    </Grid>
+    <!-- </Grid> -->
   </div>
 </template>
 
 <script>
-import ProgressMenu from '../statistics/ProgressMenu.vue'
-import Grid from '../components/Grid'
-import Widget from '../components/Widget'
+// import Grid from '../components/Grid'
+// import Widget from '../components/Widget'
 export default {
   components: {
-    Grid,
-    Widget, 
-    ProgressMenu
+    // Grid,
+    // Widget, 
   }
 }
 </script>

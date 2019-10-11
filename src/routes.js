@@ -20,44 +20,40 @@ export const routes = [
         component: () => import('./pages/Progress.vue'),
         children: [      
           {
-            path: '/week',
-            name: "week",
+            path: 'week',
             component: () => import('./statistics/Week.vue')
           },   
           {
-            path: '/month',
-            name: "month",
+            path: 'month',
             component: () => import('./statistics/Month.vue')
           }, 
           {
-            path: '/game-data',
-            name: "game-data",
+            path: 'game-data',
             component: () => import('./statistics/GameData.vue')
           },
           {
-            path: '/rating-friends',
-            name: "rating-friends",
+            path: 'rating-friends',
             component: () => import('./statistics/RatingFriends.vue')
           },
           {
-            path: '/radar',
-            name: "radar",
+            path: 'radar',
             component: () => import('./statistics/Radar.vue')
           },
           {
-            path: '/age',
-            name: "age",
+            path: 'age',
             component: () => import('./statistics/Age.vue')
           },
           {
-            path: '/records',
-            name: "records",
+            path: 'records',
             component: () => import('./statistics/Records.vue')
           },
           {
-            path: '/rating-world',
-            name: "rating-world",
+            path: 'rating-world',
             component: () => import('./statistics/RatingWorld.vue')
+          },
+          {
+            path: '',
+            component: () => import('./statistics/ProgressMenu.vue')
           },
         ]
       },
