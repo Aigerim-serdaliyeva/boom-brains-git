@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="statistics">
     <apexchart type=radar height=350 :options="chartOptions" :series="series" />
   </div>
 </template>
@@ -26,7 +26,5 @@ export default {
 </script>
 
 <style scoped>
-  .apexcharts-toolbar {
-    display: none !important;
-  }
+  
 </style>

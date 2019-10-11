@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <div class="container">
-      <div class="row">    
+      <div class="row align-items-stretch">    
         <div class="col-lg-3">
           <Sidebar />
         </div>    
@@ -43,7 +43,7 @@ export default {
     }
 
     .main {
-      padding: 20px;
+      padding: 20px 15px;
     }
   }
 </style>
