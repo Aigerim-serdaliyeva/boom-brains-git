@@ -1,54 +1,60 @@
 <template>
   <div>
     <Grid>
-      <div class="grid__block grid__block--1"><img src="../assets/img/grid-1.jpg" alt=""></div>
-      <div class="grid__block grid__block--2"><img src="../assets/img/grid-2.jpg" alt=""></div>
-      <div class="grid__block grid__block--3"><img src="../assets/img/grid-3.jpg" alt=""></div>
-      <div class="grid__block grid__block--5"><img src="../assets/img/grid-5.jpg" alt=""></div>
-      <div class="grid__block grid__block--6"><img src="../assets/img/grid-5.jpg" alt=""></div>
-      <div class="grid__block grid__block--4"><img src="../assets/img/grid-4.jpg" alt=""></div>      
-      <div class="grid__block grid__block--7"><img src="../assets/img/grid-7.jpg" alt=""></div>
-      <div class="grid__block grid__block--8"><img src="../assets/img/grid-7.jpg" alt=""></div>
+      <ProgressMenu />
+      <router-view></router-view>  
     </Grid>
   </div>
 </template>
 
 <script>
+import ProgressMenu from '../statistics/ProgressMenu.vue'
 import Grid from '../components/Grid'
 import Widget from '../components/Widget'
 export default {
   components: {
     Grid,
-    Widget
+    Widget, 
+    ProgressMenu
   }
 }
 </script>
 
 <style lang="scss" scoped>
   .grid__block {
+    background: #F1F1F1;
     &--1 {
-      grid-area: a;
+      grid-column-start: 1;
+      grid-column-end: 2;
     };
     &--2 {
-      grid-area: b;
+      grid-column-start: 2;
+      grid-column-end: 3;
     };
     &--3 {
-      grid-area: c;
+      grid-column-start: 3;
+      grid-column-end: 4;
     };
     &--4 {
-      grid-area: n;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 3;
     };
     &--5 {
-      grid-area: f;
+      grid-row-start: 2;
+      grid-column-start: 3;
     };
     &--6 {
-      grid-area: l;
+      grid-row-start: 3;
+      grid-column-start: 3;
     };
     &--7 {
-      grid-area: d;
+      grid-column-start: 4;
     }
-    &--8 {
-      grid-area: t;
+    &--8 {      
+      grid-row-start: 2;      
+      grid-column-start: 4;
     };
 
   }

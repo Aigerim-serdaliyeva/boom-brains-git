@@ -5,7 +5,6 @@
       <ul>
         <li><router-link class="sidebar__link" to="progress">Ваш прогресс</router-link></li>
         <li><router-link class="sidebar__link" to="groups">Возрастные группы</router-link></li>
-        <li><router-link class="sidebar__link" to="records">Рекорды</router-link></li>
         <li><router-link class="sidebar__link" to="applications">Приложения</router-link></li>
       </ul>
     </div>

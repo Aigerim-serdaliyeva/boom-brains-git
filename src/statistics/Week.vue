@@ -1,13 +1,12 @@
 <template>
   <div>
-    <h2>Applications</h2>
+    <h2>Week</h2>
   </div>
 </template>
 
 <script>
 export default {
-  components: { 
-  }
+  
 }
 </script>
 
