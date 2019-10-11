@@ -1,18 +1,14 @@
 <template>
   <div>
     <Grid>
-      <Widget title="Недельная активность"></Widget>
-      <Widget title="Прогресс за месяц"></Widget>
-      <Widget title="Данные по играм"></Widget>
-      <Widget title="Рейтинг Cреди друзей">
-        <ol>
-          <li>Nagibator 228 <span>23123</span></li>
-          <li>PtNaNezhnost <span>13123</span></li>
-        </ol>
-      </Widget>
-      <Widget title=""></Widget>
-      <Widget title="Рейтинг Cреди друзей"></Widget>
-      <Widget title="Мировой Рейтинг"></Widget>      
+      <div class="grid__block grid__block--1"><img src="../assets/img/grid-1.jpg" alt=""></div>
+      <div class="grid__block grid__block--2"><img src="../assets/img/grid-2.jpg" alt=""></div>
+      <div class="grid__block grid__block--3"><img src="../assets/img/grid-3.jpg" alt=""></div>
+      <div class="grid__block grid__block--5"><img src="../assets/img/grid-5.jpg" alt=""></div>
+      <div class="grid__block grid__block--6"><img src="../assets/img/grid-5.jpg" alt=""></div>
+      <div class="grid__block grid__block--4"><img src="../assets/img/grid-4.jpg" alt=""></div>      
+      <div class="grid__block grid__block--7"><img src="../assets/img/grid-7.jpg" alt=""></div>
+      <div class="grid__block grid__block--8"><img src="../assets/img/grid-7.jpg" alt=""></div>
     </Grid>
   </div>
 </template>
@@ -29,5 +25,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .grid__block {
+    &--1 {
+      grid-area: a;
+    };
+    &--2 {
+      grid-area: b;
+    };
+    &--3 {
+      grid-area: c;
+    };
+    &--4 {
+      grid-area: n;
+    };
+    &--5 {
+      grid-area: f;
+    };
+    &--6 {
+      grid-area: l;
+    };
+    &--7 {
+      grid-area: d;
+    }
+    &--8 {
+      grid-area: t;
+    };
 
+  }
 </style>
