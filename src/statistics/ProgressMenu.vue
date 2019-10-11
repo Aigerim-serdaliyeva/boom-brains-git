@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Grid>
       <div class="grid__block grid__block--1">
         <router-link to="week"> 
           <img src="../assets/img/grid-1.jpg" alt="">
@@ -40,17 +41,23 @@
           <img src="../assets/img/grid-7.jpg" alt="">
         </router-link>
       </div> 
+    </Grid>
   </div>
 </template>
 
 <script>
+import Grid from '../components/Grid.vue'
 export default {
+  components: {
+    Grid
+  }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .grid__block {
     background: #F1F1F1;
+    border-radius: 5px;
     &--1 {
       grid-column-start: 1;
       grid-column-end: 2;

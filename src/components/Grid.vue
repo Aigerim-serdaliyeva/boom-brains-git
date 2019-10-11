@@ -15,5 +15,6 @@ export default {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(4, 1fr);
+    align-items: start;
   }
 </style>
