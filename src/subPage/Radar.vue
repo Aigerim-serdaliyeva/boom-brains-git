@@ -1,11 +1,12 @@
 <template>
-  <div class="statistics">
+  <SubPage title="Radar">
     <apexchart type=radar height=350 :options="chartOptions" :series="series" />
-  </div>
+  </SubPage>
 </template>
 
 <script>
 
+import SubPage from '../components/SubPage.vue'
 import VueApexCharts from "vue-apexcharts";
 export default {
   data() {
@@ -21,6 +22,7 @@ export default {
   },
   components: {
     apexchart: VueApexCharts,
+    SubPage
   },
 }
 </script>

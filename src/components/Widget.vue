@@ -16,5 +16,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  .widget {    
+    background: #F1F1F1;
+    border-radius: 5px;
+    padding: 15px;
+    height: 100%;
+  }
 </style>

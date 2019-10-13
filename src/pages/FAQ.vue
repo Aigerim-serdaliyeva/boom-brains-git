@@ -1,12 +1,13 @@
 <template>
   <div>
-    <h2>Month</h2>
+    <h2>FAQ</h2>
   </div>
 </template>
 
 <script>
 export default {
-  
+  components: { 
+  }
 }
 </script>
 

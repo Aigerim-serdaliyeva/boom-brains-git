@@ -15,57 +15,67 @@ export const routes = [
     component: () => import('./components/Layout.vue'),    
     children: [
       {
-        path: '/progress',
-        name: "progress",
-        component: () => import('./pages/Progress.vue'),
+        path: '/profile',
+        name: "profile",
+        component: () => import('./pages/Profile.vue'),
         children: [      
           {
-            path: '/week',
-            component: () => import('./statistics/Week.vue')
+            path: 'week',
+            component: () => import('./subPage/Week.vue')
           },   
           {
-            path: '/month',
-            component: () => import('./statistics/Month.vue')
+            path: 'month',
+            component: () => import('./subPage/Month.vue')
           }, 
           {
-            path: '/game-data',
-            component: () => import('./statistics/GameData.vue')
+            path: 'game-data',
+            component: () => import('./subPage/GameData.vue')
           },
           {
-            path: '/rating-friends',
-            component: () => import('./statistics/RatingFriends.vue')
+            path: 'rating-friends',
+            component: () => import('./subPage/RatingFriends.vue')
           },
           {
-            path: '/radar',
-            component: () => import('./statistics/Radar.vue')
+            path: 'radar',
+            component: () => import('./subPage/Radar.vue')
           },
           {
-            path: '/age',
-            component: () => import('./statistics/Age.vue')
+            path: 'age',
+            component: () => import('./subPage/Age.vue')
           },
           {
-            path: '/records',
-            component: () => import('./statistics/Records.vue')
+            path: 'records',
+            component: () => import('./subPage/Records.vue')
           },
           {
-            path: '/rating-world',
-            component: () => import('./statistics/RatingWorld.vue')
+            path: 'rating-world',
+            component: () => import('./subPage/RatingWorld.vue')
           },
           {
             path: '',
-            component: () => import('./statistics/ProgressMenu.vue')
+            component: () => import('./subPage/ProfileMenu.vue')
           },
         ]
       },
       {
-        path: '/groups',
-        name: "groups",
-        component: () => import('./pages/Groups.vue')
+        path: '/game',
+        name: "game",
+        component: () => import('./pages/Game.vue')
       },
       {
-        path: '/applications',
-        name: "applications",
-        component: () => import('./pages/Applications.vue')
+        path: '/courses',
+        name: "courses",
+        component: () => import('./pages/Courses.vue')
+      },
+      {
+        path: '/faq',
+        name: "faq",
+        component: () => import('./pages/FAQ.vue')
+      },
+      {
+        path: '/boom-brains',
+        name: "boom-brains",
+        component: () => import('./pages/BoomBrains.vue')
       }
     ]
   },

@@ -3,9 +3,11 @@
     <div class="sidebar__img"><img src="../assets/img/logo.png" alt=""></div>
     <div class="sidebar__menu">
       <ul>
-        <li><router-link class="sidebar__link" to="progress">Ваш прогресс</router-link></li>
-        <li><router-link class="sidebar__link" to="groups">Возрастные группы</router-link></li>
-        <li><router-link class="sidebar__link" to="applications">Приложения</router-link></li>
+        <li><router-link class="sidebar__link"  active-class="active" to="/profile">Ваш прогресс</router-link></li>
+        <li><router-link class="sidebar__link" active-class="active" to="/game">Игры</router-link></li>
+        <li><router-link class="sidebar__link" active-class="active" to="/courses">Курсы</router-link></li>
+        <li><router-link class="sidebar__link" active-class="active" to="/faq">FAQ</router-link></li>
+        <li><router-link class="sidebar__link" active-class="active" to="/boom-brains">О BoomBrains</router-link></li>
       </ul>
     </div>
   </aside>
@@ -25,17 +27,24 @@ export default {
     width: 100%;
     background: #fff;
     border-radius: 10px;
-    padding: 40px 15px;
+    padding: 40px 0;
     text-align: center;
 
     &__img {
       margin-bottom: 70px;
     }
 
-    &__link {
-      color: #888888;
+    &__link { 
+      color: #9D9D9D;;
       font-size: 18px;
       font-weight: normal;
+      display: block;
+      padding: 22px 15px;
+      &:hover, &.active {
+        background: #427EB9;
+        color: #fff;
+        text-decoration: none;
+      }
     }
   }
 
@@ -44,7 +53,6 @@ export default {
     padding: 0;
     li {      
       list-style: none;
-      margin-bottom: 65px;
     }
   }
 </style>
