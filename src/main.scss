@@ -1,6 +1,26 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 
+$default_family: 'Roboto', Arial, sans-serif;
+$text_color: #888888;
+
+body {
+	min-width: 320px;
+	position: relative;
+	color: $text_color;
+  line-height: 1.2;
+  font-family: $default_family;
+  font-weight: normal;
+  overflow-x: auto;
+  opacity: 1;
+}
+
+a {
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
 $grid-gutter-width: 20px;
 $grid-columns: 15;
 $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1370px);

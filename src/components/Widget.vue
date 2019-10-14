@@ -19,7 +19,14 @@ export default {
   .widget {    
     background: #F1F1F1;
     border-radius: 5px;
-    padding: 15px;
+    padding: 20px 25px;
     height: 100%;
+
+    &__title {
+      text-align: center;
+      font-size: 13px;
+      font-weight: normal;
+      color: #888;
+    }
   }
 </style>

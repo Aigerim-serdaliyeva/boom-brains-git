@@ -24,7 +24,10 @@ export default {
     position: relative;
 
     &__title {
-      text-align: center;
+      text-align: center;      
+      font-weight: 500;
+      font-size: 24px;
+      color: #888;
     }
   }
 </style>
