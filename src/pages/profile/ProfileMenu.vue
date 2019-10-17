@@ -1,8 +1,8 @@
 <template>
   <div>
-    <FlexDiv>
+    <div class="d-flex">
       <div>
-        <FlexDiv>
+        <div class="d-flex">
           <Widget title="Недельная активность">
             <router-link to="/profile/week">    
               text
@@ -18,9 +18,9 @@
               text        
             </router-link>
           </Widget>
-        </FlexDiv>
+        </div>
         <div>
-          <FlexDiv>
+          <div class="d-flex">
             <Widget title="Radar">
               <router-link to="/profile/radar">  
                 text         
@@ -38,7 +38,7 @@
                 </router-link>
               </Widget>
             </div>
-          </FlexDiv>
+          </div>
         </div>
       </div>
       <div>
@@ -54,20 +54,19 @@
           </router-link>
         </Widget> 
       </div>     
-    </FlexDiv>
+    </div>
   </div>
 </template>
 
 <script>
-import Widget from '../components/widget/Widget.vue'
-import FlexDiv from '../components/FlexDiv.vue'
+import Widget from '../../components/widget/Widget'
 export default {
   components: {
-    FlexDiv, Widget    
+    Widget    
   }
 }
 </script>
 
 <style lang="scss">
-
+  
 </style>

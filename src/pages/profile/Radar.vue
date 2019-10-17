@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import SubPage from '../components/sub-page/SubPage.vue'
+import SubPage from '../../components/sub-page/SubPage.vue'
 
 import VueApexCharts from "vue-apexcharts";
 export default {

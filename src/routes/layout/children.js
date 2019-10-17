@@ -1,38 +1,38 @@
 export const children = [      
     {
       path: 'week',
-      component: () => import('../../subPage/Week.vue')
+      component: () => import('../../pages/profile/Week.vue')
     },   
     {
       path: 'month',
-      component: () => import('../../subPage/Month.vue')
+      component: () => import('../../pages/profile/Month.vue')
     }, 
     {
       path: 'game-data',
-      component: () => import('../../subPage/GameData.vue')
+      component: () => import('../../pages/profile/GameData.vue')
     },
     {
       path: 'rating-friends',
-      component: () => import('../../subPage/RatingFriends.vue')
+      component: () => import('../../pages/profile/RatingFriends.vue')
     },
     {
       path: 'radar',
-      component: () => import('../../subPage/Radar.vue')
+      component: () => import('../../pages/profile/Radar.vue')
     },
     {
       path: 'age',
-      component: () => import('../../subPage/Age.vue')
+      component: () => import('../../pages/profile/Age.vue')
     },
     {
       path: 'records',
-      component: () => import('../../subPage/Records.vue')
+      component: () => import('../../pages/profile/Records.vue')
     },
     {
       path: 'rating-world',
-      component: () => import('../../subPage/RatingWorld.vue')
+      component: () => import('../../pages/profile/RatingWorld.vue')
     },
     {
       path: '',
-      component: () => import('../../subPage/ProfileMenu.vue')
+      component: () => import('../../pages/profile/ProfileMenu.vue')
     },
   ]
