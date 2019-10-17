@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar">
-    <div class="sidebar__img"><img src="../assets/img/logo.png" alt=""></div>
+    <div class="sidebar__img"><img src="@/assets/img/logo.png" alt=""></div>
     <div class="sidebar__menu">
       <ul>
         <li><router-link class="sidebar__link"  active-class="active" to="/profile">Ваш прогресс</router-link></li>

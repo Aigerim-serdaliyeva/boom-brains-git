@@ -1,6 +1,6 @@
 <template>
   <div class="form">
-    <div class="form__img"><img src="../assets/img/logo.png" ></div>
+    <div class="form__img"><img src="@/assets/img/logo.png" ></div>
     <div class="form__block">
       <h1 class="form__title">Войти на сайт</h1>
       <div class="form__content">

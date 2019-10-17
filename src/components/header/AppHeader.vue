@@ -1,9 +1,9 @@
 <template>
   <header class="header">
     <div class="header__content">      
-      <User />
+      <UserProfile />
       <div class="header__exit">
-        <img src="../assets/img/exit.png" alt="">
+        <img src="@/assets/img/exit.png" alt="">
         <a href="#">Выход</a>
       </div>
     </div>
@@ -11,17 +11,16 @@
 </template>
 
 <script>
-import User from './User'
+import UserProfile from '../user-profile/UserProfile.vue'
+
 export default {
-  components: {
-    User
-  }
+  components: { UserProfile }
 }
 </script>
 
 <style lang="scss" scoped>
   .header {
-    background-image: url('../assets/img/header-back.jpg');
+    background-image: url('~@/assets/img/header-back.jpg');
     padding: 22px 30px 22px 40px;
 
     &__content {

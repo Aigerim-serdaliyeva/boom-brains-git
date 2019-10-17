@@ -59,12 +59,11 @@
 </template>
 
 <script>
+import Widget from '../components/widget/Widget.vue'
 import FlexDiv from '../components/FlexDiv.vue'
-import Widget from '../components/Widget.vue'
 export default {
   components: {
-    FlexDiv,
-    Widget
+    FlexDiv, Widget    
   }
 }
 </script>

@@ -7,9 +7,9 @@
         </div>    
        <div class="col-lg-12">
          <div class="layout__content">
-            <Header />
+            <AppHeader />
             <main class="main">
-              <router-view></router-view>
+              <router-view />
             </main>
           </div> 
        </div>               
@@ -19,12 +19,13 @@
 </template>
 
 <script>
-import Header from './Header'
-import Sidebar from './Sidebar'
+import Sidebar from '../sidebar/Sidebar.vue'
+import AppHeader from '../header/AppHeader.vue'
+
+
 export default {
-  components: {
-    Header,
-    Sidebar
+  components: {    
+     AppHeader, Sidebar
   }
 }
 </script>

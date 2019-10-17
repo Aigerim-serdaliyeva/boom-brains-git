@@ -1,27 +1,24 @@
 <template>
-  <Form>
-    <Input name="email" placeholder="Email" type="email" />
-    <Input name="password" placeholder="Password" type="password" />
+  <FormAuth>
+    <InputForm name="email" placeholder="Email" type="email" />
+    <InputForm name="password" placeholder="Password" type="password" />
     <div class="login__links">
       <router-link class="login__link" to="forget">Забыли пароль?</router-link>
       <router-link class="login__link" to="registration">Регистрация</router-link>
     </div>
     <SocialIcons />
-    <Button text="Войти" />
-  </Form>
+    <ButtonForm text="Войти" />
+  </FormAuth>
 </template>
 
 <script>
-import Form from '../components/Form'
-import Input from '../components/Input'
-import Button from '../components/Button'
-import SocialIcons from '../components/SocialIcons'
+import SocialIcons from '../components/social-icons/SocialIcons.vue'
+import InputForm from '../components/input-form/InputForm.vue'
+import FormAuth from '../components/form-auth/FormAuth.vue'
+import ButtonForm from '../components/button-form/ButtonForm.vue'
 export default {
-  components: {
-    Form,
-    Input, 
-    Button,
-    SocialIcons
+  components: {        
+     ButtonForm, FormAuth, SocialIcons,InputForm
   }  
 }
 </script>

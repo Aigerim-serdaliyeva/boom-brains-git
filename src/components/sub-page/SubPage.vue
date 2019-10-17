@@ -1,6 +1,6 @@
 <template>
   <div class="sub-page">
-    <router-link to="/profile"><img src="../assets/img/return-link.png" alt=""></router-link>
+    <router-link to="/profile"><img src="@/assets/img/return-link.png" alt=""></router-link>
     <h2 class="sub-page__title">{{title}}</h2>
     <slot></slot>
   </div>

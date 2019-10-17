@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import SubPage from '../components/SubPage.vue'
+import SubPage from '../components/sub-page/SubPage.vue'
 export default {
-  components: {
-    SubPage
+  components: { SubPage
+    
   }
 }
 </script>
