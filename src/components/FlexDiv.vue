@@ -1,5 +1,5 @@
 <template>
-  <div class="grid">
+  <div class="flex">
     <slot></slot>
   </div>
 </template>
@@ -12,9 +12,8 @@ export default {
 </script>
 
 <style lang="scss">
-  .grid {
-    position: relative;
+  .flex {
+    display: flex;
     width: 100%;
-    height: 400px;
   }
 </style>
