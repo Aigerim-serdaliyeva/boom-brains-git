@@ -17,10 +17,12 @@ export default {
 
 <style lang="scss" scoped>
   .widget {    
+    position: absolute;
     background: #F1F1F1;
     border-radius: 5px;
     padding: 20px 25px;
     height: 100%;
+    border: 2px solid #fff;
 
     &__title {
       text-align: center;

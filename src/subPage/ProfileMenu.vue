@@ -1,30 +1,46 @@
 <template>
   <div>
     <Grid>
-      <router-link to="/profile/week" :style="{'grid-area': '1 / 1 / span 2 / span 1'}"> 
-        <Widget title="Недельная активность"></Widget>
-      </router-link>
-      <router-link to="/profile/month" :style="{'grid-area': '1 / 2 / span 2 / span 1'}"> 
-        <Widget title="Прогресс за месяц"></Widget>
-      </router-link>
-      <router-link to="/profile/game-data" :style="{'grid-area': '1 / 3 / span 2 / span 1'}"> 
-        <Widget title="Данные по играм"></Widget>
-      </router-link>
-      <router-link to="/profile/rating-friends" :style="{'grid-area': '1 / 4 / span 3 / span 1'}"> 
-        <Widget title="Рейтинг среди друзей"></Widget>
-      </router-link>
-      <router-link to="/profile/radar" :style="{'grid-area': '3 / 1 / span 4 / span 2'}"> 
-        <Widget title="Radar"></Widget>
-      </router-link>
-      <router-link to="/profile/age" :style="{'grid-area': '3 / 3 / span 2 / span 1'}"> 
-        <Widget title="Возрастная статистика"></Widget>
-      </router-link>
-      <router-link to="/profile/records" :style="{'grid-area': '5 / 3 / span 2 / span 1'}"> 
-        <Widget title="Рекорды"></Widget>
-      </router-link>
-      <router-link to="/profile/rating-world" :style="{'grid-area': '4 / 4 / span 3 / span 1'}"> 
-        <Widget title="Мировой рейтинг"></Widget>
-      </router-link>
+      <Widget title="Недельная активность" :style="{'top': '0', 'left': '0', 'height': '25%', 'width': '25%'}">
+        <router-link to="/profile/week">    
+           text
+        </router-link>
+      </Widget>
+      <Widget title="Прогресс за месяц" :style="{'top': '0', 'left': '25%', 'height': '25%', 'width': '25%'}">
+        <router-link to="/profile/month">    
+          text     
+        </router-link>
+      </Widget>
+      <Widget title="Данные по играм" :style="{'top': '0', 'left': '50%', 'height': '25%', 'width': '25%'}">
+        <router-link to="/profile/game-data"> 
+          text        
+        </router-link>
+      </Widget>
+      <Widget title="Рейтинг среди друзей" :style="{'top': '0', 'left': '75%', 'height': '50%', 'width': '25%'}">
+        <router-link to="/profile/rating-friends">  
+          text       
+        </router-link>
+      </Widget>
+      <Widget title="Radar" :style="{'top': '25%', 'left': '0', 'height': '75%', 'width': '50%'}">
+        <router-link to="/profile/radar">  
+          text         
+        </router-link>
+      </Widget>
+      <Widget title="Возрастная статистика" :style="{'top': '25%', 'left': '50%', 'height': '37.5%', 'width': '25%'}">
+        <router-link to="/profile/age">   
+          text      
+        </router-link>
+      </Widget>
+      <Widget title="Рекорды" :style="{'top': '62.5%', 'left': '50%', 'height': '37.5%', 'width': '25%'}">
+        <router-link to="/profile/records">  
+          text       
+        </router-link>
+      </Widget>
+      <Widget title="Мировой рейтинг" :style="{'top': '50%', 'left': '75%', 'height': '50%', 'width': '25%'}">
+        <router-link to="/profile/rating-world">   
+          text      
+        </router-link>
+      </Widget>      
     </Grid>
   </div>
 </template>
