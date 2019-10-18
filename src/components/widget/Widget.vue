@@ -20,8 +20,9 @@ export default {
     background: #f1f1f1;
     border-radius: 5px;
     padding: 20px 25px;
+    margin-bottom: 5px;
     // height: 100%;
-    border: 2px solid #fff;
+    // border: 2px solid #fff;
 
     &__title {
         text-align: center;

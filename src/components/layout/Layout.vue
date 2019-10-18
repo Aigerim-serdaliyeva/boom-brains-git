@@ -5,7 +5,7 @@
                 <div class="col-lg-3">
                     <Sidebar />
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-13">
                     <div class="layout__content">
                         <AppHeader />
                         <main class="main">
@@ -41,6 +41,7 @@ export default {
         background: #fff;
         border-radius: 10px;
         overflow: hidden;
+        margin-left: 25px;
     }
 
     .main {
