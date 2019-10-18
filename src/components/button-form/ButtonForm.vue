@@ -1,18 +1,18 @@
 <template>
-  <button class="button">{{text}}</button>
+    <button class="button">{{ text }}</button>
 </template>
 
 <script>
 export default {
-  props: {
-    text: String
-  }
-}
+    props: {
+        text: String
+    }
+};
 </script>
 
 <style lang="scss">
-  .button {
-    background: #5ACC02;
+.button {
+    background: #5acc02;
     color: #fff;
     font-size: 18px;
     border-radius: 57px;
@@ -29,5 +29,5 @@ export default {
     white-space: nowrap;
     border: none;
     cursor: pointer;
-  }
+}
 </style>

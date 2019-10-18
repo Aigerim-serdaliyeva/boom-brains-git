@@ -1,19 +1,13 @@
 <template>
-  <SubPage title="Рекорды">
-
-  </SubPage>
+    <SubPage title="Рекорды"> </SubPage>
 </template>
 
 <script>
-import SubPage from '../../components/sub-page/SubPage.vue'
+import SubPage from "../../components/sub-page/SubPage.vue";
 
 export default {
-  components: { SubPage
-    
-  }
-}
+    components: { SubPage }
+};
 </script>
 
-<style lang="scss">
-  
-</style>
+<style lang="scss"></style>

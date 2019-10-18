@@ -4,9 +4,7 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-        modules: {       
-            
-        }
-    });
+    modules: {}
+});
 
 export default store;

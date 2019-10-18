@@ -1,16 +1,13 @@
 <template>
-  <div>
-    <h2>FAQ</h2>
-  </div>
+    <div>
+        <h2>FAQ</h2>
+    </div>
 </template>
 
 <script>
 export default {
-  components: { 
-  }
-}
+    components: {}
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
