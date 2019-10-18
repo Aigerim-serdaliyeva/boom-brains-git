@@ -16,6 +16,9 @@ body {
   overflow: hidden
 }
 
+h2 {
+  color: red;
+}
 a {
   &:hover {
     text-decoration: none !important;
