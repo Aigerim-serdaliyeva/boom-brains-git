@@ -1,7 +1,7 @@
 <template>
     <div class="layout">
         <div class="container">
-            <div class="row align-items-stretch">
+            <div class="row ">
                 <div class="col-lg-3">
                     <Sidebar />
                 </div>
@@ -34,8 +34,10 @@ export default {
 .layout {
     width: 100%;
     height: 100vh;
-    padding: 90px 0;
+    // padding: 90px 0;
     color: #888888;
+    display: flex;
+    align-items: center;    
 
     &__content {
         background: #fff;
@@ -45,7 +47,7 @@ export default {
     }
 
     .main {
-        padding: 20px 15px;
+        padding: 15px 15px;
     }
 }
 </style>

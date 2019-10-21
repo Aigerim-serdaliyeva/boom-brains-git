@@ -1,17 +1,17 @@
 <template>
     <div>
         <Grid>
-            <Widget title="Недельная активность" :style="{'top': '0', 'left': '0', 'height': '25%', 'width': '25%'}">
+            <Widget title="Недельная активность" :style="{'top': '0', 'left': '0', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/week">    
-                text
+                    text
                 </router-link>
             </Widget>
-            <Widget title="Прогресс за месяц" :style="{'top': '0', 'left': '25%', 'height': '25%', 'width': '25%'}">
+            <Widget title="Прогресс за месяц" :style="{'top': '0', 'left': '25%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/month">    
                 text     
                 </router-link>
             </Widget>
-            <Widget title="Данные по играм" :style="{'top': '0', 'left': '50%', 'height': '25%', 'width': '25%'}">
+            <Widget title="Данные по играм" :style="{'top': '0', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/game-data"> 
                 text        
                 </router-link>
@@ -21,17 +21,17 @@
                 text       
                 </router-link>
             </Widget>
-            <Widget title="Radar" :style="{'top': '25%', 'left': '0', 'height': '75%', 'width': '50%'}">
+            <Widget title="Radar" :style="{'top': '33.33%', 'left': '0', 'height': '66.66%', 'width': '50%'}">
                 <router-link to="/profile/radar">  
                 text         
                 </router-link>
             </Widget>
-            <Widget title="Возрастная статистика" :style="{'top': '25%', 'left': '50%', 'height': '37.5%', 'width': '25%'}">
+            <Widget title="Возрастная статистика" :style="{'top': '33.33%', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/age">   
                 text      
                 </router-link>
             </Widget>
-            <Widget title="Рекорды" :style="{'top': '62.5%', 'left': '50%', 'height': '37.5%', 'width': '25%'}">
+            <Widget title="Рекорды" :style="{'top': '66.66%', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/records">  
                 text       
                 </router-link>

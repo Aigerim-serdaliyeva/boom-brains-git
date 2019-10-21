@@ -40,4 +40,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style>
+    .apexcharts-menu-icon {
+        display: none !important;
+    }
+</style>

@@ -16,6 +16,6 @@ export default {
   .grid {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 655px;
   }
 </style>
