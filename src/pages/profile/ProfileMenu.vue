@@ -35,9 +35,10 @@
                 </router-link>
             </Widget>
             <Widget title="Рекорды" :style="{'top': '66.66%', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
-                <router-link to="/profile/records">  
+                <Records />
+                <!-- <router-link to="/profile/records">  
                 text       
-                </router-link>
+                </router-link> -->
             </Widget>
             <Widget title="Мировой рейтинг" :style="{'top': '50%', 'left': '75%', 'height': '50%', 'width': '25%'}">
                 <router-link to="/profile/rating-world">   
@@ -49,6 +50,7 @@
 </template>
 
 <script>
+import Records from './Records.vue'
 import Month from './Month.vue'
 import Radar from './Radar.vue'
 import Week from './Week.vue'
@@ -56,18 +58,18 @@ import Grid from '../../components/grid/Grid.vue'
 import Widget from "../../components/widget/Widget";
 export default {
     components: {
-        Widget, Grid, Week, Radar, Month
+        Widget, Grid, Week, Radar, Month, Records
     }
 };
 </script>
 
 <style lang="scss">
     .back-link {
-        display: none;
+        // display: none;
     }
     .sub-page {
         &__title {
-            display: none;
+            // display: none;
         }
     }
 </style>

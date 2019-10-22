@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .widget {    
     position: absolute;
     background: #F1F1F1;
@@ -26,8 +26,17 @@ export default {
     &__title {
       text-align: center;
       font-size: 13px;
-      font-weight: normal;
+      // font-weight: normal;
+      font-weight: 500;
       color: #888;
+      margin-bottom: 15px;
+    }
+    &__content {
+      &__title {
+        font-weight: 300;
+        font-size: 13px;
+        margin-bottom: 6px;
+      }
     }
   }
 </style>

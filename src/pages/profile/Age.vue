@@ -16,7 +16,11 @@ import SubPage from "../../components/sub-page/SubPage.vue";
 import VueApexCharts from "vue-apexcharts";
 export default {
     data() {
-        return {            
+        return {               
+            series: [{
+                name: 'series-1',
+                data: [44, 55, 41, 75, 22, 43, 21, 33]
+            }],        
             chartOptions: {
                 dataLabels: {
                     enabled: false,
@@ -39,15 +43,19 @@ export default {
                 yaxis: {
                     show: true,
                     showAlways: true,
+                    line: true,
+                    axisBorder: {
+                        show: true,
+                        color: "#888888"
+                    },
+                    axisTicks: {
+                        show: true,
+                    }
                 },
                 fill: {
                    colors: ['#12ACCE', '#1989A1']
                 }
             },
-            series: [{
-                name: 'series-1',
-                data: [44, 55, 41, 67, 22, 43, 21, 33]
-            }]
         }
     },
     components: {

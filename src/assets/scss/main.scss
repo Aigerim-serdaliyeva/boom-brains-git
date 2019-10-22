@@ -34,8 +34,13 @@ a {
   }
 }
 
-.apexcharts-menu-icon {
-  display: none !important;
+.apexcharts {
+  &-toolbar {
+    display: none;
+  }
+  &-menu-icon {
+    display: none !important;
+  }
 }
 
 // $grid-gutter-width: 20px;

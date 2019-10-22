@@ -1,5 +1,10 @@
 <template>
     <SubPage title="Прогресс за месяц"> 
+        <div class="month">
+            <div class="month__button active">1 Месяц</div>
+            <div class="month__button">6 Месяцев</div>
+            <div class="month__button">12 Месяцев</div>
+        </div>
         <apexchart
             type="area"
             height="350"
@@ -24,14 +29,7 @@ export default {
             series: [
                 {
                     // name: "Series 1",
-                    data: [
-                        [1486684800000, 34],
-                        [1486771200000, 43],
-                        [1486857600000, 31],
-                        [1486944000000, 43],
-                        [1487030400000, 33],
-                        [1487116800000, 52]
-                    ]
+                    data: [45, 52, 38, 45, 19, 23, 2, 45, 52, 38, 45, 19, 23, 2, 45, 52, 38, 45, 19, 23, 2, 45, 52, 38, 45, 19, 23, 2, 15, 25]
                 }
             ],
             chartOptions: {
@@ -72,11 +70,15 @@ export default {
                 },
                 xaxis: {
                     type: "datetime",
-                    // tickAmount: 8,
+                    tickAmount: 30,
+                    min: new Date("01/01/2019").getTime(),
+                    max: new Date("01/31/2019").getTime(),
                     labels: {
-                        formatter: function(val) {
-                                return $this.$moment(new Date(val)).format("DD MMM YYYY");
-                            // }
+                        // formatter: function(val) {
+                        //     return $this.$moment(new Date(val)).format("DD MMM YYYY");
+                        // }
+                        formatter: function(value, timestamp, index) {
+                            return $this.$moment(new Date(timestamp)).format("DD.MMM")
                         }
                     }
                     
@@ -134,7 +136,17 @@ export default {
                         offsetY: 0,
                         rotate: 0,
                         // formatter: (value) => { return val },
-                    },                   
+                    },     
+                    // crosshairs: {
+                    //     show: true
+                    // },
+                    axisBorder: {
+                        show: true,
+                        color: "#888888"
+                    },
+                    axisTicks: {
+                        show: true,
+                    }         
                 },
   
             }
@@ -148,9 +160,31 @@ export default {
 </script>
 
 <style lang="scss">
+    .month {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: normal;
+        font-size: 13px;
+        margin-bottom: 10px;
+        &__button {
+            padding: 6px 17px;
+            border-radius: 33px;
+            &.active {
+                background: #fff;
+            }
+        }
+    }
     .apexcharts {
+        position: relative;
         &-yaxis {
             // display: block !important;
+        }
+        &-xaxis-label  {
+            // position: absolute;
+            // transform-origin: 0 0;
+            //  transform: rotate(-30deg);
+            // transform: rotate(-45deg, 1.16406, 288.289);
         }
     }
 </style>
