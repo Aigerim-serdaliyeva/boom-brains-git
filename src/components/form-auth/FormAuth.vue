@@ -1,20 +1,33 @@
 <template>
-    <div class="form">
+    <div class="form" @submit="submitForm">
         <div class="form__img"><img src="@/assets/img/logo.png" /></div>
-        <div class="form__block">
-            <h1 class="form__title">Войти на сайт</h1>
-            <div class="form__content">
-                <slot></slot>
+        <div class="absolute-handler">
+            <slot name="indicator" />
+            <div class="form__block">
+                <h1 class="form__title">Войти на сайт</h1>
+                <div class="form__content">
+                    <slot />
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+    methods: {
+        submitForm() {
+            this.$emit("submitForm");
+        }
+    }
+};
 </script>
 
 <style lang="scss" scoped>
+.absolute-handler {
+    position: relative;
+}
+
 .form {
     width: 100%;
     height: 100vh;
@@ -33,6 +46,8 @@ export default {};
         border-radius: 10px;
         max-width: 403px;
         width: 100%;
+        position: relative;
+        z-index: 2;
         padding: 40px 55px 55px;
     }
 

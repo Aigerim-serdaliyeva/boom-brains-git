@@ -1,11 +1,16 @@
 <template>
-    <button class="button">{{ text }}</button>
+    <button @click="submitForm" class="button">{{ text }}</button>
 </template>
 
 <script>
 export default {
     props: {
         text: String
+    },
+    methods: {
+        submitForm() {
+            this.$emit("submitForm");
+        }
     }
 };
 </script>

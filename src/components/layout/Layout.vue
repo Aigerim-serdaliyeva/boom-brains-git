@@ -37,7 +37,7 @@ export default {
     // padding: 90px 0;
     color: #888888;
     display: flex;
-    align-items: center;    
+    align-items: center;
 
     &__content {
         background: #fff;

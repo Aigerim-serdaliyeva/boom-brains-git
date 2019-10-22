@@ -1,7 +1,21 @@
 <template>
-    <FormAuth>
-        <InputForm name="email" placeholder="Email" type="email" />
-        <InputForm name="password" placeholder="Password" type="password" />
+    <FormAuth @submitForm="submitForm">
+        <template v-slot:indicator v-if="spinnerSettings.loading">
+            <Indicator :spinnerSettings="spinnerSettings" />
+        </template>
+
+        <InputForm
+            name="email"
+            v-model="formData.email"
+            placeholder="Email"
+            type="email"
+        />
+        <InputForm
+            name="password"
+            v-model="formData.password"
+            placeholder="Password"
+            type="password"
+        />
         <div class="login__links">
             <router-link class="login__link" to="forget"
                 >Забыли пароль?</router-link
@@ -11,21 +25,52 @@
             >
         </div>
         <SocialIcons />
-        <ButtonForm text="Войти" />
+        <ButtonForm @submitForm="submitForm" text="Войти" />
     </FormAuth>
 </template>
 
 <script>
+import Indicator from "../components/indicator/Indicator.vue";
 import SocialIcons from "../components/social-icons/SocialIcons.vue";
 import InputForm from "../components/input-form/InputForm.vue";
 import FormAuth from "../components/form-auth/FormAuth.vue";
 import ButtonForm from "../components/button-form/ButtonForm.vue";
+import { mapActions } from "vuex";
+
 export default {
+    data() {
+        return {
+            formData: {
+                email: null,
+                password: null
+            },
+            spinnerSettings: {
+                spinnerColor: "#bada55",
+                loading: false,
+                size: 20
+            }
+        };
+    },
     components: {
         ButtonForm,
         FormAuth,
         SocialIcons,
-        InputForm
+        InputForm,
+        Indicator
+    },
+    methods: {
+        async submitForm() {
+            try {
+                this.spinnerSettings.loading = true;
+                await this.login(this.formData);
+                this.spinnerSettings.loading = false;
+            } catch (err) {
+                throw err;
+            }
+        },
+        ...mapActions({
+            login: "auth/login"
+        })
     }
 };
 </script>

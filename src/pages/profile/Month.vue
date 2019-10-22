@@ -1,5 +1,5 @@
 <template>
-    <SubPage title="Прогресс за месяц"> 
+    <SubPage title="Прогресс за месяц">
         <apexchart
             type="area"
             height="350"
@@ -24,37 +24,37 @@ export default {
             ],
             chartOptions: {
                 fill: {
-                    type: 'gradient',
+                    type: "gradient",
                     gradient: {
-                        shade: '#06CC02',
-                        gradientToColors: ['#FFD600'],
+                        shade: "#06CC02",
+                        gradientToColors: ["#FFD600"],
                         shadeIntensity: 1,
                         opacityFrom: 1,
                         opacityTo: 1,
                         stops: [0, 100, 100, 100]
-                    },
+                    }
                 },
                 stroke: {
                     width: 0,
-                    curve: 'smooth'
+                    curve: "smooth"
                 },
                 yaxis: {
                     title: {
-                        text: 'Результат',
-                    },
+                        text: "Результат"
+                    }
                 },
                 markers: {
                     size: 2,
                     opacity: 0.9,
                     colors: ["#06CC02"],
                     strokeColor: "#fff",
-                    strokeWidth: 1,                    
+                    strokeWidth: 1,
                     hover: {
-                        size: 4,
+                        size: 4
                     }
                 },
                 xaxis: {
-                    type: 'datetime',
+                    type: "datetime",
                     categories: [
                         "01 Jan",
                         "02 Jan",
@@ -63,14 +63,14 @@ export default {
                         "05 Jan",
                         "06 Jan",
                         "07 Jan"
-                    ],
+                    ]
                     // labels: {
                     //     formatter: function(value, timestamp, index) {
                     //         return moment(new Date(timestamp)).format("DD MMM YYYY")
                     //     }
                     // }
                 },
-                 yaxis: {
+                yaxis: {
                     show: true,
                     showAlways: true,
                     seriesName: undefined,
@@ -84,30 +84,29 @@ export default {
                     decimalsInFloat: undefined,
                     labels: {
                         show: true,
-                        align: 'right',
+                        align: "right",
                         minWidth: 0,
                         // maxWidth: 160,
                         offsetX: 0,
                         offsetY: 0,
-                        rotate: 0,
+                        rotate: 0
                         // formatter: (value) => { return val },
-                    },                   
+                    }
                 }
-  
             }
-        }
+        };
     },
-    components: { 
-        SubPage,        
-        apexchart: VueApexCharts,
+    components: {
+        SubPage,
+        apexchart: VueApexCharts
     }
 };
 </script>
 
 <style lang="scss">
-    .apexcharts {
-        &-yaxis {
-            // display: block !important;
-        }
+.apexcharts {
+    &-yaxis {
+        // display: block !important;
     }
+}
 </style>

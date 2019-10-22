@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style>
-    .apexcharts-menu-icon {
-        display: none !important;
-    }
+.apexcharts-menu-icon {
+    display: none !important;
+}
 </style>

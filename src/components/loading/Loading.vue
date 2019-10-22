@@ -1,10 +1,9 @@
 <template>
-    <div class="loading" >
+    <div class="loading">
         <Spinner v-bind="spinnerSettings" />
-        <div :style='isLoadingStyle'>
+        <div :style="isLoadingStyle">
             <slot />
         </div>
-        
     </div>
 </template>
 
@@ -15,20 +14,9 @@ export default {
     props: {
         spinnerSettings: {
             type: Object
-        },       
-    },
-    components: { Spinner },
-    computed: {
-        isLoadingStyle() {
-            const { loading } = this.spinnerSettings;
-
-            if(loading) {
-                return {
-                    opacity: 0
-                }
-            }            
         }
-    }
+    },
+    components: { Spinner }
 };
 </script>
 
@@ -37,6 +25,6 @@ export default {
     position: relative;
     height: 100%;
     width: 100%;
-    background: '#fff'
+    background: "#fff";
 }
 </style>

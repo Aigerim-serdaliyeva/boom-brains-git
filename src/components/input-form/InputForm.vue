@@ -5,6 +5,8 @@
             :type="type"
             :placeholder="placeholder"
             :name="name"
+            v-model="content"
+            @input="handleInput"
         />
     </div>
 </template>
@@ -17,10 +19,18 @@ export default {
         type: {
             default: "text",
             type: String
-        }
+        },
+        value: null
     },
     data() {
-        return {};
+        return {
+            content: this.value
+        };
+    },
+    methods: {
+        handleInput(e) {
+            this.$emit("input", this.content);
+        }
     }
 };
 </script>
