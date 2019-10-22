@@ -19,6 +19,7 @@ import VueApexCharts from "vue-apexcharts";
 
 export default {
     data() {
+        const $this = this;
         return {
             series: [
                 {
@@ -68,7 +69,7 @@ export default {
                     labels: {
                         formatter: function(val) {
                             // console.log(val)
-                                return moment(new Date(val)).format("DD MMM YYYY");
+                                return $this.$moment(new Date(val)).format("DD MMM YYYY");
                             // }
                         }
                     }

@@ -13,8 +13,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import "./assets/scss/main.scss";
-import moment from 'moment';
-// import * as moment from 'moment'
+import moment from "moment";
 
 library.add(faVk, faFacebookF, faGoogle, faTwitter);
 
@@ -30,7 +29,6 @@ Vue.use(VueRouter);
 Vue.use(VueApexCharts);
 Vue.config.productionTip = false;
 Vue.prototype.$moment = moment;
-// Vue.use(moment);
 
 new Vue({
     router,
