@@ -24,7 +24,14 @@ export default {
             series: [
                 {
                     // name: "Series 1",
-                    data: [10000, 30000, 50000, 55000, 47000, 78000, 12000, 10000, 30000, 50000, 55000, 47000, 78000, 12000]
+                    data: [
+                        [1486684800000, 34],
+                        [1486771200000, 43],
+                        [1486857600000, 31],
+                        [1486944000000, 43],
+                        [1487030400000, 33],
+                        [1487116800000, 52]
+                    ]
                 }
             ],
             chartOptions: {
@@ -68,7 +75,6 @@ export default {
                     // tickAmount: 8,
                     labels: {
                         formatter: function(val) {
-                            // console.log(val)
                                 return $this.$moment(new Date(val)).format("DD MMM YYYY");
                             // }
                         }
