@@ -25,12 +25,12 @@ export default {
                 {
                     // name: "Series 1",
                     data: [
-                        [1486684800000, 34],
-                        [1486771200000, 43],
-                        [1486857600000, 31],
-                        [1486944000000, 43],
-                        [1487030400000, 33],
-                        [1487116800000, 52]
+                        ['05/06/2019', 34],
+                        ['05/10/2019', 43],
+                        ['05/11/2019', 31],
+                        ['05/15/2019', 43],
+                        ['05/20/2019', 33],
+                        ['05/22/2019', 52]
                     ]
                 }
             ],
@@ -38,8 +38,8 @@ export default {
                 fill: {
                     type: 'gradient',
                     gradient: {
-                        shade: '#06CC02',
-                        gradientToColors: ['#FFD600'],
+                        // shade: '#06CC02',
+                        gradientToColors: ['#FFD600', '#06CC02'],
                         shadeIntensity: 1,
                         opacityFrom: 1,
                         opacityTo: 1,
@@ -74,8 +74,10 @@ export default {
                     type: "datetime",
                     // tickAmount: 8,
                     labels: {
-                        formatter: function(val) {
-                                return $this.$moment(new Date(val)).format("DD MMM YYYY");
+                      rotate: -45,
+                      rotateAlways: true,
+                        formatter: function(val, timestamp) {
+                                return $this.$moment(new Date(timestamp)).format("DD.MM");
                             // }
                         }
                     }

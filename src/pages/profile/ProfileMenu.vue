@@ -62,12 +62,12 @@ export default {
 </script>
 
 <style lang="scss">
-    .back-link {
-        display: none;
-    }
-    .sub-page {
-        &__title {
-            display: none;
-        }
-    }
+    // .back-link {
+    //     display: none;
+    // }
+    // .sub-page {
+    //     &__title {
+    //         display: none;
+    //     }
+    // }
 </style>
