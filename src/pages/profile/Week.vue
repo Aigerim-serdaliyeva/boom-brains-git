@@ -1,13 +1,32 @@
 <template>
     <div>
         <SubPage title="Недельная активность">
-            <apexchart
-                type=bar 
-                width=550
-                height=350 
-                :options="chartOptions" 
-                :series="series"
-            />
+            <div class="d-flex align-items-end justify-content-between">
+                <div>
+                    <h2 class="apexchart__title">Сравнение с пред идущей</h2>             
+                    <apexchart
+                        type=bar 
+                        width=400
+                        height=350
+                        :options="chartOptions" 
+                        :series="series"
+                    >    
+                    </apexchart>
+                </div>
+                <div>
+                    <h2 class="apexchart__title">Дни тренировок на этой неделе</h2> 
+                    <apexchart
+                        type=bar 
+                        width=550
+                        height=350 
+                        :options="chartOptions" 
+                        :series="series"
+                    >                   
+                    </apexchart>
+                </div>
+            </div>   
+            <div class="apexchart__text">По нашим показателям у людей которые уделяют тренажерам около 10 минут в день и более, наблюдается значительное улучшение результатов. 
+                Но не стоит забывать что для улучшения работоспособности мозга нужны не только тренировки но и отдых</div>         
         </SubPage>
     </div>    
 </template>
@@ -23,6 +42,9 @@ export default {
                 data: [44, 35, 7, 67, 13, 20, 25]
             }],
             chartOptions: {  
+                chart: {
+                    id: 'basic-bar'
+                },
                 dataLabels: {
                     enabled: true,
                     // formatter: function(value, { seriesIndex, dataPointIndex, w }) {
@@ -47,7 +69,7 @@ export default {
                 },                
                 grid: {
                     row: {
-                        colors: ['#fff', '#F2F2F2']
+                        colors: ['#F1F1F1', '#EBEBEB']
                     }
                 },
                 xaxis: {
@@ -75,7 +97,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .apexcharts {
+    .apexcharts {        
         &-yaxis {
             display: none;
         }

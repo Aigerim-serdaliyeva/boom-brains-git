@@ -1,12 +1,10 @@
 <template>
-    <SubPage title="Radar">
-        <apexchart
-            type="radar"
-            height="350"
-            :options="chartOptions"
-            :series="series"
-        />
-    </SubPage>
+    <apexchart
+        type="radar"
+        height="450"
+        :options="chartOptions"
+        :series="series"
+    />
 </template>
 
 <script>
@@ -28,8 +26,27 @@ export default {
                     "Память",
                     "Аккуратность",
                     "Внимание",
-                    "Логика"
-                ]
+                    "Логика",
+                ], 
+                fill: {
+                    colors: ['#FF9900']
+                },
+                stroke: {
+                    show: true,
+                    width: 1,
+                    colors: ['#FF9900'],
+                    dashArray: 0
+                },
+                markers: {
+                    size: 3,
+                    colors: ['#FF9900'],
+                    hover: {
+                        size: 4
+                    }
+                },
+                yaxis: {
+                    show: false,
+                }
             }
         };
     },
@@ -40,8 +57,16 @@ export default {
 };
 </script>
 
-<style>
-    .apexcharts-menu-icon {
-        display: none !important;
+<style lang=scss>
+    .apexcharts {
+        &-menu-icon {
+            display: none !important;
+        
+        }
+        &-datalabel {
+            font-size: 17px;
+            font-weight: normal;
+        }
     }
+    
 </style>

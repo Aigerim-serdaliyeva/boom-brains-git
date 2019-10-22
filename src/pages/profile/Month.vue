@@ -6,6 +6,10 @@
             :series="series"
             :options="chartOptions"
         />
+        <div class="d-flex justify-content-between">
+            <div class="apexchart__text">Количество очков за прошлый месяц: <span>74999</span></div>
+            <div class="apexchart__text">Количество очков за этот месяц: <span>4999</span></div>
+        </div>
     </SubPage>
 </template>
 
@@ -19,7 +23,7 @@ export default {
             series: [
                 {
                     // name: "Series 1",
-                    data: [10000, 30000, 50000, 55000, 47000, 28000, 12000]
+                    data: [10000, 30000, 50000, 55000, 47000, 78000, 12000, 10000, 30000, 50000, 55000, 47000, 78000, 12000]
                 }
             ],
             chartOptions: {
@@ -33,6 +37,11 @@ export default {
                         opacityTo: 1,
                         stops: [0, 100, 100, 100]
                     },
+                },
+                grid: {
+                    row: {
+                        colors: ['#F1F1F1', '#ECECEC']
+                    }
                 },
                 stroke: {
                     width: 0,
@@ -54,33 +63,60 @@ export default {
                     }
                 },
                 xaxis: {
-                    type: 'datetime',
-                    categories: [
-                        "01 Jan",
-                        "02 Jan",
-                        "03 Jan",
-                        "04 Jan",
-                        "05 Jan",
-                        "06 Jan",
-                        "07 Jan"
-                    ],
+                    type: "datetime",
+                    // tickAmount: 8,
+                    labels: {
+                        formatter: function(val) {
+                            // console.log(val)
+                                return moment(new Date(val)).format("DD MMM YYYY");
+                            // }
+                        }
+                    }
+                    
+                    // type: 'datetime',
+                    // categories: [
+                    //     "01 Jan",
+                    //     "02 Jan",
+                    //     "03 Jan",
+                    //     "04 Jan",
+                    //     "05 Jan",
+                    //     "06 Jan",
+                    //     "07 Jan",
+                    //     "01 Jan",
+                    //     "02 Jan",
+                    //     "03 Jan",
+                    //     "04 Jan",
+                    //     "05 Jan",
+                    //     "06 Jan",
+                    //     "07 Jan"
+                    // ],  
+                    // labels: {
+                    //      formatter: function(value, timestamp, index) {
+                    //         return moment(new Date(timestamp)).format("DD MMM YYYY")
+                    //     }
+                    // }
+                    // labels: {
+                    //     format: 'dd.MM',
+                    // }       
+                    // labels: {
+                    //     formatter: function (value, timestamp) {
+                    //     return new Date(timestamp) // The formatter function overrides format property
+                    //     }, 
+                    // }           
                     // labels: {
                     //     formatter: function(value, timestamp, index) {
                     //         return moment(new Date(timestamp)).format("DD MMM YYYY")
                     //     }
                     // }
                 },
-                 yaxis: {
+                yaxis: {
                     show: true,
                     showAlways: true,
                     seriesName: undefined,
                     opposite: false,
                     reversed: false,
                     logarithmic: false,
-                    tickAmount: 8,
-                    // min: 12,
-                    // max: 6,
-                    // forceNiceScale: false,
+                    tickAmount: 6,
                     decimalsInFloat: undefined,
                     labels: {
                         show: true,
@@ -92,7 +128,7 @@ export default {
                         rotate: 0,
                         // formatter: (value) => { return val },
                     },                   
-                }
+                },
   
             }
         }
@@ -111,3 +147,6 @@ export default {
         }
     }
 </style>
+
+
+                    

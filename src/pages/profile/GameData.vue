@@ -6,6 +6,9 @@
             :options="chartOptions"
             :series="series"
         />
+        <div class="apexchart__text">Все тренажены направленны на тренировку различных функций мозга мы советуем равномерно распределять время между тренажерами.</div> <br>
+        <div class="apexchart__text">Используя различные тренажеры, вы лучше стимулируете мозг. 
+            По нашим показателям люди использующие разнообразные тренажеры показывают более сильный прогресс в результатах чем люди использующие всего один.</div>
     </SubPage>
 </template>
 
@@ -36,7 +39,24 @@ export default {
                         position: 'bottom'
                     }
                     }
-                }]
+                }],
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            size: '65%',
+                            labels: {
+                                show: true,
+                                name: {
+                                   color: '#FD9300'
+                                },
+                                value: {
+                                    // Рекорд:
+                                   color: '#FD9300'
+                                }
+                            }
+                        }
+                    }
+                },
             }
         }
     }
@@ -45,8 +65,13 @@ export default {
 
 <style lang="scss">
 
-    .apexcharts-canvas {
-        
+    .apexcharts {
+        &-legend {
+            display: none !important;
+        }
+        &-datalabel-label {
+            font-size: 18px;
+        }
     }
 
 </style>

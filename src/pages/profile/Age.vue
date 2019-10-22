@@ -1,11 +1,13 @@
 <template>
-    <SubPage title="Возрастрная статистика"> 
+    <SubPage title="Возрастная статистика"> 
         <apexchart 
             type=bar 
             height=350 
             :options="chartOptions" 
             :series="series" 
         />
+        <div class="apexchart__text">По нашим данным наибольшая активность мозга проявляется в возрасте от 17 до 35 лет. 
+            Существую “люди исключения” с достаточными тренировками мозговой деятельности некоторые люди поддерживают его активность в хорошей форме даже до 50-60 лет.</div>   
     </SubPage>
 </template>
 
@@ -14,52 +16,15 @@ import SubPage from "../../components/sub-page/SubPage.vue";
 import VueApexCharts from "vue-apexcharts";
 export default {
     data() {
-        return {
-            series: [{
-                name: 'Servings',
-                data: [44, 55, 41, 67, 22, 43, 21, 33]
-            }],
+        return {            
             chartOptions: {
-                annotations: {
-                    points: [{
-                    x: 'Bananas',
-                    seriesIndex: 0,
-                    label: {
-                        borderColor: '#775DD0',
-                        offsetY: 0,
-                        style: {
-                        color: '#fff',
-                        background: '#775DD0',
-                        },
-                        text: 'Bananas are good',
-                    }
-                    }]
-                },
-                // chart: {
-                //     height: 350,
-                //     type: 'bar',
-                // },
-                plotOptions: {
-                    bar: {
-                    columnWidth: '50%',
-                    endingShape: 'rounded'	
-                    }
-                },
                 dataLabels: {
-                    enabled: false
+                    enabled: false,
                 },
-                stroke: {
-                    // width: 0
-                },
-                grid: {
-                    row: {
-                    colors: ['#fff', '#E7EFF1']
-                    }
+                chart: {
+                    // id: 'basic-bar'
                 },
                 xaxis: {
-                    // labels: {
-                    //     rotate: -45
-                    // },
                     categories: [
                         '10-15 лет',
                         '15-20 лет',
@@ -72,24 +37,17 @@ export default {
                     ],
                 },
                 yaxis: {
-                    title: {
-                        text: 'Servings',
-                    },
+                    show: true,
+                    showAlways: true,
                 },
                 fill: {
-                    type: 'gradient',
-                    gradient: {
-                        shade: 'light',
-                        type: "horizontal",
-                        shadeIntensity: 0.25,
-                        gradientToColors: undefined,
-                        inverseColors: true,
-                        opacityFrom: 0.85,
-                        opacityTo: 0.85,
-                        stops: [50, 0, 100]
-                    },
+                   colors: ['#12ACCE', '#1989A1']
                 }
-            }        
+            },
+            series: [{
+                name: 'series-1',
+                data: [44, 55, 41, 67, 22, 43, 21, 33]
+            }]
         }
     },
     components: {
