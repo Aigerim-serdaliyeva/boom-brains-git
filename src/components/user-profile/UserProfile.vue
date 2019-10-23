@@ -1,7 +1,7 @@
 <template>
     <div class="user">
         <div class="user__img">
-            <img src="@/assets/img/Group 108.jpg" alt="" />
+            <img src="@/assets/img/player.jpg" alt="" />
         </div>
         <div class="user__content">
             <div class="user__name">

@@ -8,12 +8,12 @@
             </Widget>
             <Widget title="Прогресс за месяц" :style="{'top': '0', 'left': '25%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/month">    
-                    <img src="@/assets/img/month.jpg" alt="">
+                    <img src="@/assets/img/month.png" alt="">
                 </router-link>
             </Widget>
             <Widget title="Данные по играм" :style="{'top': '0', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/game-data"> 
-                    <img src="@/assets/img/game-data.jpg" alt="">       
+                    <img src="@/assets/img/game-data.png" alt="">       
                 </router-link>
             </Widget>
             <Widget title="Рейтинг среди друзей" :style="{'top': '0', 'left': '75%', 'height': '50%', 'width': '25%'}">
@@ -29,7 +29,7 @@
             </Widget>
             <Widget title="Возрастная статистика" :style="{'top': '33.33%', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/age">   
-                    <img src="@/assets/img/age.jpg" alt="">    
+                    <img src="@/assets/img/age.png" alt="">    
                 </router-link>
             </Widget>
             <Widget title="Рекорды" :style="{'top': '66.66%', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
@@ -60,12 +60,5 @@ export default {
 </script>
 
 <style lang="scss">
-    // .back-link {
-    //     display: none;
-    // }
-    // .sub-page {
-    //     &__title {
-    //         display: none;
-    //     }
-    // }
+    
 </style>
