@@ -29,15 +29,22 @@ export default {
             series: [
                 {
                     // name: "Series 1",
-                    data: [45, 52, 38, 45, 19, 23, 2, 45, 52, 38, 45, 19, 23, 2, 45, 52, 38, 45, 19, 23, 2, 45, 52, 38, 45, 19, 23, 2, 15, 25]
+                    data: [
+                        ['05/06/2019', 34],
+                        ['05/10/2019', 43],
+                        ['05/11/2019', 31],
+                        ['05/15/2019', 43],
+                        ['05/20/2019', 33],
+                        ['05/22/2019', 52]
+                    ]
                 }
             ],
             chartOptions: {
                 fill: {
                     type: 'gradient',
                     gradient: {
-                        shade: '#06CC02',
-                        gradientToColors: ['#FFD600'],
+                        // shade: '#06CC02',
+                        gradientToColors: ['#FFD600', '#06CC02'],
                         shadeIntensity: 1,
                         opacityFrom: 1,
                         opacityTo: 1,
@@ -74,11 +81,11 @@ export default {
                     min: new Date("01/01/2019").getTime(),
                     max: new Date("01/31/2019").getTime(),
                     labels: {
-                        // formatter: function(val) {
-                        //     return $this.$moment(new Date(val)).format("DD MMM YYYY");
-                        // }
-                        formatter: function(value, timestamp, index) {
-                            return $this.$moment(new Date(timestamp)).format("DD.MMM")
+                      rotate: -45,
+                      rotateAlways: true,
+                        formatter: function(val, timestamp) {
+                                return $this.$moment(new Date(timestamp)).format("DD.MM");
+                            // }
                         }
                     }
                     
