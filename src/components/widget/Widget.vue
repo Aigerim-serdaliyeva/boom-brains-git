@@ -32,6 +32,9 @@ export default {
       margin-bottom: 15px;
     }
     &__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       &__title {
         font-weight: 300;
         font-size: 13px;

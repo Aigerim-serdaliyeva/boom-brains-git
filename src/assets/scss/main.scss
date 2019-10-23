@@ -1,7 +1,8 @@
+@import "./fonts";
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 
-$default_family: 'Roboto', Arial, sans-serif;
+$default_family: Roboto, Arial, sans-serif;
 $text_color: #888888;
 
 body {
@@ -9,11 +10,15 @@ body {
 	position: relative;
 	color: $text_color;
   line-height: 1.2;
-  font-family: $default_family;
+  font-family: $default_family !important;
   font-weight: normal;
   overflow-x: auto;
   opacity: 1;
   overflow: hidden
+}
+
+img {
+  max-width: 100%;
 }
 
 a {
