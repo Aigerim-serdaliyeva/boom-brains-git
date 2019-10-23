@@ -4,14 +4,7 @@
             <div class="d-flex align-items-end justify-content-between">
                 <div>
                     <h2 class="apexchart__title">Сравнение с пред идущей</h2>             
-                    <apexchart
-                        type=bar 
-                        width=400
-                        height=350
-                        :options="chartOptions" 
-                        :series="series"
-                    >    
-                    </apexchart>
+                    <PreviousWeek />
                 </div>
                 <div>
                     <h2 class="apexchart__title">Дни тренировок на этой неделе</h2> 
@@ -32,7 +25,8 @@
 </template>
 
 <script>
-import SubPage from "../../components/sub-page/SubPage.vue";
+import PreviousWeek from './PreviousWeek.vue'
+import SubPage from '../../../components/sub-page/SubPage.vue'
 import VueApexCharts from "vue-apexcharts";
 
 export default {
@@ -84,22 +78,27 @@ export default {
                     ],                    
                 },
                 yaxis: {
-                    tickAmount: 8,
+                    tickAmount: 6,
                 }
             }        
         }
     },
     components: { 
         SubPage,
-        apexchart: VueApexCharts,
+        apexchart: VueApexCharts, PreviousWeek
     }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .apexcharts {        
         &-yaxis {
             display: none;
         }
+        &-xaxis-label {
+            font-size: 18px;
+            color: #888;
+            font-weight: 500;
+        } 
     }
 </style>

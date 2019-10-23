@@ -13,6 +13,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import "./assets/scss/main.scss";
+import "./assets/scss/fonts.scss";
 import moment from "moment";
 
 library.add(faVk, faFacebookF, faGoogle, faTwitter);

@@ -3,19 +3,17 @@
         <Grid>
             <Widget title="Недельная активность" :style="{'top': '0', 'left': '0', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/week">    
-                    <Week></Week>
-                    <!-- text -->
+                    <img src="@/assets/img/week.png" alt="">
                 </router-link>
             </Widget>
             <Widget title="Прогресс за месяц" :style="{'top': '0', 'left': '25%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/month">    
-                    <Month />
-                <!-- text      -->
+                    <img src="@/assets/img/month.jpg" alt="">
                 </router-link>
             </Widget>
             <Widget title="Данные по играм" :style="{'top': '0', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/game-data"> 
-                text        
+                    <img src="@/assets/img/game-data.jpg" alt="">       
                 </router-link>
             </Widget>
             <Widget title="Рейтинг среди друзей" :style="{'top': '0', 'left': '75%', 'height': '50%', 'width': '25%'}">
@@ -31,7 +29,7 @@
             </Widget>
             <Widget title="Возрастная статистика" :style="{'top': '33.33%', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/age">   
-                text      
+                    <img src="@/assets/img/age.jpg" alt="">    
                 </router-link>
             </Widget>
             <Widget title="Рекорды" :style="{'top': '66.66%', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
@@ -51,14 +49,12 @@
 
 <script>
 import Records from './Records.vue'
-import Month from './Month.vue'
 import Radar from './Radar.vue'
-import Week from './Week.vue'
 import Grid from '../../components/grid/Grid.vue'
 import Widget from "../../components/widget/Widget";
 export default {
     components: {
-        Widget, Grid, Week, Radar, Month, Records
+        Widget, Grid, Radar, Records
     }
 };
 </script>
