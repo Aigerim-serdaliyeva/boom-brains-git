@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import App from "./App";
 import { router } from "./router";
+import Vuelidate from 'vuelidate'
 import { store } from "./store";
 import VueApexCharts from "vue-apexcharts";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -16,6 +17,16 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(faVk, faFacebookF, faGoogle, faTwitter);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
+// Error handler
+Vue.config.errorHandler = function(err, vm, info) {    
+    const message = `Error: ${err.toString()}\nInfo: ${info}`;
+    if (process.env.NODE_ENV !== "production") {
+        console.log(message);
+    }
+
+    store.dispatch("error/setMessage", message);
+};
+
 // Global Style
 import "./assets/scss/main.scss";
 
@@ -25,6 +36,7 @@ import "./plugins/axios";
 // Vue use
 Vue.use(Router);
 Vue.use(VueApexCharts);
+Vue.use(Vuelidate)
 Vue.config.productionTip = false;
 
 new Vue({

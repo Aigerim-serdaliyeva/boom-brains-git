@@ -7,7 +7,10 @@
             :name="name"
             v-model="content"
             @input="handleInput"
+            :required="requiredProp"
+            :autocomplete="autocomplete"
         />
+        <slot />
     </div>
 </template>
 
@@ -20,7 +23,15 @@ export default {
             default: "text",
             type: String
         },
-        value: null
+        value: null,
+        requiredProp: {
+            type: Boolean,
+            default: false
+        },
+        autocomplete: {
+            type: String,
+            default: 'off'
+        }
     },
     data() {
         return {
@@ -43,6 +54,7 @@ export default {
 
 .input,
 .textarea {
+    outline: none;
     font-size: 14px;
     text-align: center;
     font-weight: bold;
@@ -76,4 +88,5 @@ export default {
         opacity: 1;
     }
 }
+
 </style>

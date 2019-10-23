@@ -2,7 +2,7 @@
     <header class="header">
         <div class="header__content">
             <UserProfile />
-            <div class="header__exit">
+            <div @click="logout" class="header__exit">
                 <img src="@/assets/img/exit.png" alt="" />
                 <a href="#">Выход</a>
             </div>
@@ -12,9 +12,15 @@
 
 <script>
 import UserProfile from "../user-profile/UserProfile.vue";
+import { mapActions } from "vuex";
 
 export default {
-    components: { UserProfile }
+    components: { UserProfile },
+    methods: {
+        ...mapActions({
+            logout: "auth/logout"
+        })
+    }
 };
 </script>
 
@@ -31,6 +37,7 @@ export default {
 
     &__exit {
         text-align: center;
+        cursor: pointer;
         a {
             display: block;
             color: #ffffff;

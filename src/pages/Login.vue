@@ -9,12 +9,14 @@
             v-model="formData.email"
             placeholder="Email"
             type="email"
+            autocomplete="on"
         />
         <InputForm
             name="password"
             v-model="formData.password"
             placeholder="Password"
             type="password"
+            autocomplete="on"
         />
         <div class="login__links">
             <router-link class="login__link" to="forget"
@@ -25,7 +27,7 @@
             >
         </div>
         <SocialIcons />
-        <ButtonForm @submitForm="submitForm" text="Войти" />
+        <ButtonForm type="submit" text="Войти" />
     </FormAuth>
 </template>
 
@@ -59,18 +61,19 @@ export default {
         Indicator
     },
     methods: {
+        ...mapActions({
+            login: "auth/login"
+        }),
         async submitForm() {
             try {
                 this.spinnerSettings.loading = true;
                 await this.login(this.formData);
                 this.spinnerSettings.loading = false;
             } catch (err) {
+                this.spinnerSettings.loading = false;
                 throw err;
             }
-        },
-        ...mapActions({
-            login: "auth/login"
-        })
+        }  
     }
 };
 </script>

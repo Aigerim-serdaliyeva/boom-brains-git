@@ -10,13 +10,10 @@ export const auth = {
         accessToken: localStorage.getItem("access_token")
     },
     getters: {
-        accessToken: state => {
-            const { accessToken } = state;
-
+        accessToken: ({ accessToken }) => {
             if (accessToken === "undefined" || accessToken === null) {
                 return false;
             }
-
             return accessToken;
         }
     },
@@ -38,10 +35,26 @@ export const auth = {
 
                 localStorage.setItem("access_token", token);
 
-                commit(LOGIN_SUCCESS, {
-                    token
-                });
+                commit(LOGIN_SUCCESS, token);
                 router.push("/profile");
+            } catch (err) {
+                throw err;
+            }
+        },
+        async register({ commit }, credentials) {
+            try {
+                const res = await axios.post("/auth/register", credentials);
+                const data = await res.data;
+
+                const { token, status } = data;
+
+                if(status === 'rejected') {
+                    return data
+                }
+
+                localStorage.setItem("access_token", token);
+                commit(LOGIN_SUCCESS, token);
+                router.push("/profile");                
             } catch (err) {
                 throw err;
             }

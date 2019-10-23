@@ -1,20 +1,26 @@
 <template>
-    <div class="form" @submit="submitForm">
+    <form class="form" @submit.prevent="submitForm" >
         <div class="form__img"><img src="@/assets/img/logo.png" /></div>
         <div class="absolute-handler">
             <slot name="indicator" />
             <div class="form__block">
-                <h1 class="form__title">Войти на сайт</h1>
+                <h1 class="form__title"> {{ title }} </h1>
                 <div class="form__content">
                     <slot />
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </template>
 
 <script>
 export default {
+    props: {
+        title: {
+            type: String,
+            default: 'Войти на сайт'
+        }
+    },
     methods: {
         submitForm() {
             this.$emit("submitForm");
