@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Loading from "../components/loading/Loading.vue";
+import Loading from '../../components/loading/Loading.vue'
 
 export default {
     components: { Loading },
@@ -20,3 +20,7 @@ export default {
     }
 };
 </script>
+
+<style lang="scss">
+    
+</style>

@@ -41,6 +41,10 @@ export default {};
         }
     }
 
+    &__content {
+        margin-bottom: 10px;
+    }
+
     &__data {
         font-weight: normal;
         font-size: 13px;

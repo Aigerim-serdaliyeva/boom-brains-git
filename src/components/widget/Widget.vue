@@ -26,19 +26,36 @@ export default {
     &__title {
       text-align: center;
       font-size: 13px;
-      // font-weight: normal;
       font-weight: 500;
       color: #888;
       margin-bottom: 15px;
     }
     &__content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       &__title {
         font-weight: 300;
         font-size: 13px;
         margin-bottom: 6px;
+      }
+      
+    }
+    &__img {
+      display: flex;
+      align-items: center;
+      justify-content: center;  
+    }
+  }
+
+  @media screen and (max-width: 1370px) {
+    .widget {
+      padding: 15px 15px 10px;
+    }
+  } 
+
+  @media screen and (max-width: 1200px) {
+    .widget {
+      padding: 10px;
+      &__title {
+        margin-bottom: 10px;
       }
     }
   }

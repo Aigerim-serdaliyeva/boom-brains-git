@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
-#app {
-    overflow-y: scroll;
-}
+    #app {
+        overflow-y: scroll;
+    }
 </style>

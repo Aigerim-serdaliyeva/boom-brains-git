@@ -18,4 +18,16 @@ export default {
     width: 100%;
     height: 655px;
   }
+
+  @media screen and (max-width: 1370px) {
+    .grid {
+      height: 620px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .grid {
+      height: 550px;
+    }
+  }
 </style>

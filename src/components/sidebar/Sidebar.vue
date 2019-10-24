@@ -94,4 +94,22 @@ ul {
         list-style: none;
     }
 }
+
+    @media screen and (max-width: 1370px) {
+        .sidebar {
+            &__link {
+                padding: 18px 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .sidebar {
+            max-width: 210px;
+            &__link {
+                padding: 12px 8px;
+                font-size: 16px;
+            }
+        }
+    }
 </style>

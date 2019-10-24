@@ -1,7 +1,7 @@
 <template>
   <apexchart
     type=bar 
-    width=310
+    width=270
     height=350
     :options="chartOptions" 
     :series="series"
@@ -68,6 +68,15 @@ export default {
     .apexcharts {        
         &-xaxis-label {
 
+        }
+    }
+
+    @media screen and (max-width: 1370px) {
+        .apexcharts {
+            &-canvas, &-svg {
+                // width: 250px !important;
+                // height: 300px !important;
+            }
         }
     }
 </style>

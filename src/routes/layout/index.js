@@ -8,13 +8,13 @@ export const layout = [
         children: [
             {
                 path: "/profile",
-                component: () => import("../../pages/Profile.vue"),
+                component: () => import("../../pages/profile/Profile.vue"),
                 children: profileChildren
             },
             {
                 path: "/game",
                 name: "game",
-                component: () => import("../../pages/Game.vue")
+                component: () => import("../../pages/game/Game.vue")
             },
             {
                 path: "/courses",

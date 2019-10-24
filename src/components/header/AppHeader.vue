@@ -39,4 +39,10 @@ export default {
         }
     }
 }
+
+@media screen and (max-width: 1370px) {
+    .header {
+        padding: 15px 25px;
+    }
+}
 </style>

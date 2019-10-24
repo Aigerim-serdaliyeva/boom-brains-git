@@ -1,7 +1,7 @@
 <template>
     <apexchart
         type="radar"
-        height="450"
+        height="400"
         :options="chartOptions"
         :series="series"
     />
@@ -17,7 +17,7 @@ export default {
             series: [
                 {
                     name: "Series 1",
-                    data: [80, 50, 30, 40, 100]
+                    data: [20, 110, 50, 40, 100]
                 }
             ],
             chartOptions: {
@@ -66,6 +66,19 @@ export default {
         &-datalabel {
             font-size: 17px;
             font-weight: normal;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .apexcharts {
+            &-canvas {
+                height: 300px !important;
+            }
+            &-svg {
+            }
+            &-datalabel {
+                font-size: 14px;
+            }
         }
     }
     

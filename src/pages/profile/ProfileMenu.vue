@@ -3,17 +3,17 @@
         <Grid>
             <Widget title="Недельная активность" :style="{'top': '0', 'left': '0', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/week">    
-                    <img src="@/assets/img/week.png" alt="">
+                    <div class="widget__img"><img src="@/assets/img/week.png" alt=""></div>
                 </router-link>
             </Widget>
             <Widget title="Прогресс за месяц" :style="{'top': '0', 'left': '25%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/month">    
-                    <img src="@/assets/img/month.png" alt="">
+                    <div class="widget__img"><img src="@/assets/img/month.png" alt=""></div>
                 </router-link>
             </Widget>
             <Widget title="Данные по играм" :style="{'top': '0', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/game-data"> 
-                    <img src="@/assets/img/game-data.png" alt="">       
+                    <div class="widget__img"><img src="@/assets/img/game-data.png" alt=""> </div>      
                 </router-link>
             </Widget>
             <Widget title="Рейтинг среди друзей" :style="{'top': '0', 'left': '75%', 'height': '50%', 'width': '25%'}">
@@ -29,7 +29,7 @@
             </Widget>
             <Widget title="Возрастная статистика" :style="{'top': '33.33%', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/age">   
-                    <img src="@/assets/img/age.png" alt="">    
+                    <div class="widget__img"><img src="@/assets/img/age.png" alt=""> </div>   
                 </router-link>
             </Widget>
             <Widget title="Рекорды" :style="{'top': '66.66%', 'left': '50%', 'height': '33.33%', 'width': '25%'}">
