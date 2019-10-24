@@ -7,13 +7,13 @@
       <div class="col-xl-9">
         <div class="row align-items-center game-widget__content">
           <div class="col-xl-4">
-            <img src="@/assets/img/game/game-1-2.png" alt="">            
+            <img src="@/assets/img/game/game-4-2.png" alt="">            
           </div>
           <div class="col-xl-8">
-            <GameWidget 
-              title="Calculate"
-              gameRulesText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quos nulla laborum eius saepe eos velit hic eveniet mollitia accusantium!"
-            >           
+            <GameWidget title="Calculate" >    
+              <template v-slot:rules>
+                <p class="game-widget__block__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quos nulla laborum eius saepe eos velit hic eveniet mollitia accusantium!</p>
+              </template>       
             </GameWidget>
           </div>
         </div>

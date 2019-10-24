@@ -15,13 +15,13 @@
         <div class="game-widget__record__title">{{worldRecord}}</div>
       </div>
     </div>
-    <div class="game-widget__rules">
-      <h5 class="game-widget__rules__title">{{ gameRules }}</h5>
-      <div class="game-widget__rules__text">{{gameRulesText}}</div>
+    <div class="game-widget__block">
+      <h5 class="game-widget__block__title">{{ gameRules }}</h5>
+      <slot name="rules"></slot>
     </div>
-    <div class="game-widget__stimulates">
-      <h5 class="game-widget__stimulates__title">{{gameStimulates}}</h5>
-      <div class="game-widget__stimulates__text">{{gameStimulatesText}}</div>
+    <div class="game-widget__block">
+      <h5 class="game-widget__block__title">{{gameStimulates}}</h5>
+      <div class="game-widget__block__text">{{gameStimulatesText}}</div>
     </div>
   </div>
 </template>
@@ -46,9 +46,6 @@ export default {
       type: String,
       default: "Правила игры:"
     },
-    gameRulesText: {
-      type: String
-    },
     gameStimulates: {
       type: String,
       default: "Тренажер стимулирует:"
@@ -64,15 +61,16 @@ export default {
 <style lang="scss">
 
   .game-widget {
-    max-width: 400px;
+    max-width: 410px;
     width: 100%;
     font-size: 14px;
     margin-left: 20px;
+    height: 100%;
     &__title {
       font-weight: 500;
       font-size: 23px;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     &__header {
@@ -90,26 +88,22 @@ export default {
     &__content {
       background: #F1F1F1;
       border-radius: 8px;
-      padding: 25px 30px;
+      padding: 20px 30px;
     }
 
-    &__rules {
-      margin-bottom: 10px;
+    &__block {
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
       &__title {
-        margin-bottom: 5px;
+        margin: 0;
         font-weight: 500;
         font-size: 14px;
       }
       &__text {
         text-align: justify;
-      }
-    }
-
-    &__stimulates {
-      &__title {
-        margin-bottom: 5px;
-        font-weight: 500;
-        font-size: 14px;
+        margin-bottom: 0;
       }
     }
   }

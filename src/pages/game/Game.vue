@@ -5,15 +5,20 @@
                 <component :is="currentComponent"></component>
             </div>
             <div class="row game__content">
-                <div class="col-xl-3 col-lg-4 col-6"
-                     v-for="(image, index) in games"
+                <div class="col-lg-4 col-6"
+                     v-for="(game, index) in games"
                     :key="index" 
                 >
-                    <div class="game__img">
-                        <img                             
-                            @click="currentComponent=image.target" 
-                            :src="image.url"
-                        >
+                    <div class="game"
+                        @click="currentComponent=game.target" 
+                    >
+                        <div class="game__data">
+                            <h4 class="game__name">{{game.name}}</h4>
+                            <div class="game__record"><img src="@/assets/img/game/record-white.png" alt="">Рекорд:</div>
+                        </div>
+                        <div class="game__img">
+                            <img :src="game.url" >
+                        </div>
                     </div>
                 </div>
             </div>
@@ -33,14 +38,18 @@ export default {
     components: { Loading, TableSchulte, RememberNumber, FindNumber, Calculate, Equation },
     data() {
         return {  
-            currentComponent: "TableSchulte", 
+            currentComponent: "", 
+            // currentComponent: "TableSchulte", 
             games: [
-                {url: require("@/assets/img/game/game-1.jpg"), target: "TableSchulte"},
-                {url: require("@/assets/img/game/game-2.jpg"), target: "RememberNumber"},
-                {url: require("@/assets/img/game/game-3.jpg"), target: "FindNumber"},
-                {url: require("@/assets/img/game/game-4.jpg"), target: "Calculate"},
-                {url: require("@/assets/img/game/game-5.jpg"), target: "Equation"},
-                {url: require("@/assets/img/game/game-6.jpg"), target: ""},
+                {url: require("@/assets/img/game/game-1.jpg"), name: "Таблица шульте", target: "TableSchulte"},
+                {url: require("@/assets/img/game/game-2.jpg"), name: "Запомни число", target: "RememberNumber"},
+                {url: require("@/assets/img/game/game-3.jpg"), name: "Найди число", target: "FindNumber"},
+                {url: require("@/assets/img/game/game-4.jpg"), name: "", target: "Calculate"},
+                {url: require("@/assets/img/game/game-5.jpg"), name: "", target: "Equation"},
+                {url: require("@/assets/img/game/game-6.jpg"), name: "", target: ""},
+                {url: require("@/assets/img/game/game-7.jpg"), name: "", target: ""},
+                {url: require("@/assets/img/game/game-8.jpg"), name: "", target: ""},
+                {url: require("@/assets/img/game/game-9.jpg"), name: "", target: ""},
             ],         
             // spinnerSettings: {
             //     spinnerColor: '#bada55',
@@ -54,19 +63,39 @@ export default {
 
 <style lang="scss">
     .game {
+        margin-bottom: 15px;            
+        background: #F1F1F1;
+        position: relative;          
+        cursor: pointer;
         &__content {
             margin-top: 5px;
             background: #F1F1F1;
             border-radius: 8px;
-            padding: 30px 55px;
+            padding: 30px 24px;
         }
         &__img {
-            margin-bottom: 10px;
             img {
-                border-radius: 8px;
-                overflow: hidden;                
-                background: #5380B7;
-                cursor: pointer;
+                border-radius: 10px;
+                overflow: hidden; 
+            }
+        }
+        &__data {
+            position: absolute;
+            color: #fff;
+            margin-left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &__name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        &__record {
+            font-weight: normal;
+            font-size: 13px;
+            img {
+                margin-right: 5px;
             }
         }
     }
