@@ -48,13 +48,13 @@ export const auth = {
 
                 const { token, status } = data;
 
-                if(status === 'rejected') {
-                    return data
+                if (status === "rejected") {
+                    return data;
                 }
 
                 localStorage.setItem("access_token", token);
                 commit(LOGIN_SUCCESS, token);
-                router.push("/profile");                
+                router.push("/profile");
             } catch (err) {
                 throw err;
             }

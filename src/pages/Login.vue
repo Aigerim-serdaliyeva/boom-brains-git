@@ -73,7 +73,7 @@ export default {
                 this.spinnerSettings.loading = false;
                 throw err;
             }
-        }  
+        }
     }
 };
 </script>

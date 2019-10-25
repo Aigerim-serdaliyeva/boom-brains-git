@@ -1,38 +1,11 @@
 <template>
-    <div class="input-div">
-        <input
-            class="input"
-            :type="type"
-            :placeholder="placeholder"
-            :name="name"
-            v-model="content"
-            @input="handleInput"
-            :required="requiredProp"
-            :autocomplete="autocomplete"
-        />
+    <div class="input-div">        
         <slot />
     </div>
 </template>
 
 <script>
-export default {
-    props: {
-        placeholder: String,
-        name: String,
-        type: {
-            default: "text",
-            type: String
-        },
-        value: null,
-        requiredProp: {
-            type: Boolean,
-            default: false
-        },
-        autocomplete: {
-            type: String,
-            default: 'off'
-        }
-    },
+export default {    
     data() {
         return {
             content: this.value
@@ -88,5 +61,4 @@ export default {
         opacity: 1;
     }
 }
-
 </style>

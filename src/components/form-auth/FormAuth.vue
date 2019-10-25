@@ -1,10 +1,10 @@
 <template>
-    <form class="form" @submit.prevent="submitForm" >
+    <form class="form" @submit.prevent="submitForm">
         <div class="form__img"><img src="@/assets/img/logo.png" /></div>
         <div class="absolute-handler">
             <slot name="indicator" />
             <div class="form__block">
-                <h1 class="form__title"> {{ title }} </h1>
+                <h1 class="form__title">{{ title }}</h1>
                 <div class="form__content">
                     <slot />
                 </div>
@@ -18,7 +18,7 @@ export default {
     props: {
         title: {
             type: String,
-            default: 'Войти на сайт'
+            default: "Войти на сайт"
         }
     },
     methods: {
