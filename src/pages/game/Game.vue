@@ -1,5 +1,5 @@
 <template>
-    <div class="main--2">
+    <div class="game__section">
         <!-- <Loading :spinnerSettings="spinnerSettings"> -->
             <div class="row">
                 <component :is="currentComponent"></component>
@@ -67,6 +67,9 @@ export default {
         background: #F1F1F1;
         position: relative;          
         cursor: pointer;
+        &__section {
+            margin: 15px 30px;
+        }
         &__content {
             margin-top: 5px;
             background: #F1F1F1;

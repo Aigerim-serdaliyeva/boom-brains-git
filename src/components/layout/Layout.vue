@@ -48,10 +48,7 @@ export default {
         }        
     }
     .main {
-        padding: 15px 15px;
-        &--2 {
-            padding: 15px 30px;
-        }
+        padding: 15px 15px;        
     }
 
     @media screen and (max-width: 1370px) {
