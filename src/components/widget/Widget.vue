@@ -42,6 +42,10 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;  
+      transition: all .5s ease;
+      &:hover, &.active {
+        transform: scale(1.03, 1.03)
+      }
     }
   }
 

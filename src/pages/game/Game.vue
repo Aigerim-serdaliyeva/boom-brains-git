@@ -1,12 +1,14 @@
-<template>
+<template> 
     <div class="game__section">
         <!-- <Loading :spinnerSettings="spinnerSettings"> -->
             <div class="row">
-                <component :is="currentComponent"></component>
+                <transition name="page" mode="out-in">
+                    <component :is="currentComponent"></component>
+                </transition>                    
             </div>
             <div class="row game__content">
                 <div class="col-lg-4 col-6"
-                     v-for="(game, index) in games"
+                    v-for="(game, index) in games"
                     :key="index" 
                 >
                     <div class="game"

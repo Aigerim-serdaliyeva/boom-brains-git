@@ -9,7 +9,9 @@
                     <div class="layout__content">
                         <AppHeader />
                         <main class="main">
-                            <router-view />
+                            <transition  name="fade" mode="out-in">
+                                <router-view />
+                            </transition>                            
                         </main>
                     </div>
                 </div>
@@ -48,7 +50,7 @@ export default {
         }        
     }
     .main {
-        padding: 15px 15px;        
+        padding: 15px 15px;    
     }
 
     @media screen and (max-width: 1370px) {

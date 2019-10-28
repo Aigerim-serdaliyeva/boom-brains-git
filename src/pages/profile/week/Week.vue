@@ -1,23 +1,21 @@
 <template>
     <div>
         <SubPage title="Недельная активность">
-            <div class="d-flex align-items-end justify-content-between">
-                <div>
+            <div class="row align-items-end">
+                <div class="col-md-4 col-sm-6 col-8">
                     <h2 class="apexchart__title">Сравнение с пред идущей</h2>             
                     <PreviousWeek />
                 </div>
-                <div>
+                <div class="col-md-8 h-100">
                     <h2 class="apexchart__title">Дни тренировок на этой неделе</h2> 
                     <apexchart
                         type=bar 
-                        width=550
-                        height=350 
                         :options="chartOptions" 
                         :series="series"
                     >                   
                     </apexchart>
                 </div>
-            </div>   
+            </div>
             <div class="apexchart__text">По нашим показателям у людей которые уделяют тренажерам около 10 минут в день и более, наблюдается значительное улучшение результатов. 
                 Но не стоит забывать что для улучшения работоспособности мозга нужны не только тренировки но и отдых</div>         
         </SubPage>
@@ -90,14 +88,17 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
     .apexchart {
         &__title {
-        font-size: 18px;
-        font-weight: 500;
-        text-align: center;
-    }
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+        }
+        &__prevweek {
+            height: 100% !important;
+        }
     }
     .apexcharts {        
         &-yaxis {

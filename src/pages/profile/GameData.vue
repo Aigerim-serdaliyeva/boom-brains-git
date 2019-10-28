@@ -1,11 +1,14 @@
 <template>
     <SubPage title="Данные по играм"> 
-        <apexchart
-            type="donut"
-            height="350"
-            :options="chartOptions"
-            :series="series"
-        />
+        <div class="row justify-content-center align-items-center">
+            <div class="col-xl-4 col-lg-6 col-md-5 col-sm-6 col-10">
+                <apexchart
+                    type="donut"
+                    :options="chartOptions"
+                    :series="series"
+                />
+            </div>
+        </div>
         <div class="apexchart__text">Все тренажены направленны на тренировку различных функций мозга мы советуем равномерно распределять время между тренажерами.</div> <br>
         <div class="apexchart__text">Используя различные тренажеры, вы лучше стимулируете мозг. 
             По нашим показателям люди использующие разнообразные тренажеры показывают более сильный прогресс в результатах чем люди использующие всего один.</div>
@@ -43,7 +46,7 @@ export default {
                 plotOptions: {
                     pie: {
                         donut: {
-                            size: '65%',
+                            // size: '65%',
                             labels: {
                                 show: true,
                                 name: {

@@ -1,12 +1,12 @@
 <template>
-  <apexchart
-    type=bar 
-    width=270
-    height=350
-    :options="chartOptions" 
-    :series="series"
-  >    
-  </apexchart> 
+    <div class="apexchart__prevweek">
+        <apexchart
+            type=bar 
+            :options="chartOptions" 
+            :series="series"
+        >    
+        </apexchart> 
+    </div>  
 </template>
 
 <script>

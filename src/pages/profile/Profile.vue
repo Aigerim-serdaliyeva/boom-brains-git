@@ -1,6 +1,8 @@
 <template>
     <Loading :spinnerSettings="spinnerSettings">
-        <router-view />
+        <transition name="page" mode="out-in">
+            <router-view />
+        </transition>        
     </Loading>
 </template>
 

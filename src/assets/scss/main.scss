@@ -27,6 +27,51 @@ a {
   }
 }
 
+/* zoom transition */
+.zoom-enter-active,
+.zoom-leave-active {
+  animation-duration: 0.9s;
+  animation-fill-mode: both;
+  animation-name: zoom;
+}
+.zoom-leave-active {
+  animation-direction: reverse;
+}
+.zoom-enter, .zoom-leave-to {
+  opacity: 0;
+  transform: scale3d(0.3, 0.3, 0.3);
+}
+
+/* fade transition*/
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .4s ease;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+/*slide transition*/
+.slide-enter-active,
+.slide-leave-active
+ {
+  transition: transform 0.4s ease-out;
+}
+.slide-enter {
+  transform: translateX(-30%);
+}
+.slide-leave-to {
+  transform: translateX(30%);
+}
+
+/* page transition */
+.page-enter-active, .page-leave-active {
+  transition: opacity .4s, transform .4s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+  transform: translateX(-30%);
+}
+
 .apexchart {  
   &__text {
       font-size: 14px;

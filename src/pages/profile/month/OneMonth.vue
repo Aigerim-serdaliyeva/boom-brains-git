@@ -1,10 +1,11 @@
 <template> 
-    <apexchart
-        type="area"
-        max-height="350"
-        :series="series"
-        :options="chartOptions"
-    />
+    <div class="apexchart__content">
+        <apexchart
+            type="area"
+            :series="series"
+            :options="options"
+        />
+    </div>
 </template>
 
 <script>
@@ -27,7 +28,11 @@ export default {
                     ]
                 }
             ],
-            chartOptions: {
+            options: {
+                chart: {
+                    // height: 'auto'
+                    // height: '100%'
+                },
                 fill: {
                     type: 'gradient',
                     gradient: {
@@ -124,6 +129,13 @@ export default {
 </script>
 
 <style lang="scss">
+
+    .apexchart__content {
+        // max-width: 600px;
+        // width: 100%;
+        // height: 400px;
+    }
+
 </style>
 
 

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-stretch">
       <div class="col-xl-3">
         <img src="@/assets/img/game/game-1-1.png" alt="">
       </div>
@@ -35,5 +35,8 @@ export default {
 
 <style lang=scss>
 
+  .game-widget__content {
+    height: 100%;
+  }
     
 </style>

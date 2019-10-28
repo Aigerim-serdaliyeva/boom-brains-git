@@ -77,12 +77,14 @@ export default {
         font-size: 18px;
         font-weight: normal;
         display: block;
-        padding: 22px 15px;
-        &:hover,
+        padding: 22px 15px;        
         &.active {
             background: #427eb9;
             color: #fff;
-            text-decoration: none;
+        }
+        &:hover {
+            color: #fff;
+            background: rgba(#427eb9, .7);
         }
     }
 }
