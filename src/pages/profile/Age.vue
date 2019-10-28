@@ -2,7 +2,7 @@
     <SubPage title="Возрастная статистика"> 
         <apexchart 
             type=bar 
-            height=350 
+            max-height=350 
             :options="chartOptions" 
             :series="series" 
         />

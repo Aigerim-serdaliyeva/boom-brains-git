@@ -66,6 +66,9 @@ export default {
 <style lang="scss">
 
     .apexcharts {
+        &-canvas {
+            margin: 0 auto;
+        }
         &-legend {
             display: none !important;
         }
@@ -73,5 +76,14 @@ export default {
             font-size: 18px;
         }
     }
+
+    @media screen and (max-width: 580px) {
+        .game-data {
+        }
+        .apexcharts {
+            &-canvas {
+            }
+        }
+    } 
 
 </style>

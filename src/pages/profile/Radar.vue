@@ -81,5 +81,15 @@ export default {
             }
         }
     }
+
+    @media screen and (max-width: 767px) {
+        .apexcharts {
+            &-canvas {
+            }
+            &-datalabel {
+                font-size: 12px;
+            }
+        }
+    }
     
 </style>

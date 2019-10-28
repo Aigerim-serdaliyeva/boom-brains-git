@@ -91,6 +91,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+    .apexchart {
+        &__title {
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+    }
+    }
     .apexcharts {        
         &-yaxis {
             display: none;
@@ -101,4 +109,12 @@ export default {
             font-weight: 500;
         } 
     }
+
+    @media screen and (max-width: 1370px) {
+        .apexchart {
+            &__title {
+                font-size: 16px;
+            }
+        }
+    } 
 </style>

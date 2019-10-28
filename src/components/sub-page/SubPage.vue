@@ -28,7 +28,6 @@ export default {
 }
 .sub-page {
     max-width: 1015px;
-    // min-height: 655px;
     padding: 20px 40px 40px;
     background: #f1f1f1;
     border-radius: 6px;
@@ -42,4 +41,20 @@ export default {
         margin-bottom: 20px;
     }
 }
+
+    @media screen and (max-width: 1350px) {
+        .sub-page {            
+            padding: 20px;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .sub-page {            
+            padding: 15px 10px;
+
+            &__title {
+                font-size: 20px;
+            }
+        }
+    }
 </style>
