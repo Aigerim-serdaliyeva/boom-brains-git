@@ -1,12 +1,12 @@
 <template>
-    <div class="apexchart__prevweek">
         <apexchart
             type=bar 
+            class="apexchart__prevweek"
             :options="chartOptions" 
             :series="series"
+            height="100%"
         >    
         </apexchart> 
-    </div>  
 </template>
 
 <script>
@@ -19,9 +19,6 @@ export default {
                 data: [44, 60]
             }],
             chartOptions: {  
-                chart: {
-                    id: 'basic-bar'
-                },
                 dataLabels: {
                     enabled: true,
                 },

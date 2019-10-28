@@ -1,19 +1,24 @@
 <template>
     <div>
         <SubPage title="Недельная активность">
-            <div class="row align-items-end">
+            <div class="row">
                 <div class="col-md-4 col-sm-6 col-8">
-                    <h2 class="apexchart__title">Сравнение с пред идущей</h2>             
-                    <PreviousWeek />
+                    <h2 class="apexchart__title">Сравнение с пред идущей</h2>
+                    <div class="week__chart">
+                      <PreviousWeek />
+                    </div>
                 </div>
                 <div class="col-md-8 h-100">
-                    <h2 class="apexchart__title">Дни тренировок на этой неделе</h2> 
-                    <apexchart
-                        type=bar 
-                        :options="chartOptions" 
-                        :series="series"
-                    >                   
-                    </apexchart>
+                    <h2 class="apexchart__title">Дни тренировок на этой неделе</h2>
+                    <div class="week__chart">
+                      <apexchart
+                          type=bar 
+                          :options="chartOptions" 
+                          :series="series"
+                          height="100%"
+                      >       
+                      </apexchart>
+                    </div>
                 </div>
             </div>
             <div class="apexchart__text">По нашим показателям у людей которые уделяют тренажерам около 10 минут в день и более, наблюдается значительное улучшение результатов. 
@@ -90,6 +95,12 @@ export default {
 
 <style lang="scss">
 
+  .week {
+    &__chart {
+      height: 360px;
+    }
+  }
+
     .apexchart {
         &__title {
             font-size: 18px;
@@ -97,7 +108,8 @@ export default {
             text-align: center;
         }
         &__prevweek {
-            height: 100% !important;
+          // flex-grow: 1;
+            // height: 100% !important;
         }
     }
     .apexcharts {        
