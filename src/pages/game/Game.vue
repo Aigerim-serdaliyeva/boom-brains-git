@@ -69,6 +69,10 @@ export default {
         background: #F1F1F1;
         position: relative;          
         cursor: pointer;
+        transition: all .5s ease;
+        &:hover, &.active {
+            transform: scale(1.04, 1.04);
+        }
         &__section {
             margin: 15px 30px;
         }
@@ -104,4 +108,15 @@ export default {
             }
         }
     }
+
+    @media screen and (max-width: 1370px) {
+        .game {
+            &__section {
+                margin: 5px 10px;
+            }
+            &__content {
+                padding: 20px 15px;
+            }
+        }
+    } 
 </style>

@@ -1,12 +1,14 @@
 <template>
     <SubPage title="Данные по играм"> 
         <div class="row justify-content-center align-items-center">
-            <div class="col-xl-4 col-lg-6 col-md-5 col-sm-6 col-10">
-                <apexchart
-                    type="donut"
-                    :options="chartOptions"
-                    :series="series"
-                />
+            <div class="col-xl-4 col-lg-6 col-md-5 col-sm-6">
+                <div class="game-data__chart">
+                    <apexchart
+                        type="donut"
+                        :options="chartOptions"
+                        :series="series"
+                    />
+                </div>
             </div>
         </div>
         <div class="apexchart__text">Все тренажены направленны на тренировку различных функций мозга мы советуем равномерно распределять время между тренажерами.</div> <br>
@@ -68,6 +70,14 @@ export default {
 
 <style lang="scss">
 
+    .game-data {
+        &__chart {
+            height: 320px;
+            width: 320px;
+            margin: 0 auto;
+        }
+    }
+
     .apexcharts {
         &-canvas {
             margin: 0 auto;
@@ -82,9 +92,10 @@ export default {
 
     @media screen and (max-width: 580px) {
         .game-data {
-        }
-        .apexcharts {
-            &-canvas {
+            &__chart {
+                height: 180px;
+                width: 300px;
+                margin: 0 auto;
             }
         }
     } 

@@ -11,13 +11,13 @@
                 <div class="col-md-8 h-100">
                     <h2 class="apexchart__title">Дни тренировок на этой неделе</h2>
                     <div class="week__chart">
-                      <apexchart
-                          type=bar 
-                          :options="chartOptions" 
-                          :series="series"
-                          height="100%"
-                      >       
-                      </apexchart>
+                        <apexchart
+                            type=bar 
+                            :options="chartOptions" 
+                            :series="series"
+                            height="100%"
+                        >       
+                        </apexchart>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,8 @@ export default {
     },
     components: { 
         SubPage,
-        apexchart: VueApexCharts, PreviousWeek
+        apexchart: VueApexCharts, 
+        PreviousWeek
     }
 };
 </script>
@@ -107,18 +108,13 @@ export default {
             font-weight: 500;
             text-align: center;
         }
-        &__prevweek {
-          // flex-grow: 1;
-            // height: 100% !important;
-        }
     }
     .apexcharts {        
         &-yaxis {
             display: none;
         }
         &-xaxis-label {
-            font-size: 18px;
-            color: #888;
+            font-size: 16px;
             font-weight: 500;
         } 
     }
@@ -127,6 +123,14 @@ export default {
         .apexchart {
             &__title {
                 font-size: 16px;
+            }
+        }
+    } 
+
+    @media screen and (max-width: 1200px) {
+        .week {
+            &__chart {
+                height: 300px;
             }
         }
     } 

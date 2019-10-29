@@ -1,8 +1,9 @@
 <template> 
-    <div class="apexchart__content">
+    <div class="month__chart">
         <apexchart
             type="area"
             :series="series"
+            height="100%"
             :options="options"
         />
     </div>
@@ -130,11 +131,6 @@ export default {
 
 <style lang="scss">
 
-    .apexchart__content {
-        // max-width: 600px;
-        // width: 100%;
-        // height: 400px;
-    }
 
 </style>
 

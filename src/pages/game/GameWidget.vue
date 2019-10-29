@@ -109,6 +109,11 @@ export default {
   }
 
   @media screen and (max-width: 1370px) {
-    
+    .game-widget {
+      margin-left: 0;
+      &__content {
+        padding: 10px;
+      }
+    }
   } 
 </style>

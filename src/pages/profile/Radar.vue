@@ -1,10 +1,12 @@
 <template>
-    <apexchart
-        type="radar"
-        height="400"
-        :options="chartOptions"
-        :series="series"
-    />
+    <div class="radar__chart">
+        <apexchart
+            type="radar"
+            height="100%"
+            :options="chartOptions"
+            :series="series"
+        />
+    </div>    
 </template>
 
 <script>
@@ -58,6 +60,14 @@ export default {
 </script>
 
 <style lang=scss>
+
+    .radar {
+        &__chart {
+            height: 450px;
+            margin-top: -10px;
+        }
+    }
+
     .apexcharts {
         &-menu-icon {
             display: none !important;
@@ -70,6 +80,11 @@ export default {
     }
 
     @media screen and (max-width: 1200px) {
+        .radar {
+            &__chart {
+                height: 370px;
+            }
+        }
         .apexcharts {
             &-canvas {
                 height: 300px !important;

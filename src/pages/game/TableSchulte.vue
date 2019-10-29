@@ -1,15 +1,15 @@
 <template>
   <div class="container">
     <div class="row align-items-stretch">
-      <div class="col-xl-3">
+      <div class="col-lg-3 col-md-3">
         <img src="@/assets/img/game/game-1-1.png" alt="">
       </div>
-      <div class="col-xl-9">
+      <div class="col-lg-9 col-md-9">
         <div class="row align-items-center game-widget__content">
-          <div class="col-xl-4">
+          <div class="col-lg-4 col-md-3">
             <img src="@/assets/img/game/game-1-2.png" alt="">
           </div>
-          <div class="col-xl-8">
+          <div class="col-lg-8 col-md-9">
             <GameWidget 
               title="Таблица шульте"
             >   

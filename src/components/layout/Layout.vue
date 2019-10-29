@@ -36,7 +36,7 @@ export default {
 <style lang="scss" >
     .layout {
         width: 100%;
-        // height: 100vh;
+        height: 100vh;
         padding: 90px 0;
         color: #888888;
         display: flex;

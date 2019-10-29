@@ -1,10 +1,12 @@
 <template> 
-    <apexchart
-        type="area"
-        max-height="350"
-        :series="series"
-        :options="chartOptions"
-    />
+    <div class="month__chart">
+        <apexchart
+            type="area"
+            height="100%"
+            :series="series"
+            :options="chartOptions"
+        />
+    </div>    
 </template>
 
 <script>

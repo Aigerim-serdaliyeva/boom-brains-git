@@ -1,7 +1,6 @@
 <template>
         <apexchart
             type=bar 
-            class="apexchart__prevweek"
             :options="chartOptions" 
             :series="series"
             height="100%"
@@ -70,10 +69,7 @@ export default {
 
     @media screen and (max-width: 1370px) {
         .apexcharts {
-            &-canvas, &-svg {
-                // width: 250px !important;
-                // height: 300px !important;
-            }
+            
         }
     }
 </style>

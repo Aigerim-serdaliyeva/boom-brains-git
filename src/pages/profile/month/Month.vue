@@ -8,9 +8,11 @@
               :class="['month__button', { active: currentComponent === item.target }]"
             >{{ item.button }}</div>
           </div>
-          <div class="months__content">
-            <component :is="currentComponent" />
-          </div>
+          <transition name="page" mode="out-in">
+            <div class="months__content">
+              <component :is="currentComponent" />
+            </div>
+          </transition>
         </div>
         <div class="d-flex justify-content-between">
             <div class="apexchart__text">Количество очков за прошлый месяц: <span>74999</span></div>
@@ -54,6 +56,10 @@ export default {
         font-weight: normal;
         font-size: 13px;
         margin-bottom: 10px;
+        &__chart {
+          height: 450px;
+          margin-bottom: 20px;
+        }
         &__button {
             padding: 6px 17px;
             border-radius: 33px;
@@ -66,6 +72,24 @@ export default {
     .apexcharts {
         position: relative;
     }
+
+    @media screen and (max-width: 1370px) {
+      .month {
+        &__chart {
+          height: 400px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 1200px) {
+      .month {
+        &__chart {
+          height: 350px;
+          margin-bottom: 15px;
+        }
+      }
+    }
+
 </style>
 
 

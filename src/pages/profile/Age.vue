@@ -1,11 +1,13 @@
 <template>
     <SubPage title="Возрастная статистика"> 
-        <apexchart 
-            type=bar 
-            max-height=350 
-            :options="chartOptions" 
-            :series="series" 
-        />
+        <div class="age__chart">
+            <apexchart 
+                type=bar 
+                height="100%"
+                :options="chartOptions" 
+                :series="series" 
+            />
+        </div>
         <div class="apexchart__text">По нашим данным наибольшая активность мозга проявляется в возрасте от 17 до 35 лет. 
             Существую “люди исключения” с достаточными тренировками мозговой деятельности некоторые люди поддерживают его активность в хорошей форме даже до 50-60 лет.</div>   
     </SubPage>
@@ -65,4 +67,10 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+    .age__chart {
+        height: 350px;
+    }
+
+</style>
