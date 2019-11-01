@@ -2,9 +2,10 @@ import axios from "axios";
 import { store } from "../store";
 import swal from "sweetalert";
 
-axios.defaults.baseURL = (process.env.NODE_ENV === 'production') 
-    ? "https://boom-brains-api.kdo.one"
-    : "http://localhost:3000";
+axios.defaults.baseURL =
+    process.env.NODE_ENV === "production"
+        ? "https://boom-brains-api.kdo.one"
+        : "http://localhost:3000";
 
 axios.interceptors.request.use(config => {
     const accessToken = store.getters["auth/accessToken"];

@@ -1,19 +1,25 @@
-import { required, minLength, maxLength, sameAs } from "vuelidate/lib/validators";
-import axios from 'axios'
+import {
+    required,
+    minLength,
+    maxLength,
+    sameAs
+} from "vuelidate/lib/validators";
+import axios from "axios";
 
 export const validateRegistration = {
     validations: {
         formData: {
-            email: {                
-                required,                
+            email: {
+                required,
                 maxLength: maxLength(64),
-                async isUnique(value) {                    
-                    if (!value) return true;          
-                    
-                    const res = await axios.post('/auth/exists-email', { email: value });                                                
-                    return res.data                                                                
-                },
-                
+                async isUnique(value) {
+                    if (!value) return true;
+
+                    const res = await axios.post("/auth/exists-email", {
+                        email: value
+                    });
+                    return res.data;
+                }
             },
             username: {
                 required,
@@ -21,16 +27,18 @@ export const validateRegistration = {
                 async isUnique(value) {
                     if (!value) return true;
 
-                    const res = await axios.post('/auth/exists-username', { username: value });                        
-                    return res.data                    
+                    const res = await axios.post("/auth/exists-username", {
+                        username: value
+                    });
+                    return res.data;
                 }
             },
-            password: { 
+            password: {
                 required,
-                maxLength: maxLength(32)                
+                maxLength: maxLength(32)
             },
-            confirmPassword: { 
-                sameAsPassword: sameAs('password')               
+            confirmPassword: {
+                sameAsPassword: sameAs("password")
             }
         }
     }

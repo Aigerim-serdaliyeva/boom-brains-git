@@ -1,11 +1,11 @@
 <template>
-    <div class="input-div">        
+    <div class="input-div">
         <slot />
     </div>
 </template>
 
 <script>
-export default {    
+export default {
     data() {
         return {
             content: this.value

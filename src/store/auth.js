@@ -31,7 +31,11 @@ export const auth = {
                 const res = await axios.post("/auth/login", credentials);
                 const data = await res.data;
 
-                const { token } = data;
+                const { token, status } = data;
+
+                if (status === "rejected") {                    
+                    return data;
+                }
 
                 localStorage.setItem("access_token", token);
 
