@@ -7,13 +7,15 @@
             <div class="user__name">
                 <input 
                     class="user__input"
-                    v-if="edit"
-                    v-model="user"
-                    @blur="edit = false; $emit('update')"
-                    @keyup.enter="edit = false; $emit('update')"
+                    v-if="isEditMode"
+                    v-model="userName"
+                    ref="userInput"
+                    @blur="saveUserName"
+                    @keyup.enter="saveUserName"
                 >
                 <div v-else>
-                    <label class="user__name" @click="edit = true">{{user}}</label> <img @click="userEdit" src="@/assets/img/pen.png" alt="" />
+                    <span class="user__name">{{userName}}</span>
+                    <img @click="showEditMode" src="@/assets/img/pen.png" alt="" />
                 </div>
             </div>
             <div class="user__data"><span>Email:</span> wtf@hz.com</div>
@@ -26,14 +28,24 @@
 export default {
     data() {
         return {
-            user: "Player Name",
-            edit: false,
-            editedName: null,
+            userName: "Player Name",
+            isEditMode: false,
         }
     },
     methods: {
-        userEdit() {
-            this.edit = true
+        showEditMode() {
+            this.isEditMode = true;
+            setTimeout(() => {
+                if (this.$refs.userInput) {
+                    this.$refs.userInput.focus();
+                }
+            });
+        },
+        saveUserName() {
+            if (this.isEditMode) {
+                
+                this.isEditMode = false;
+            }
         }
     }
 };
