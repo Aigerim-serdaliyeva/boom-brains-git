@@ -4,12 +4,12 @@ export const routes = [
     {
         path: "/login",
         name: "login",
-        component: () => import("../pages/Login.vue")
+        component: () => import("../../pages/login/Login.vue")
     },
     {
         path: "/registration",
         name: "registration",
-        component: () => import("../pages/Registration.vue")
+        component: () => import("../../pages/registration/Registration.vue")
     },
     ...layout
 ];

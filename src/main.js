@@ -1,8 +1,9 @@
 import Vue from "vue";
-import VueRouter from "vue-router";
-import App from "./App.vue";
-import store from "./store";
-import { routes } from "./routes";
+import Router from "vue-router";
+import App from "./App";
+import { router } from "./router";
+import Vuelidate from "vuelidate";
+import { store } from "./store";
 import VueApexCharts from "vue-apexcharts";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -15,18 +16,30 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import "./assets/scss/main.scss";
 import moment from "moment";
 
+// Fontawesome
 library.add(faVk, faFacebookF, faGoogle, faTwitter);
-
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
-const router = new VueRouter({
-    linkActiveClass: "active",
-    mode: "history",
-    routes
-});
+// Error handler
+Vue.config.errorHandler = function(err, vm, info) {
+    const message = `Error: ${err.toString()}\nInfo: ${info}`;
+    if (process.env.NODE_ENV !== "production") {
+        console.log(message);
+    }
 
-Vue.use(VueRouter);
+    store.dispatch("error/setMessage", message);
+};
+
+// Global Style
+import "./assets/scss/main.scss";
+
+// Axios middleware
+import "./plugins/axios";
+
+// Vue use
+Vue.use(Router);
 Vue.use(VueApexCharts);
+Vue.use(Vuelidate);
 Vue.config.productionTip = false;
 Vue.prototype.$moment = moment;
 

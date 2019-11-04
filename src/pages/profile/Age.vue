@@ -32,15 +32,15 @@ export default {
                 },
                 xaxis: {
                     categories: [
-                        '10-15 лет',
-                        '15-20 лет',
-                        '20-25 лет',
-                        '30-35 лет',
-                        '40-45 лет',
-                        '50-55 лет',
-                        '60-65 лет',
-                        '70-75+ лет'
-                    ],
+                        "10-15 лет",
+                        "15-20 лет",
+                        "20-25 лет",
+                        "30-35 лет",
+                        "40-45 лет",
+                        "50-55 лет",
+                        "60-65 лет",
+                        "70-75+ лет"
+                    ]
                 },
                 yaxis: {
                     show: true,
@@ -62,7 +62,7 @@ export default {
     },
     components: {
         SubPage,
-        apexchart: VueApexCharts,
+        apexchart: VueApexCharts
     }
 };
 </script>

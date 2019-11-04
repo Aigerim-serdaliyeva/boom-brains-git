@@ -16,9 +16,12 @@
                     <div class="widget__img"><img src="@/assets/img/game-data.png" alt=""> </div>      
                 </router-link>
             </Widget>
-            <Widget title="Рейтинг среди друзей" :style="{'top': '0', 'left': '75%', 'height': '50%', 'width': '25%'}">
-                <router-link to="/profile/rating-friends">  
-                text       
+            <Widget
+                title="Рейтинг среди друзей"
+                :style="{ top: '0', left: '75%', height: '50%', width: '25%' }"
+            >
+                <router-link to="/profile/rating-friends">
+                    text
                 </router-link>
             </Widget>
             <Widget :style="{'top': '33.33%', 'left': '0', 'height': '66.66%', 'width': '50%'}">
@@ -38,11 +41,19 @@
                 text       
                 </router-link> -->
             </Widget>
-            <Widget title="Мировой рейтинг" :style="{'top': '50%', 'left': '75%', 'height': '50%', 'width': '25%'}">
-                <router-link to="/profile/rating-world">   
-                text      
+            <Widget
+                title="Мировой рейтинг"
+                :style="{
+                    top: '50%',
+                    left: '75%',
+                    height: '50%',
+                    width: '25%'
+                }"
+            >
+                <router-link to="/profile/rating-world">
+                    text
                 </router-link>
-            </Widget>      
+            </Widget>
         </Grid>
     </div>
 </template>

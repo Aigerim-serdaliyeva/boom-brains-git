@@ -1,26 +1,20 @@
 <template>
     <div class="input-div">
-        <input
-            class="input"
-            :type="type"
-            :placeholder="placeholder"
-            :name="name"
-        />
+        <slot />
     </div>
 </template>
 
 <script>
 export default {
-    props: {
-        placeholder: String,
-        name: String,
-        type: {
-            default: "text",
-            type: String
-        }
-    },
     data() {
-        return {};
+        return {
+            content: this.value
+        };
+    },
+    methods: {
+        handleInput(e) {
+            this.$emit("input", this.content);
+        }
     }
 };
 </script>
@@ -33,6 +27,7 @@ export default {
 
 .input,
 .textarea {
+    outline: none;
     font-size: 14px;
     text-align: center;
     font-weight: bold;

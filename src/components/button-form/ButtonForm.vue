@@ -1,11 +1,20 @@
 <template>
-    <button class="button">{{ text }}</button>
+    <button :type="buttonType" class="button">{{ text }}</button>
 </template>
 
 <script>
 export default {
     props: {
-        text: String
+        text: String,
+        buttonType: {
+            type: String,
+            default: "button"
+        }
+    },
+    methods: {
+        submitForm() {
+            this.$emit("submitForm");
+        }
     }
 };
 </script>

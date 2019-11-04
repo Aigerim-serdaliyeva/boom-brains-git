@@ -22,21 +22,22 @@ export default {
                     enabled: true,
                 },
                 fill: {
-                    colors: [function({ value, seriesIndex, w }) {
-                        if(value > 10 && value <= 20) {
-                            return '#A46192'
-                        } else if (value > 20 && value <= 30) {
-                            return '#6F7CA8'
-                        } else if (value > 30 && value <= 40) {
-                            return '#5689B2'
-                        } else if (value <= 10) {
-                            return '#E93E76'
+                    colors: [
+                        function({ value, seriesIndex, w }) {
+                            if (value > 10 && value <= 20) {
+                                return "#A46192";
+                            } else if (value > 20 && value <= 30) {
+                                return "#6F7CA8";
+                            } else if (value > 30 && value <= 40) {
+                                return "#5689B2";
+                            } else if (value <= 10) {
+                                return "#E93E76";
+                            } else {
+                                return "#12ACCE";
+                            }
                         }
-                        else {
-                            return '#12ACCE'
-                        }
-                    }]
-                },                
+                    ]
+                },
                 grid: {
                     row: {
                         colors: ['#F1F1F1', '#EBEBEB']
@@ -51,8 +52,8 @@ export default {
                 yaxis: {
                     tickAmount: 6,
                 }
-            }        
-        }
+            }
+        };
     },
     components: { 
         apexchart: VueApexCharts,
@@ -72,4 +73,5 @@ export default {
             
         }
     }
+}
 </style>

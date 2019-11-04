@@ -1,24 +1,24 @@
 <template>
-  <div class="widget">
-    <h4 class="widget__title">{{title}}</h4>
-    <div class="widget__content">
-      <slot></slot>
+    <div class="widget">
+        <h4 class="widget__title">{{ title }}</h4>
+        <div class="widget__content">
+            <slot></slot>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
 export default {
-  props: {
-    title: String
-  }
-}
+    props: {
+        title: String
+    }
+};
 </script>
 
 <style lang="scss">
   .widget {    
     position: absolute;
-    background: #F1F1F1;
+    background: #f1f1f1;
     border-radius: 5px;
     padding: 20px 25px;
     height: 100%;
@@ -62,5 +62,5 @@ export default {
         margin-bottom: 10px;
       }
     }
-  }
+}
 </style>
