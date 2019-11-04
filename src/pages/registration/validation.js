@@ -13,11 +13,12 @@ export const validateRegistration = {
                 required,
                 maxLength: maxLength(64),
                 async isUnique(value) {
-                    if (!value) return true;
+                    if (!value || value === '') return true;
 
                     const res = await axios.post("/auth/exists-email", {
                         email: value
                     });
+                    
                     return res.data;
                 }
             },
@@ -25,7 +26,7 @@ export const validateRegistration = {
                 required,
                 maxLength: maxLength(16),
                 async isUnique(value) {
-                    if (!value) return true;
+                    if (!value || value === '') return true;
 
                     const res = await axios.post("/auth/exists-username", {
                         username: value
