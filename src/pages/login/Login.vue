@@ -17,7 +17,7 @@
             </div>            
 
             <div
-                v-else-if="submitted && !$v.formData.email.maxLength"
+                v-if="submitted && !$v.formData.email.maxLength"
                 class="error"
             >
                 Максимальное количество символов не должно превышать 64
@@ -40,7 +40,7 @@
             </div>
 
             <div
-                v-else-if="submitted && !$v.formData.password.maxLength"
+                v-if="submitted && !$v.formData.password.maxLength"
                 class="error"
             >
                 Максимальное количество символов не должно превышать 32

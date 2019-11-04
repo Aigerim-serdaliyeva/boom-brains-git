@@ -7,7 +7,7 @@
         <InputForm>
             <input
                 class="input"
-                v-model.trim="formData.email"
+                v-model="formData.email"
                 type="email"
                 placeholder="Email"
             />
@@ -24,8 +24,8 @@
             </div>
 
             <div
-                v-else-if="submitted && !$v.formData.email.maxLength"
                 class="error"
+                v-if="submitted && !$v.formData.email.maxLength"                
             >
                 Максимальное количество символов не должно превышать 64
             </div>
@@ -47,15 +47,14 @@
             </div>
 
             <div
-                v-else-if="submitted && !$v.formData.username.isUnique"
+                v-if="submitted && !$v.formData.username.isUnique"
                 :class="['error', { pending: $v.formData.username.$pending }]"
             >
                 Такой никнейм уже используется
             </div>
 
             <div
-                v-else-if="submitted && !$v.formData.username.maxLength"
-                class="error"
+                v-if="submitted && !$v.formData.username.maxLength"                
             >
                 Максимальное количество символов не должно превышать 16
             </div>
@@ -77,7 +76,7 @@
             </div>
 
             <div
-                v-else-if="submitted && !$v.formData.password.maxLength"
+                v-if="submitted && !$v.formData.password.maxLength"
                 class="error"
             >
                 Максимальное количество символов не должно превышать 32
@@ -144,9 +143,8 @@ export default {
             register: "auth/register"
         }),
         async attemptRegister() {
-            try {
+            try {                
                 this.spinnerSettings.loading = true;
-
                 const { confirmPassword, ...otherData } = this.formData;
                 const data = await this.register(otherData);
             } catch (err) {
@@ -155,15 +153,24 @@ export default {
                 this.spinnerSettings.loading = false;
             }
         },
-        submitForm() {
+        // валидация vuelidate не возвращает промис , поэтому делаем отдельную проверку
+            validPromise () {
+        return new Promise((resolve) => {
+            const unwatch = this.$watch(() => !this.$v.$invalid, (isValid) => {
+            if (isValid) {
+                unwatch()
+                resolve()
+            }
+            }, {immediate: true})
+        })
+        },
+        async submitForm() {
+            
             this.submitted = true;
 
             this.$v.$touch();
 
-            if (this.$v.$invalid) {                
-                console.log('invalid')
-                return;
-            }
+            await this.validPromise()                                    
 
             // return чтобы из функции передать throw в error boundry
             return this.attemptRegister();
