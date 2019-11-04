@@ -1,7 +1,7 @@
 <template>
     <div class="loading">
         <Spinner v-bind="spinnerSettings" />
-        <div :style="isLoadingStyle">
+        <div >
             <slot />
         </div>
     </div>

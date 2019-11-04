@@ -3,7 +3,7 @@
         <div class="months">
           <div class="month">
             <div 
-              v-for="(item) in months" :key="item"
+              v-for="(item) in months" :key="item.id"
               @click="currentComponent=item.target" 
               :class="['month__button', { active: currentComponent === item.target }]"
             >{{ item.button }}</div>
@@ -34,9 +34,9 @@ export default {
       currentComponent: "OneMonth",
       activetab: 0,
       months: [
-        {button: "1 Месяц", target: "OneMonth"},
-        {button: "6 Месяцев", target: "SixMonth"},
-        {button: "12 Месяцев", target: "TwelveMonth"}
+        {id:1, button: "1 Месяц", target: "OneMonth"},
+        {id:2, button: "6 Месяцев", target: "SixMonth"},
+        {id:3, button: "12 Месяцев", target: "TwelveMonth"}
       ]
     }
   },
