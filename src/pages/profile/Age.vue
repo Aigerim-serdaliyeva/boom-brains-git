@@ -1,15 +1,19 @@
 <template>
-    <SubPage title="Возрастная статистика"> 
+    <SubPage title="Возрастная статистика">
         <div class="age__chart">
-            <apexchart 
-                type=bar 
+            <apexchart
+                type="bar"
                 height="100%"
-                :options="chartOptions" 
-                :series="series" 
+                :options="chartOptions"
+                :series="series"
             />
         </div>
-        <div class="apexchart__text">По нашим данным наибольшая активность мозга проявляется в возрасте от 17 до 35 лет. 
-            Существую “люди исключения” с достаточными тренировками мозговой деятельности некоторые люди поддерживают его активность в хорошей форме даже до 50-60 лет.</div>   
+        <div class="apexchart__text">
+            По нашим данным наибольшая активность мозга проявляется в возрасте
+            от 17 до 35 лет. Существую “люди исключения” с достаточными
+            тренировками мозговой деятельности некоторые люди поддерживают его
+            активность в хорошей форме даже до 50-60 лет.
+        </div>
     </SubPage>
 </template>
 
@@ -18,14 +22,16 @@ import SubPage from "../../components/sub-page/SubPage.vue";
 import VueApexCharts from "vue-apexcharts";
 export default {
     data() {
-        return {               
-            series: [{
-                name: 'series-1',
-                data: [44, 55, 41, 75, 22, 43, 21, 33]
-            }],        
+        return {
+            series: [
+                {
+                    name: "series-1",
+                    data: [44, 55, 41, 75, 22, 43, 21, 33]
+                }
+            ],
             chartOptions: {
                 dataLabels: {
-                    enabled: false,
+                    enabled: false
                 },
                 chart: {
                     // id: 'basic-bar'
@@ -51,14 +57,14 @@ export default {
                         color: "#888888"
                     },
                     axisTicks: {
-                        show: true,
+                        show: true
                     }
                 },
                 fill: {
-                   colors: ['#12ACCE', '#1989A1']
+                    colors: ["#12ACCE", "#1989A1"]
                 }
-            },
-        }
+            }
+        };
     },
     components: {
         SubPage,
@@ -68,9 +74,7 @@ export default {
 </script>
 
 <style lang="scss">
-
-    .age__chart {
-        height: 350px;
-    }
-
+.age__chart {
+    height: 350px;
+}
 </style>

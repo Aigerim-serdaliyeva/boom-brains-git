@@ -1,4 +1,4 @@
-<template> 
+<template>
     <div class="month__chart">
         <apexchart
             type="area"
@@ -20,12 +20,12 @@ export default {
                 {
                     name: "Series 1",
                     data: [
-                        ['05/06/2019', 34],
-                        ['05/10/2019', 43],
-                        ['05/11/2019', 31],
-                        ['05/15/2019', 43],
-                        ['05/20/2019', 33],
-                        ['05/22/2019', 52]
+                        ["05/06/2019", 34],
+                        ["05/10/2019", 43],
+                        ["05/11/2019", 31],
+                        ["05/15/2019", 43],
+                        ["05/20/2019", 33],
+                        ["05/22/2019", 52]
                     ]
                 }
             ],
@@ -35,9 +35,9 @@ export default {
                     // height: '100%'
                 },
                 fill: {
-                    type: 'gradient',
+                    type: "gradient",
                     gradient: {
-                        shade: 'dark',
+                        shade: "dark",
                         shadeIntensity: 1,
                         opacityFrom: 1,
                         opacityTo: 1,
@@ -46,38 +46,38 @@ export default {
                             {
                                 offset: 0,
                                 color: "#06CC02",
-                                opacity: .7
+                                opacity: 0.7
                             },
                             {
                                 offset: 150,
                                 color: "#FFD600",
-                                opacity: .7
+                                opacity: 0.7
                             }
                         ]
                     }
                 },
                 grid: {
                     row: {
-                        colors: ['#F1F1F1', '#ECECEC']
+                        colors: ["#F1F1F1", "#ECECEC"]
                     }
                 },
                 stroke: {
                     width: 0,
-                    curve: 'smooth'
+                    curve: "smooth"
                 },
                 yaxis: {
                     title: {
-                        text: 'Результат',
-                    },
+                        text: "Результат"
+                    }
                 },
                 markers: {
                     size: 2,
                     opacity: 0.9,
                     colors: ["#06CC02"],
                     strokeColor: "#fff",
-                    strokeWidth: 1,                    
+                    strokeWidth: 1,
                     hover: {
-                        size: 4,
+                        size: 4
                     }
                 },
                 xaxis: {
@@ -86,10 +86,12 @@ export default {
                     // min: new Date("01/01/2019").getTime(),
                     // max: new Date("01/31/2019").getTime(),
                     labels: {
-                      rotate: -45,
-                      rotateAlways: true,
+                        rotate: -45,
+                        rotateAlways: true,
                         formatter: function(val, timestamp) {
-                                return $this.$moment(new Date(timestamp)).format("DD.MM");
+                            return $this
+                                .$moment(new Date(timestamp))
+                                .format("DD.MM");
                             // }
                         }
                     }
@@ -105,34 +107,27 @@ export default {
                     decimalsInFloat: undefined,
                     labels: {
                         show: true,
-                        align: 'right',
+                        align: "right",
                         minWidth: 0,
                         offsetX: 0,
                         offsetY: 0,
-                        rotate: 0,
+                        rotate: 0
                     },
                     axisBorder: {
                         show: true,
                         color: "#888888"
                     },
                     axisTicks: {
-                        show: true,
-                    }         
-                },
-  
+                        show: true
+                    }
+                }
             }
-        }
+        };
     },
-    components: {  
-        apexchart: VueApexCharts,
+    components: {
+        apexchart: VueApexCharts
     }
 };
 </script>
 
-<style lang="scss">
-
-
-</style>
-
-
-                    
+<style lang="scss"></style>

@@ -14,12 +14,9 @@
 
             <div v-if="submitted && !$v.formData.email.required" class="error">
                 Поле обязательно к заполнению
-            </div>            
+            </div>
 
-            <div
-                v-if="submitted && !$v.formData.email.maxLength"
-                class="error"
-            >
+            <div v-if="submitted && !$v.formData.email.maxLength" class="error">
                 Максимальное количество символов не должно превышать 64
             </div>
         </InputForm>
@@ -46,11 +43,16 @@
                 Максимальное количество символов не должно превышать 32
             </div>
 
-            <div class="error">                
+            <div class="error">
                 <div v-if="serverErrors.length">
                     Проверьте пожалуйста правильность:
-                    <div v-for="item in filterServerErrors" :key="item.statusCode"> {{ item.ru }} </div>
-                </div>                
+                    <div
+                        v-for="item in filterServerErrors"
+                        :key="item.statusCode"
+                    >
+                        {{ item.ru }}
+                    </div>
+                </div>
             </div>
         </InputForm>
 
@@ -75,7 +77,7 @@ import InputForm from "../../components/input-form/InputForm.vue";
 import FormAuth from "../../components/form-auth/FormAuth.vue";
 import ButtonForm from "../../components/button-form/ButtonForm.vue";
 import { mapActions } from "vuex";
-import { validateLogin } from './validation'
+import { validateLogin } from "./validation";
 
 export default {
     mixins: [validateLogin],
@@ -91,8 +93,8 @@ export default {
             submitted: false,
             serverErrors: [],
             formData: {
-                email: "",                
-                password: "",                
+                email: "",
+                password: ""
             },
             spinnerSettings: {
                 spinnerColor: "#bada55",
@@ -100,24 +102,24 @@ export default {
                 size: 20
             }
         };
-    },    
+    },
     computed: {
         filterServerErrors() {
-            let arr = this.serverErrors.slice()
-            if(!arr.length) {
-                return arr
+            let arr = this.serverErrors.slice();
+            if (!arr.length) {
+                return arr;
             }
 
-            arr = arr.map((item) => {
-                switch(item.statusCode) {
+            arr = arr.map(item => {
+                switch (item.statusCode) {
                     case 9:
-                        return {}
+                        return {};
                     default:
-                        return item
+                        return item;
                 }
-            })
+            });
 
-            return arr
+            return arr;
         }
     },
     methods: {
@@ -127,15 +129,14 @@ export default {
         async attemptLogin() {
             try {
                 this.spinnerSettings.loading = true;
-                
+
                 const data = await this.login(this.formData);
 
-                if(!data) {                    
-                    return this.serverErrors = []
+                if (!data) {
+                    return (this.serverErrors = []);
                 }
 
-                this.serverErrors = data.errors                
-
+                this.serverErrors = data.errors;
             } catch (err) {
                 throw err;
             } finally {
@@ -147,7 +148,7 @@ export default {
 
             this.$v.$touch();
 
-            if (this.$v.$invalid) {                
+            if (this.$v.$invalid) {
                 return;
             }
 
@@ -158,8 +159,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
-
+<style lang="scss">
 .login {
     &__links {
         display: flex;

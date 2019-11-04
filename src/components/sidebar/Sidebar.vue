@@ -77,14 +77,14 @@ export default {
         font-size: 18px;
         font-weight: normal;
         display: block;
-        padding: 22px 15px;        
+        padding: 22px 15px;
         &.active {
             background: #427eb9;
             color: #fff;
         }
         &:hover {
             color: #fff;
-            background: rgba(#427eb9, .7);
+            background: rgba(#427eb9, 0.7);
         }
     }
 }
@@ -97,21 +97,21 @@ ul {
     }
 }
 
-    @media screen and (max-width: 1370px) {
-        .sidebar {
-            &__link {
-                padding: 18px 10px;
-            }
+@media screen and (max-width: 1370px) {
+    .sidebar {
+        &__link {
+            padding: 18px 10px;
         }
     }
+}
 
-    @media screen and (max-width: 1200px) {
-        .sidebar {
-            max-width: 210px;
-            &__link {
-                padding: 12px 8px;
-                font-size: 16px;
-            }
+@media screen and (max-width: 1200px) {
+    .sidebar {
+        max-width: 210px;
+        &__link {
+            padding: 12px 8px;
+            font-size: 16px;
         }
     }
+}
 </style>

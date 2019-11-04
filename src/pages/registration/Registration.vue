@@ -23,10 +23,7 @@
                 Такой email уже используется
             </div>
 
-            <div
-                class="error"
-                v-if="submitted && !$v.formData.email.maxLength"                
-            >
+            <div class="error" v-if="submitted && !$v.formData.email.maxLength">
                 Максимальное количество символов не должно превышать 64
             </div>
         </InputForm>
@@ -53,9 +50,7 @@
                 Такой никнейм уже используется
             </div>
 
-            <div
-                v-if="submitted && !$v.formData.username.maxLength"                
-            >
+            <div v-if="submitted && !$v.formData.username.maxLength">
                 Максимальное количество символов не должно превышать 16
             </div>
         </InputForm>
@@ -99,8 +94,10 @@
             </div>
         </InputForm>
 
-        <router-link class="login__link login__link--log" to="/login">Login</router-link>
-        
+        <router-link class="login__link login__link--log" to="/login"
+            >Login</router-link
+        >
+
         <!-- <SocialIcons /> -->
         <ButtonForm type="submit" text="Регистрация" />
     </FormAuth>
@@ -145,7 +142,7 @@ export default {
             register: "auth/register"
         }),
         async attemptRegister() {
-            try {                
+            try {
                 this.spinnerSettings.loading = true;
                 const { confirmPassword, ...otherData } = this.formData;
                 const data = await this.register(otherData);
@@ -156,26 +153,27 @@ export default {
             }
         },
         // валидация vuelidate не возвращает промис , поэтому делаем отдельную проверку
-            validPromise () {
-        return new Promise((resolve) => {
-            const unwatch = this.$watch(() => !this.$v.$invalid, (isValid) => {
-            if (isValid) {
-                unwatch()
-                resolve()
-            }
-            }, {immediate: true})
-        })
+        waitForValidation() {
+            return new Promise(resolve => {
+                const unwatch = this.$watch(
+                    () => !this.$v.$pending,
+                    isNotPending => {
+                        if (isNotPending) {                            
+                            resolve(!this.$v.$invalid);
+                        }
+                    },
+                    { immediate: true }
+                );
+            });
         },
         async submitForm() {
-            
-            this.submitted = true;
+            this.submitted = true;            
 
-            this.$v.$touch();
-
-            await this.validPromise()                                    
-
-            // return чтобы из функции передать throw в error boundry
-            return this.attemptRegister();
+            const isValid = await this.waitForValidation();
+            if (isValid) {
+                // return чтобы из функции передать throw в error boundry
+                return this.attemptRegister();
+            }
         }
     }
 };

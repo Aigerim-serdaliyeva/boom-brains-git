@@ -33,7 +33,7 @@ export const auth = {
 
                 const { token, status } = data;
 
-                if (status === "rejected") {                    
+                if (status === "rejected") {
                     return data;
                 }
 
@@ -66,7 +66,7 @@ export const auth = {
         async logout({ commit }) {
             try {
                 commit(LOGOUT);
-                localStorage.removeItem("access_token");                
+                localStorage.removeItem("access_token");
             } catch (err) {
                 throw err;
             }
