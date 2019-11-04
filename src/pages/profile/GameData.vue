@@ -58,9 +58,8 @@ export default {
                                 position: "bottom"
                             }
                         }
-                    }
-                    }
-                }],
+                    }                    
+                ],
                 plotOptions: {
                     pie: {
                         donut: {

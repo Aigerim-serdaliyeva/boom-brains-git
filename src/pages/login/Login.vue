@@ -91,8 +91,8 @@ export default {
             submitted: false,
             serverErrors: [],
             formData: {
-                email: "test@gmail.com",                
-                password: "153624",                
+                email: "",                
+                password: "",                
             },
             spinnerSettings: {
                 spinnerColor: "#bada55",

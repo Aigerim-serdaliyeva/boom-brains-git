@@ -66,8 +66,7 @@ export const auth = {
         async logout({ commit }) {
             try {
                 commit(LOGOUT);
-                localStorage.removeItem("access_token");
-                router.push("/login");
+                localStorage.removeItem("access_token");                
             } catch (err) {
                 throw err;
             }
