@@ -28,13 +28,15 @@ export default {
       font-size: 13px;
       font-weight: 500;
       color: #888;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
     &__content {
       &__title {
         font-weight: 300;
         font-size: 13px;
-        margin-bottom: 6px;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: space-between;
       }
       
     }

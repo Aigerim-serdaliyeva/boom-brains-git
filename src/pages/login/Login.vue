@@ -158,7 +158,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
+
 .login {
     &__links {
         display: flex;
@@ -170,6 +171,11 @@ export default {
         text-decoration: underline;
         font-size: 14px;
         font-weight: normal;
+        &--log {
+            display: block;
+            text-align: center;
+            margin-bottom: 25px;
+        }
     }
 }
 

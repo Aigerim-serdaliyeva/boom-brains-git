@@ -27,15 +27,7 @@ axios.interceptors.response.use(
     res => res,
     err => {
         if (401 === err.response.status) {
-            swal({
-                title: "Сессия окончена",
-                text: "Вы будете перенаправлены на страницу логина",
-                icon: "warning",
-                button: "Ок",
-                closeModal: true
-            }).then(() => {
-                store.dispatch("auth/logout", true);
-            });
+            store.dispatch("auth/logout", true);
         }
     }
 );

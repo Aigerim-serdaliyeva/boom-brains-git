@@ -14,7 +14,7 @@ export default {
 .grid {
     position: relative;
     width: 100%;
-    height: 655px;
+    height: 740px;
   }
 
   @media screen and (max-width: 1370px) {

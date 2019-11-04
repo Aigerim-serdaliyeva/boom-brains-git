@@ -100,7 +100,9 @@
             </div>
         </InputForm>
 
-        <SocialIcons />
+        <router-link class="login__link login__link--log" to="/login">Login</router-link>
+        
+        <!-- <SocialIcons /> -->
         <ButtonForm type="submit" text="Регистрация" />
     </FormAuth>
 </template>
@@ -172,7 +174,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .error {
     padding-top: 0.5rem;
     font-size: 0.8rem;

@@ -18,19 +18,25 @@
                     <img @click="showEditMode" src="@/assets/img/pen.png" alt="" />
                 </div>
             </div>
-            <div class="user__data"><span>Email:</span> wtf@hz.com</div>
-            <div class="user__data"><span>id:</span> 3646167</div>
+            <div class="user__data"><span>Email:</span> {{email}}</div>
+            <div class="user__data"><span>id:</span>{{ id }}</div>
         </div>
     </div>
 </template>
 
 <script>
+import axios from "axios"
 export default {
     data() {
         return {
-            userName: "Player Name",
+            userName: "",
+            email: "",
+            id: null,
             isEditMode: false,
         }
+    },
+    mounted() {
+        this.fetchInfo() 
     },
     methods: {
         showEditMode() {
@@ -45,6 +51,20 @@ export default {
             if (this.isEditMode) {
                 
                 this.isEditMode = false;
+            }
+        },
+        async fetchInfo() {
+            try {
+               const res = await axios.get("auth/user-info") 
+               const data = await res.data
+               const {email, username, uid} = data
+
+               this.userName = username
+               this.email = email
+               this.id = uid
+            }
+            catch(error) {
+                throw error
             }
         }
     }
