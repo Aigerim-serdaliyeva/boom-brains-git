@@ -62,6 +62,7 @@ export default {
 .sidebar {
     max-width: 250px;
     width: 100%;
+    height: 100%;
     background: #fff;
     border-radius: 10px;
     padding: 40px 0;
@@ -76,12 +77,14 @@ export default {
         font-size: 18px;
         font-weight: normal;
         display: block;
-        padding: 22px 15px;
-        &:hover,
+        padding: 22px 15px;        
         &.active {
             background: #427eb9;
             color: #fff;
-            text-decoration: none;
+        }
+        &:hover {
+            color: #fff;
+            background: rgba(#427eb9, .7);
         }
     }
 }
@@ -93,4 +96,22 @@ ul {
         list-style: none;
     }
 }
+
+    @media screen and (max-width: 1370px) {
+        .sidebar {
+            &__link {
+                padding: 18px 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .sidebar {
+            max-width: 210px;
+            &__link {
+                padding: 12px 8px;
+                font-size: 16px;
+            }
+        }
+    }
 </style>

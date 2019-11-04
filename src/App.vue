@@ -12,8 +12,7 @@ export default {
 </script>
 
 <style>
-#app {
-    font-family: "Roboto", Arial, sans-serif;
-    overflow-y: scroll;
-}
+    #app {
+        overflow-y: scroll;
+    }
 </style>

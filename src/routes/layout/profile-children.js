@@ -1,11 +1,11 @@
 export const profileChildren = [
     {
         path: "week",
-        component: () => import("../../pages/profile/Week.vue")
+        component: () => import("../../pages/profile/week/Week.vue")
     },
     {
         path: "month",
-        component: () => import("../../pages/profile/Month.vue")
+        component: () => import("../../pages/profile/month/Month.vue")
     },
     {
         path: "game-data",
