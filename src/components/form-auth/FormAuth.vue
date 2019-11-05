@@ -39,8 +39,9 @@ export default {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
+    text-align: center;
 
     &__img {
         margin-bottom: 40px;
@@ -52,6 +53,7 @@ export default {
         border-radius: 10px;
         max-width: 403px;
         width: 100%;
+        margin: 0 auto;
         position: relative;
         z-index: 2;
         padding: 40px 55px 55px;

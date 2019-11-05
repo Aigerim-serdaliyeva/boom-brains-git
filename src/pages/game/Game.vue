@@ -6,59 +6,83 @@
                     <component :is="currentComponent"></component>
                 </transition>                    
             </div>
-            <div class="row game__content">
+            <div class="row game__content" v-if="records.length">                
                 <div class="col-lg-4 col-6"
-                    v-for="(game, index) in games"
-                    :key="index" 
+                    v-for="(game, index) in records"
+                    :key="game._id" 
                 >
                     <div class="game"
-                        @click="currentComponent=game.target" 
+                        @click="currentComponent=games[index].target" 
                     >
                         <div class="game__data">
-                            <h4 class="game__name">{{game.name}}</h4>
-                            <div class="game__record"><img src="@/assets/img/game/record-white.png" alt="">Рекорд:</div>
+                            <h4 class="game__name">{{games[index].name}}</h4>
+                            <div class="game__record"><img src="@/assets/img/game/record-white.png" alt="">Рекорд: {{ game.record }}</div>
                         </div>
                         <div class="game__img">
-                            <img :src="game.url" >
+                            <img :src="games[index].url" >
                         </div>
                     </div>
-                </div>
+                </div>                
             </div>
         <!-- </Loading> -->
     </div>
 </template>
 
 <script>
+import ColoredWords from './ColoredWords.vue'
+import ColoredFigures from './ColoredFigures.vue'
+import MemorySquare from './MemorySquare.vue'
+import RememberWords from './RememberWords.vue'
+import ShulteLetters from './ShulteLetters.vue'
 import Equation from './Equation.vue'
 import Calculate from './Calculate.vue'
 import FindNumber from './FindNumber.vue'
 import RememberNumber from './RememberNumber.vue'
 import TableSchulte from './TableSchulte.vue'
 import Loading from '../../components/loading/Loading.vue'
+import { async } from 'q'
+import axios from "axios"
 
 export default {
-    components: { Loading, TableSchulte, RememberNumber, FindNumber, Calculate, Equation },
+    components: { Loading, TableSchulte, RememberNumber, FindNumber, Calculate, Equation, ShulteLetters, RememberWords, MemorySquare, ColoredFigures, ColoredWords },
     data() {
         return {  
             currentComponent: "", 
-            // currentComponent: "TableSchulte", 
             games: [
                 {url: require("@/assets/img/game/game-1.jpg"), name: "Таблица шульте", target: "TableSchulte"},
                 {url: require("@/assets/img/game/game-2.jpg"), name: "Запомни число", target: "RememberNumber"},
                 {url: require("@/assets/img/game/game-3.jpg"), name: "Найди число", target: "FindNumber"},
-                {url: require("@/assets/img/game/game-4.jpg"), name: "", target: "Calculate"},
-                {url: require("@/assets/img/game/game-5.jpg"), name: "", target: "Equation"},
-                {url: require("@/assets/img/game/game-6.jpg"), name: "", target: ""},
-                {url: require("@/assets/img/game/game-7.jpg"), name: "", target: ""},
-                {url: require("@/assets/img/game/game-8.jpg"), name: "", target: ""},
-                {url: require("@/assets/img/game/game-9.jpg"), name: "", target: ""},
-            ],         
+                {url: require("@/assets/img/game/game-4.jpg"), name: "Calculate", target: "Calculate"},
+                {url: require("@/assets/img/game/game-5.jpg"), name: "Equation", target: "Equation"},
+                {url: require("@/assets/img/game/game-6.jpg"), name: "ShulteLetters", target: "ShulteLetters"},
+                {url: require("@/assets/img/game/game-7.jpg"), name: "RememberWords", target: "RememberWords"},
+                {url: require("@/assets/img/game/game-8.jpg"), name: "MemorySquare", target: "MemorySquare"},
+                {url: require("@/assets/img/game/game-9.jpg"), name: "ColoredFigures", target: "ColoredFigures"},
+                {url: require("@/assets/img/game/game-9.jpg"), name: "ColoredWords", target: "ColoredWords"}
+            ], 
+            records: []        
             // spinnerSettings: {
             //     spinnerColor: '#bada55',
             //     loading: false,
             //     size: 20                
             // }
         };
+    },
+    mounted() {
+        this.fetchRecords()
+    },
+    methods: {
+        async fetchRecords() {
+            try {
+                const res = await axios.get("api/games-list")
+                const data = await res.data
+                const {records} = data
+                this.records = records
+            }
+            catch(error) {
+                throw error
+            }
+        }
     }
 };
 </script>

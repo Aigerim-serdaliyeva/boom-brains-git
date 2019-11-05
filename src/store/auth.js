@@ -63,6 +63,24 @@ export const auth = {
                 throw err;
             }
         },
+        async forget({ commit }, credentials) {
+            try {
+                const res = await axios.post("/auth/forget", credentials);
+                const data = await res.data;
+
+                const { token, status } = data;
+
+                if (status === "rejected") {
+                    return data;
+                }
+
+                localStorage.setItem("access_token", token);
+                commit(LOGIN_SUCCESS, token);
+                router.push("/profile");
+            } catch (err) {
+                throw err;
+            }
+        },
         async logout({ commit }) {
             try {
                 commit(LOGOUT);

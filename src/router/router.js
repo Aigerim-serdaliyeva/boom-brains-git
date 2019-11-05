@@ -14,7 +14,7 @@ export const router = new Router({
 router.beforeEach((to, from, next) => {
     const accessToken = store.getters["auth/accessToken"];
 
-    if (to.path === "/login" || to.path === "/registration") {
+    if (to.path === "/login" || to.path === "/registration" || to.path === "/forget") {
         return accessToken ? next("/profile") : next();
     }
 

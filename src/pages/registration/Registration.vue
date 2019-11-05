@@ -99,7 +99,9 @@
             </div>
         </InputForm>
 
-        <router-link class="login__link login__link--log" to="/login">Login</router-link>
+        <div class="login__links login__links--min">
+            <span>У вас уже есть аккаунт?</span> <router-link class="login__link" to="/login">Войти</router-link>
+        </div>
         
         <!-- <SocialIcons /> -->
         <ButtonForm type="submit" text="Регистрация" />

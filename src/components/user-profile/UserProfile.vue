@@ -9,9 +9,10 @@
                     class="user__input"
                     v-if="isEditMode"
                     v-model="userName"
+                    maxlength="32"
                     ref="userInput"
-                    @blur="saveUserName"
-                    @keyup.enter="saveUserName"
+                    @blur="changeUsername"
+                    @keyup.enter="changeUsername"
                 >
                 <div v-else>
                     <span class="user__name">{{userName}}</span>
@@ -47,12 +48,6 @@ export default {
                 }
             });
         },
-        saveUserName() {
-            if (this.isEditMode) {
-                
-                this.isEditMode = false;
-            }
-        },
         async fetchInfo() {
             try {
                const res = await axios.get("auth/user-info") 
@@ -62,6 +57,17 @@ export default {
                this.userName = username
                this.email = email
                this.id = uid
+            }
+            catch(error) {
+                throw error
+            }
+        },
+        async changeUsername() {
+            try {
+                await axios.post("auth/username", {username: this.userName})   
+                if (this.isEditMode) {                
+                    this.isEditMode = false;
+                }   
             }
             catch(error) {
                 throw error
@@ -92,9 +98,8 @@ export default {
         color: #fff;
         background: transparent;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 22px;
         margin-bottom: 8px;
-        // max-width: 160px;
         width: 100%;
         padding: 0 5px;
     }

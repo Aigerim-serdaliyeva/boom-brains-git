@@ -165,17 +165,17 @@ export default {
         display: flex;
         justify-content: space-between;
         margin-bottom: 25px;
+        color: #b4b4b4;
+        font-size: 14px;
+        &--min {
+            padding: 0 25px;
+        }
     }
     &__link {
         color: #b4b4b4;
         text-decoration: underline;
         font-size: 14px;
         font-weight: normal;
-        &--log {
-            display: block;
-            text-align: center;
-            margin-bottom: 25px;
-        }
     }
 }
 
