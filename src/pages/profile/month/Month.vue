@@ -1,5 +1,5 @@
 <template>
-    <SubPage title="Прогресс за месяц"> 
+    <SubPage :title="$t('widget.month')"> 
         <div class="months">
           <div class="month">
             <div 
@@ -34,9 +34,9 @@ export default {
       currentComponent: "OneMonth",
       activetab: 0,
       months: [
-        {id:1, button: "1 Месяц", target: "OneMonth"},
-        {id:2, button: "6 Месяцев", target: "SixMonth"},
-        {id:3, button: "12 Месяцев", target: "TwelveMonth"}
+        {id:1, button: this.$t('month.button.one'), target: "OneMonth"},
+        {id:2, button: this.$t('month.button.six'), target: "SixMonth"},
+        {id:3, button: this.$t('month.button.twelve'), target: "TwelveMonth"}
       ]
     }
   },
@@ -49,6 +49,11 @@ export default {
     messages: {
       ru: {
         month: {
+          button: {
+            one: "1 Месяц",
+            six: "6 Месяцев",
+            twelve: "12 Месяцев"
+          },
           text1: "Количество очков за прошлый месяц:",
           text2: "Количество очков за этот месяц:"
         }

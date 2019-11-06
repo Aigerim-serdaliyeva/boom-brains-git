@@ -1,5 +1,5 @@
 <template>
-    <SubPage title="Мировой Рейтинг"> </SubPage>
+    <SubPage :title="$t('widget.ratingworld')"> </SubPage>
 </template>
 
 <script>

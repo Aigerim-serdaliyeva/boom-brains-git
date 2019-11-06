@@ -1,5 +1,5 @@
 <template>
-    <SubPage title="Данные по играм"> 
+    <SubPage :title="$t('widget.gamedata')"> 
         <div class="row justify-content-center align-items-center">
             <div class="col-xl-4 col-lg-6 col-md-5 col-sm-6">
                 <div class="game-data__chart">

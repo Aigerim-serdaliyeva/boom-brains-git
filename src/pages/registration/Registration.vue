@@ -158,15 +158,15 @@ export default {
             }
         },
         // валидация vuelidate не возвращает промис , поэтому делаем отдельную проверку
-            validPromise () {
-        return new Promise((resolve) => {
-            const unwatch = this.$watch(() => !this.$v.$invalid, (isValid) => {
-            if (isValid) {
-                unwatch()
-                resolve()
-            }
-            }, {immediate: true})
-        })
+        validPromise () {
+            return new Promise((resolve) => {
+                const unwatch = this.$watch(() => !this.$v.$invalid, (isValid) => {
+                if (isValid) {
+                    unwatch()
+                    resolve()
+                }
+                }, {immediate: true})
+            })
         },
         async submitForm() {
             

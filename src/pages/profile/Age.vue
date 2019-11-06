@@ -1,5 +1,5 @@
 <template>
-    <SubPage title="Возрастная статистика"> 
+    <SubPage :title="$t('widget.age')"> 
         <div class="age__chart">
             <apexchart 
                 type=bar 

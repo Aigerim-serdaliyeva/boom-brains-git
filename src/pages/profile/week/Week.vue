@@ -1,6 +1,6 @@
 <template>
     <div>
-        <SubPage title="Недельная активность">
+        <SubPage :title="$t('widget.week')">
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-8">
                     <h2 class="apexchart__title">{{ $tc('title', 0) }}</h2>

@@ -12,9 +12,15 @@ export default new VueI18n({
   formatter,
   messages: {
     'ru': {
-      // widget: {
-      //   week: "Недельная активность"
-      // }
+      widget: {
+        week: "Недельная активность",
+        month: "Прогресс за месяц",
+        gamedata: "Данные по играм",
+        ratingfriends: "Рейтинг Cреди друзей",
+        age: "Возрастрная статистика",
+        records: "Рекорды",
+        ratingworld: "Мировой Рейтинг"
+      }
     },
 
     'en': {

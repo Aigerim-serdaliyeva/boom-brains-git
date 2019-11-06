@@ -1,5 +1,5 @@
 <template>
-    <SubPage title="Рейтинг Cреди друзей"> </SubPage>
+    <SubPage :title="$t('widget.ratingfriends')"> </SubPage>
 </template>
 
 <script>
