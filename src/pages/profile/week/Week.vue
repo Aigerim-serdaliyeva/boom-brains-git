@@ -3,13 +3,13 @@
         <SubPage title="Недельная активность">
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-8">
-                    <h2 class="apexchart__title">Сравнение с пред идущей</h2>
+                    <h2 class="apexchart__title">{{ $tc('title', 0) }}</h2>
                     <div class="week__chart">
                       <PreviousWeek />
                     </div>
                 </div>
                 <div class="col-md-8 h-100">
-                    <h2 class="apexchart__title">Дни тренировок на этой неделе</h2>
+                    <h2 class="apexchart__title">{{ $tc('title', 1) }}</h2>
                     <div class="week__chart">
                         <apexchart
                             type=bar 
@@ -21,8 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="apexchart__text">По нашим показателям у людей которые уделяют тренажерам около 10 минут в день и более, наблюдается значительное улучшение результатов. 
-                Но не стоит забывать что для улучшения работоспособности мозга нужны не только тренировки но и отдых</div>         
+            <div class="apexchart__text">{{ $t('text') }}</div>         
         </SubPage>
     </div>    
 </template>
@@ -40,7 +39,7 @@ export default {
             }],
             chartOptions: {  
                 chart: {
-                    id: 'basic-bar'
+                    id: 'basic-bar',
                 },
                 dataLabels: {
                     enabled: true,
@@ -90,6 +89,15 @@ export default {
         SubPage,
         apexchart: VueApexCharts, 
         PreviousWeek
+    },
+    i18n: {
+        messages: {
+            ru: {
+                title: "Дни тренировок на этой неделе | Сравнение с пред идущей",
+                text: "По нашим показателям у людей которые уделяют тренажерам около 10 минут в день и более, наблюдается значительное улучшение результатов. Но не стоит забывать что для улучшения работоспособности мозга нужны не только тренировки но и отдых",
+                categories: "пн | вт | ср | чт | пт | сб | вс"
+            }
+        }
     }
 };
 </script>

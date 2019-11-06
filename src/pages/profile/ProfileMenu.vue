@@ -3,7 +3,7 @@
         <Grid>
             <Widget title="Недельная активность" :style="{'top': '0', 'left': '0', 'height': '33.33%', 'width': '25%'}">
                 <router-link to="/profile/week">    
-                    <div class="widget__img"><img src="@/assets/img/week.png" alt=""></div>
+                    <div class="widget__img"><img src="@/assets/img/week.png" alt=""></div>                    
                 </router-link>
             </Widget>
             <Widget title="Прогресс за месяц" :style="{'top': '0', 'left': '25%', 'height': '33.33%', 'width': '25%'}">
@@ -41,15 +41,7 @@
                 text       
                 </router-link> -->
             </Widget>
-            <Widget
-                title="Мировой рейтинг"
-                :style="{
-                    top: '50%',
-                    left: '75%',
-                    height: '50%',
-                    width: '25%'
-                }"
-            >
+            <Widget title="Мировой рейтинг" :style="{ top: '50%', left: '75%', height: '50%', width: '25%' }">
                 <router-link to="/profile/rating-world">
                     text
                 </router-link>
@@ -66,6 +58,16 @@ import Widget from "../../components/widget/Widget";
 export default {
     components: {
         Widget, Grid, Radar, Records
+    },
+    i18n: {
+        messages: {
+            ru: {
+                widget: "Недельная активность | Прогресс за месяц"
+            },
+            en: {
+                
+            }
+        }
     }
 };
 </script>

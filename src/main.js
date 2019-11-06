@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import App from "./App";
+import i18n from "./i18n";
 import { router } from "./router";
 import Vuelidate from "vuelidate";
 import { store } from "./store";
@@ -46,5 +47,6 @@ Vue.prototype.$moment = moment;
 new Vue({
     router,
     store,
+    i18n,
     render: h => h(App)
 }).$mount("#app");

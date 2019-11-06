@@ -63,7 +63,7 @@ export default {
         FormAuth,
         Indicator
     },
-     data() {
+    data() {
         return {
             submitted: false,
             serverErrors: [],

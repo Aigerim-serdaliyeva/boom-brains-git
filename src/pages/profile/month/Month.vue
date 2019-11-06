@@ -15,8 +15,8 @@
           </transition>
         </div>
         <div class="d-flex justify-content-between">
-            <div class="apexchart__text">Количество очков за прошлый месяц: <span>74999</span></div>
-            <div class="apexchart__text">Количество очков за этот месяц: <span>4999</span></div>
+            <div class="apexchart__text">{{ $t('month.text1') }} <span>74999</span></div>
+            <div class="apexchart__text">{{ $t('month.text2') }} <span>4999</span></div>
         </div>
     </SubPage>
 </template>
@@ -40,11 +40,21 @@ export default {
       ]
     }
   },
-    components: { 
-        SubPage,        
-        apexchart: VueApexCharts, 
-        OneMonth, SixMonth, TwelveMonth
+  components: { 
+    SubPage,        
+    apexchart: VueApexCharts, 
+    OneMonth, SixMonth, TwelveMonth
+  },
+  i18n: {
+    messages: {
+      ru: {
+        month: {
+          text1: "Количество очков за прошлый месяц:",
+          text2: "Количество очков за этот месяц:"
+        }
+      }
     }
+  }
 };
 </script>
 

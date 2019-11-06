@@ -10,7 +10,7 @@
                         class="sidebar__link"
                         active-class="active"
                         to="/profile"
-                        >Ваш прогресс</router-link
+                        >{{ $t('menu.profile') }}</router-link
                     >
                 </li>
                 <li>
@@ -18,7 +18,7 @@
                         class="sidebar__link"
                         active-class="active"
                         to="/game"
-                        >Игры</router-link
+                        >{{ $t('menu.game') }}</router-link
                     >
                 </li>
                 <li>
@@ -26,7 +26,7 @@
                         class="sidebar__link"
                         active-class="active"
                         to="/courses"
-                        >Курсы</router-link
+                        >{{ $t('menu.courses') }}</router-link
                     >
                 </li>
                 <li>
@@ -34,7 +34,7 @@
                         class="sidebar__link"
                         active-class="active"
                         to="/faq"
-                        >FAQ</router-link
+                        >{{ $t('menu.faq') }}</router-link
                     >
                 </li>
                 <li>
@@ -42,7 +42,7 @@
                         class="sidebar__link"
                         active-class="active"
                         to="/boom-brains"
-                        >О BoomBrains</router-link
+                        >{{ $t('menu.boombrains') }}</router-link
                     >
                 </li>
             </ul>
@@ -54,6 +54,22 @@
 export default {
     props: {
         text: String
+    },
+    i18n: {
+        messages: {
+            ru: {
+                menu: {
+                    profile: "Ваш профиль",
+                    game: "Игры",
+                    courses: "Курсы",
+                    faq: "FAQ",
+                    boombrains: "О BoomBrains"
+                },
+            },
+            en: {
+                
+            }
+        }
     }
 };
 </script>

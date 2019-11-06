@@ -20,7 +20,7 @@ export default {
     position: absolute;
     background: #f1f1f1;
     border-radius: 5px;
-    padding: 20px 25px;
+    padding: 15px 25px;
     height: 100%;
     border: 2px solid #fff;
     &__title {
@@ -31,6 +31,8 @@ export default {
       margin-bottom: 10px;
     }
     &__content {
+      height: 100%;
+      // position: relative;
       &__title {
         font-weight: 300;
         font-size: 13px;
@@ -42,8 +44,10 @@ export default {
     }
     &__img {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;  
+      height: 90%;
       transition: all .5s ease;
       &:hover, &.active {
         transform: scale(1.03, 1.03)
