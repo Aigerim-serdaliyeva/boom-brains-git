@@ -10,7 +10,7 @@
             <img src="@/assets/img/game/game-5-2.png" alt="">            
           </div>
           <div class="col-xl-8">
-            <GameWidget title="Equation" >     
+            <GameWidget :title="$t('game.equation')" >     
               <template v-slot:rules>
                 <p class="game-widget__block__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quos nulla laborum eius saepe eos velit hic eveniet mollitia accusantium!</p>
               </template>      

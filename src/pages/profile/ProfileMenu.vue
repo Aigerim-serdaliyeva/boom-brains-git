@@ -39,22 +39,24 @@
                 </router-link> -->
             </Widget>
             <Widget :title="$t('widget.ratingworld')" :style="{ top: '50%', left: '75%', height: '50%', width: '25%' }">
-                <router-link to="/profile/rating-world">
+                <!-- <router-link to="/profile/rating-world">
                     text
-                </router-link>
+                </router-link> -->
+                <RatingWorld />
             </Widget>
         </Grid>
     </div>
 </template>
 
 <script>
+import RatingWorld from './RatingWorld.vue'
 import Records from './Records.vue'
 import Radar from './Radar.vue'
 import Grid from '../../components/grid/Grid.vue'
 import Widget from "../../components/widget/Widget";
 export default {
     components: {
-        Widget, Grid, Radar, Records
+        Widget, Grid, Radar, Records, RatingWorld
     },
     i18n: {
         messages: {

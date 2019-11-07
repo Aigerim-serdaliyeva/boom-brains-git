@@ -10,7 +10,7 @@
             <img src="@/assets/img/game/game-3-2.png" alt="">            
           </div>
           <div class="col-xl-8">
-            <GameWidget title="Find Number" >      
+            <GameWidget :title="$t('game.findNumber')" >      
               <template v-slot:rules>
                 <p class="game-widget__block__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quos nulla laborum eius saepe eos velit hic eveniet mollitia accusantium!</p>
               </template>     

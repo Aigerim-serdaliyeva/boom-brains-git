@@ -53,6 +53,9 @@ export default {
                         ]
                     },
                 },
+                tooltip: {
+                    enabled: false
+                },
                 grid: {
                     row: {
                         colors: ['#F1F1F1', '#ECECEC']

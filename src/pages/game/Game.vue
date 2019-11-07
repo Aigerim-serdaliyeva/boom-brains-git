@@ -16,7 +16,7 @@
                     >
                         <div class="game__data">
                             <h4 class="game__name">{{games[index].name}}</h4>
-                            <div class="game__record"><img src="@/assets/img/game/record-white.png" alt="">Рекорд: {{ game.record }}</div>
+                            <div class="game__record"><img src="@/assets/img/game/record-white.png" alt="">{{ $t('record') }}: {{ game.record }}</div>
                         </div>
                         <div class="game__img">
                             <img :src="games[index].url" >
@@ -49,16 +49,16 @@ export default {
         return {  
             currentComponent: "", 
             games: [
-                {url: require("@/assets/img/game/game-1.jpg"), name: "Таблица шульте", target: "TableSchulte"},
-                {url: require("@/assets/img/game/game-2.jpg"), name: "Запомни число", target: "RememberNumber"},
-                {url: require("@/assets/img/game/game-3.jpg"), name: "Найди число", target: "FindNumber"},
-                {url: require("@/assets/img/game/game-4.jpg"), name: "Calculate", target: "Calculate"},
-                {url: require("@/assets/img/game/game-5.jpg"), name: "Equation", target: "Equation"},
-                {url: require("@/assets/img/game/game-6.jpg"), name: "ShulteLetters", target: "ShulteLetters"},
-                {url: require("@/assets/img/game/game-7.jpg"), name: "RememberWords", target: "RememberWords"},
-                {url: require("@/assets/img/game/game-8.jpg"), name: "MemorySquare", target: "MemorySquare"},
-                {url: require("@/assets/img/game/game-9.jpg"), name: "ColoredFigures", target: "ColoredFigures"},
-                {url: require("@/assets/img/game/game-9.jpg"), name: "ColoredWords", target: "ColoredWords"}
+                {url: require("@/assets/img/game/game-1.jpg"), name: this.$t('game.tableShulte'), target: "TableSchulte"},
+                {url: require("@/assets/img/game/game-2.jpg"), name: this.$t('game.rememberNumber'), target: "RememberNumber"},
+                {url: require("@/assets/img/game/game-3.jpg"), name: this.$t('game.findNumber'), target: "FindNumber"},
+                {url: require("@/assets/img/game/game-4.jpg"), name: this.$t('game.calculate'), target: "Calculate"},
+                {url: require("@/assets/img/game/game-5.jpg"), name: this.$t('game.equation'), target: "Equation"},
+                {url: require("@/assets/img/game/game-6.jpg"), name: this.$t('game.shulteLetters'), target: "ShulteLetters"},
+                {url: require("@/assets/img/game/game-7.jpg"), name: this.$t('game.rememberWords'), target: "RememberWords"},
+                {url: require("@/assets/img/game/game-8.jpg"), name: this.$t('game.memorySquare'), target: "MemorySquare"},
+                {url: require("@/assets/img/game/game-9.jpg"), name: this.$t('game.coloredFigures'), target: "ColoredFigures"},
+                {url: require("@/assets/img/game/game-9.jpg"), name: this.$t('game.coloredWords'), target: "ColoredWords"}
             ], 
             records: []        
             // spinnerSettings: {

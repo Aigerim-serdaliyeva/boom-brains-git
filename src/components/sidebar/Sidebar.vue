@@ -47,14 +47,17 @@
                 </li>
             </ul>
         </div>
+        <Locale />
     </aside>
 </template>
 
 <script>
+import Locale from '../Locale.vue'
 export default {
     props: {
         text: String
     },
+    components: { Locale},
     i18n: {
         messages: {
             ru: {
@@ -83,6 +86,12 @@ export default {
     border-radius: 10px;
     padding: 40px 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    &__menu {
+        flex-grow: 1;
+    }
 
     &__img {
         margin-bottom: 70px;

@@ -21,6 +21,9 @@ export default {
                 dataLabels: {
                     enabled: true,
                 },
+                tooltip: {
+                    enabled: false
+                },
                 fill: {
                     colors: [
                         function({ value, seriesIndex, w }) {
@@ -45,8 +48,8 @@ export default {
                 },
                 xaxis: {
                     categories: [
-                        'Прошлая неделя',
-                        'Эта неделя',
+                        this.$t('week.last'),
+                        this.$t('week.this'),
                     ],                    
                 },
                 yaxis: {

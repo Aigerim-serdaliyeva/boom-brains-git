@@ -11,7 +11,7 @@
           </div>
           <div class="col-lg-8 col-md-9">
             <GameWidget 
-              title="Таблица шульте"
+              :title="$t('game.tableShulte')"
             >   
               <template v-slot:rules>
                 <p class="game-widget__block__text">Нажимайте на числа по их возрастанию, в зависимости от уровня количество ячеек будет увиличиваться. 

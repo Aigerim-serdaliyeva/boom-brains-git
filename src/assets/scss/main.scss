@@ -94,6 +94,11 @@ a {
   &-menu-icon {
     display: none !important;
   }
+  &-bar-area {
+    &:hover {
+      // display: none;
+    }
+  }
 }
 
 // $grid-gutter-width: 20px;

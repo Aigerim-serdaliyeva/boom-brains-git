@@ -5,7 +5,7 @@
                 <div class="col-md-4 col-sm-6 col-8">
                     <h2 class="apexchart__title">{{ $tc('title', 0) }}</h2>
                     <div class="week__chart">
-                      <PreviousWeek />
+                      <LastWeek />
                     </div>
                 </div>
                 <div class="col-md-8 h-100">
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import PreviousWeek from './PreviousWeek.vue'
+import LastWeek from './LastWeek.vue'
 import SubPage from '../../../components/sub-page/SubPage.vue'
 import VueApexCharts from "vue-apexcharts";
 
@@ -43,9 +43,9 @@ export default {
                 },
                 dataLabels: {
                     enabled: true,
-                    // formatter: function(value, { seriesIndex, dataPointIndex, w }) {
-                    //     return w.config.series[seriesIndex].name + ":  " + value
-                    // }
+                },
+                tooltip: {
+                    enabled: false
                 },
                 fill: {
                     colors: [function({ value, seriesIndex, w }) {
@@ -70,25 +70,25 @@ export default {
                 },
                 xaxis: {
                     categories: [
-                        'пн',
-                        'вт',
-                        'ср',
-                        'чт',
-                        'пт',
-                        'сб',
-                        'вс',
+                        this.$t('week.mon'),
+                        this.$t('week.tue'),
+                        this.$t('week.wed'),
+                        this.$t('week.thu'),
+                        this.$t('week.fri'),
+                        this.$t('week.sat'),
+                        this.$t('week.sun'),
                     ],                    
                 },
                 yaxis: {
                     tickAmount: 6,
                 }
-            }        
+            },      
         }
     },
     components: { 
         SubPage,
         apexchart: VueApexCharts, 
-        PreviousWeek
+        LastWeek
     },
     i18n: {
         messages: {

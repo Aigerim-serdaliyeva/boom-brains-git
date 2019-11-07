@@ -20,7 +20,7 @@ export default {
     position: absolute;
     background: #f1f1f1;
     border-radius: 5px;
-    padding: 15px 25px;
+    padding: 15px 20px;
     height: 100%;
     border: 2px solid #fff;
     &__title {

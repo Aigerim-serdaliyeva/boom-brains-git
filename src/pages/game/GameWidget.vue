@@ -4,24 +4,24 @@
     <div class="game-widget__header">
       <div class="game-widget__record">
         <div class="game-widget__record__number"><img src="@/assets/img/game/record.png" alt=""></div>
-        <div class="game-widget__record__title">{{youRecord}}</div>
+        <div class="game-widget__record__title">{{ $t('record.youRecord') }}</div>
       </div>
       <div class="game-widget__record">
         <div class="game-widget__record__number"><img src="@/assets/img/game/record.png" alt=""></div>
-        <div class="game-widget__record__title">{{averageIndicator}}</div>          
+        <div class="game-widget__record__title">{{ $t('record.averageIndicator') }}</div>          
       </div>
       <div class="game-widget__record">
         <div class="game-widget__record__number"><img src="@/assets/img/game/record.png" alt=""></div>
-        <div class="game-widget__record__title">{{worldRecord}}</div>
+        <div class="game-widget__record__title">{{ $t('record.worldRecord') }}</div>
       </div>
     </div>
     <div class="game-widget__block">
-      <h5 class="game-widget__block__title">{{ gameRules }}</h5>
+      <h5 class="game-widget__block__title">{{ $t('game.gameRules') }}</h5>
       <slot name="rules"></slot>
     </div>
     <div class="game-widget__block">
-      <h5 class="game-widget__block__title">{{gameStimulates}}</h5>
-      <div class="game-widget__block__text">{{gameStimulatesText}}</div>
+      <h5 class="game-widget__block__title">{{ $t('game.gameStimulates') }}</h5>
+      <div class="game-widget__block__text">{{ $t('game.gameStimulatesText') }}</div>
     </div>
   </div>
 </template>
@@ -53,6 +53,22 @@ export default {
     gameStimulatesText: {
       type: String,
       default: "Память, Внимание"
+    }
+  },
+  i18n: {
+    messages: {
+      ru: {
+        record: {
+          youRecord: "Ваш Рекорд",
+          averageIndicator: "Средний показатель",
+          worldRecord: "Мировой рекорд"
+        },
+        game: {
+          gameRules: "Правила игры:",
+          gameStimulates: "Тренажер стимулирует:",
+          gameStimulatesText: "Память, Внимание"
+        }
+      }
     }
   }
 }

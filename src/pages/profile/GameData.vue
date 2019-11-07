@@ -30,11 +30,11 @@ export default {
             series: [65, 55, 41, 17, 15],
             chartOptions: {
                 labels: [
-                    "Таблица шульте",
-                    "Запомни число",
-                    "Найди число",
-                    "Вычисли",
-                    "Определи знак"
+                    this.$t('game.tableShulte'),
+                    this.$t('game.rememberNumber'),
+                    this.$t('game.findNumber'),
+                    this.$t('game.calculate'),
+                    this.$t('game.equation'),
                 ],
                 fill: {
                     colors: [

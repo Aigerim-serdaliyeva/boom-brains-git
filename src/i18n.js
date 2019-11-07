@@ -20,7 +20,33 @@ export default new VueI18n({
         age: "Возрастрная статистика",
         records: "Рекорды",
         ratingworld: "Мировой Рейтинг"
-      }
+      },
+      game: {
+        tableShulte: "Таблица шульте",
+        rememberNumber: "Запомни число",
+        findNumber: "Найди число",
+        calculate: "Вычисли",
+        equation: "Определи знак",
+        shulteLetters: "shulteLetters",
+        rememberWords: "rememberWords",
+        memorySquare: "memorySquare",
+        coloredFigures: "coloredFigures",
+        coloredWords: "coloredWords"
+      },
+      week: {
+        mon: "пн",
+        tue: "вт",
+        wed: "ср",
+        thu: "чт",
+        fri: "пт",
+        sat: "сб",
+        sun: "вс",
+        last: "Прошлая неделя",
+        this: "Эта неделя"
+      },
+      year: '{count} лет',
+      exit: "Выход",
+      record: "Рекорд"
     },
 
     'en': {

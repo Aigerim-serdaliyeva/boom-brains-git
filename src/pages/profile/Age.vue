@@ -26,19 +26,22 @@ export default {
                 dataLabels: {
                     enabled: false,
                 },
+                tooltip: {
+                    enabled: false
+                },
                 chart: {
                     // id: 'basic-bar'
                 },
                 xaxis: {
                     categories: [
-                        "10-15 лет",
-                        "15-20 лет",
-                        "20-25 лет",
-                        "30-35 лет",
-                        "40-45 лет",
-                        "50-55 лет",
-                        "60-65 лет",
-                        "70-75+ лет"
+                        this.$tc('year', '10-15'),
+                        this.$tc('year', '15-20'),
+                        this.$tc('year', '20-25'),
+                        this.$tc('year', '30-35'),
+                        this.$tc('year', '40-45'),
+                        this.$tc('year', '50-55'),
+                        this.$tc('year', '60-65'),
+                        this.$tc('year', '70-75+')
                     ]
                 },
                 yaxis: {

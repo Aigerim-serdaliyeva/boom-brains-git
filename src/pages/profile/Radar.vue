@@ -30,6 +30,9 @@ export default {
                     "Внимание",
                     "Логика",
                 ], 
+                tooltip: {
+                    enabled: false
+                },
                 fill: {
                     colors: ['#FF9900']
                 },
