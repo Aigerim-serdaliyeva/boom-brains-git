@@ -70,7 +70,22 @@ export default {
                 },
             },
             en: {
-                
+                menu: {
+                    profile: "Your profile",
+                    game: "Games",
+                    courses: "Courses",
+                    faq: "FAQ",
+                    boombrains: "About BoomBrains"
+                },
+            },
+            kz: {
+                menu: {
+                    profile: "Сіздің профиліңіз",
+                    game: "Ойындар",
+                    courses: "Курстар",
+                    faq: "FAQ",
+                    boombrains: "BoomBrains туралы"
+                },
             }
         }
     }

@@ -16,7 +16,7 @@
               <template v-slot:rules>
                 <p class="game-widget__block__text">Нажимайте на числа по их возрастанию, в зависимости от уровня количество ячеек будет увиличиваться. 
                 Ошибкой будет нажатие цифры которая не стоит следующей в очереди. Правильные нажатия помечаются - зеленым цветом, а ложные - красным. 
-                Будьте внимательны и старайтесь концентрировать взгляд на центре таблицы.</p>
+                Будьте внимательны и старайтесь концентрировать взгляд на центре таблицы. </p>
               </template>        
             </GameWidget>
           </div>
@@ -28,8 +28,31 @@
 
 <script>
 import GameWidget from './GameWidget.vue'
+import axios from "axios"
 export default {    
-    components: { GameWidget }
+    components: { GameWidget },
+    data() {
+      return {
+        game: "",
+        myWorldRecord: {}
+      }
+    },
+    // mounted() {
+    //     this.fetchGameData()
+    // },
+    methods: {
+      async fetchGameData() {
+          try {
+              const res = await axios.post("api/game-info", {game: this.game})
+              const data = await res.data
+              const {myWorldRecord} = data
+              this.myWorldRecord = myWorldRecord
+          }
+          catch(error) {
+              throw error
+          }
+      }
+    }
 };
 </script>
 

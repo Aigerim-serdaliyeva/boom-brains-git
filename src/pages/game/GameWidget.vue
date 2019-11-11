@@ -3,7 +3,7 @@
     <h4 class="game-widget__title">{{title}}</h4>
     <div class="game-widget__header">
       <div class="game-widget__record">
-        <div class="game-widget__record__number"><img src="@/assets/img/game/record.png" alt=""></div>
+        <div class="game-widget__record__number"><img src="@/assets/img/game/record.png" alt=""><span>{{youRecord}}</span></div>
         <div class="game-widget__record__title">{{ $t('record.youRecord') }}</div>
       </div>
       <div class="game-widget__record">
@@ -31,28 +31,27 @@ export default {
   props: {
     title: String,
     youRecord: {
-      type: String,
-      default: "Ваш Рекорд"
+      type: Number
     },
     averageIndicator: {
       type: String,
-      default: "Средний показатель"
+      // default: "Средний показатель"
     },
     worldRecord: {
       type: String,
-      default: "Мировой рекорд"
+      // default: "Мировой рекорд"
     },
     gameRules: {
       type: String,
-      default: "Правила игры:"
+      // default: "Правила игры:"
     },
     gameStimulates: {
       type: String,
-      default: "Тренажер стимулирует:"
+      // default: "Тренажер стимулирует:"
     },
     gameStimulatesText: {
       type: String,
-      default: "Память, Внимание"
+      // default: "Память, Внимание"
     }
   },
   i18n: {
@@ -67,6 +66,30 @@ export default {
           gameRules: "Правила игры:",
           gameStimulates: "Тренажер стимулирует:",
           gameStimulatesText: "Память, Внимание"
+        }
+      },
+      en: {
+        record: {
+          youRecord: "Your record",
+          averageIndicator: "Average indicator",
+          worldRecord: "World record"
+        },
+        game: {
+          gameRules: "Rules of the game",
+          gameStimulates: "Training apparatus stimulates:",
+          gameStimulatesText: "Memory, Attention"
+        }
+      },
+      kz: {
+        record: {
+          youRecord: "Сіздің рекорд",
+          averageIndicator: "Орташа көрсеткіш",
+          worldRecord: "Әлемдік рекорд"
+        },
+        game: {
+          gameRules: "Ойын ережелері: ",
+          gameStimulates: "Тренажер ынталандырады:",
+          gameStimulatesText: "Жад, Назар аудару: "
         }
       }
     }

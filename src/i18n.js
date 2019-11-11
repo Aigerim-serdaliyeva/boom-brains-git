@@ -44,17 +44,85 @@ export default new VueI18n({
         last: "Прошлая неделя",
         this: "Эта неделя"
       },
-      year: '{count} лет',
+      years: '{count} лет',
       exit: "Выход",
       record: "Рекорд"
     },
 
     'en': {
-
+      widget: {
+        week: "Weekly activities",
+        month: "Monthly progress",
+        gamedata: "Game data",
+        ratingfriends: "Rating among friends",
+        age: "Age statistics",
+        records: "Highscores",
+        ratingworld: "World ranking"
+      },
+      game: {
+        tableShulte: "",
+        rememberNumber: "",
+        findNumber: "",
+        calculate: "",
+        equation: "",
+        shulteLetters: "shulteLetters",
+        rememberWords: "rememberWords",
+        memorySquare: "memorySquare",
+        coloredFigures: "coloredFigures",
+        coloredWords: "coloredWords"
+      },
+      week: {
+        mon: "mon",
+        tue: "tue",
+        wed: "wed",
+        thu: "thu",
+        fri: "fri",
+        sat: "sat",
+        sun: "sun",
+        last: "Last week",
+        this: "This week"
+      },
+      years: '{count} years',
+      exit: "Exit",
+      record: "Record"
     },
 
     'kz': {
-
+      widget: {
+        week: "Апталық белсенділік",
+        month: "Ай сайынғы прогресс",
+        gamedata: "Ойын туралы мәліметтер",
+        ratingfriends: "Достар арасындағы рейтинг",
+        age: "Жас статистикасы",
+        records: "Жоғары рейтингтер",
+        ratingworld: "Әлемдік рейтинг"
+      },
+      game: {
+        tableShulte: "",
+        rememberNumber: "",
+        findNumber: "",
+        calculate: "",
+        equation: "",
+        shulteLetters: "shulteLetters",
+        rememberWords: "rememberWords",
+        memorySquare: "memorySquare",
+        coloredFigures: "coloredFigures",
+        coloredWords: "coloredWords"
+      },
+      week: {
+        mon: "дс",
+        tue: "сс",
+        wed: "ср",
+        thu: "бс",
+        fri: "жм",
+        sat: "сб",
+        sun: "жб",
+        last: "Өткен апта",
+        this: "Осы апта"
+      },
+      years: '{count} жас',
+      exit: "Шығу",
+      record: "Рекорд"
     }
   }
 })

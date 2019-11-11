@@ -8,10 +8,12 @@
                 <div class="col-lg-9">
                     <div class="layout__content">
                         <AppHeader />
-                        <main class="main">
-                            <transition  name="fade" mode="out-in">
-                                <router-view />
-                            </transition>                            
+                        <main class="main">                            
+                            <div :key="key">
+                                <transition  name="fade" mode="out-in">
+                                    <router-view />
+                                </transition> 
+                            </div>                                                       
                         </main>
                     </div>
                 </div>
@@ -23,12 +25,18 @@
 <script>
 import Sidebar from "../sidebar/Sidebar.vue";
 import AppHeader from "../header/AppHeader.vue";
+import {mapGetters} from "vuex"
 
 export default {
     components: {
         AppHeader,
         Sidebar
-    }
+    },
+    computed: {
+        ...mapGetters({
+            key: "language/key"   
+        })
+    },
 };
 
 </script>
@@ -36,7 +44,6 @@ export default {
 <style lang="scss" >
     .layout {
         width: 100%;
-        // height: 100vh;
         padding: 90px 0;
         color: #888888;
         display: flex;

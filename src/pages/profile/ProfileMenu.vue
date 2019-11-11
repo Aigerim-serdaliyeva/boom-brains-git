@@ -17,9 +17,10 @@
                 </router-link>
             </Widget>
             <Widget :title="$t('widget.ratingfriends')" :style="{ top: '0', left: '75%', height: '50%', width: '25%' }" >
-                <router-link to="/profile/rating-friends">
+                <!-- <router-link to="/profile/rating-friends">
                     text
-                </router-link>
+                </router-link> -->
+                <RatingFriends />
             </Widget>
             <Widget :style="{'top': '33.33%', 'left': '0', 'height': '66.66%', 'width': '50%'}">
                 <Radar />   
@@ -49,6 +50,7 @@
 </template>
 
 <script>
+import RatingFriends from './RatingFriends.vue'
 import RatingWorld from './RatingWorld.vue'
 import Records from './Records.vue'
 import Radar from './Radar.vue'
@@ -56,7 +58,7 @@ import Grid from '../../components/grid/Grid.vue'
 import Widget from "../../components/widget/Widget";
 export default {
     components: {
-        Widget, Grid, Radar, Records, RatingWorld
+        Widget, Grid, Radar, Records, RatingWorld, RatingFriends
     },
     i18n: {
         messages: {

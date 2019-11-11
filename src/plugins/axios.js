@@ -9,12 +9,18 @@ axios.defaults.baseURL =
 
 axios.interceptors.request.use(config => {
     const accessToken = store.getters["auth/accessToken"];
+    const language = store.getters["language/currentLanguage"]
 
     config.headers["Content-type"] = "application/json";
 
+    if (language) {
+        config.headers["App-Language"] = language;
+    }
+    
     if (accessToken) {
         config.headers.Authorization = "Bearer " + accessToken;
         config.headers.Accept = "application/json";
+        
     } else {
         config.headers.Authorization = null;
         config.headers["Secret-key"] = "BoomBrains";

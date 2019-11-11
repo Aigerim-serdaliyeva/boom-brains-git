@@ -1,31 +1,48 @@
 <template>
     <div class="languages" >
-        <a @click.prevent="changeLang('ru'), active = 'ru'" :class="{active: isActive('ru')}" class="lang">ru</a>
-        <a @click.prevent="changeLang('en'), active = 'en'" :class="{active: isActive('en')}" class="lang">en</a>
-        <a @click.prevent="changeLang('kz'), active = 'kz'" :class="{active: isActive('kz')}" class="lang">kz</a>
+        <a @click.prevent="attemptChangeLanguage('ru')" :class="setClass('ru') " >ru</a>
+        <a @click.prevent="attemptChangeLanguage('en')"  :class="setClass('en')">en</a>
+        <a @click.prevent="attemptChangeLanguage('kz')" :class="setClass('kz')">kz</a>
     </div>
 </template>
 
 <script>
+
+import {mapGetters, mapActions} from "vuex"
+
 export default {
-    data() {
-        return {
-            active: "ru"
-        }
+    computed: {
+        ...mapGetters({
+            currentLanguage: "language/currentLanguage"            
+        }),
+        
     },
     methods: {
-        changeLang(lang) {
-            this.$root.$i18n.locale = lang 
+        ...mapActions({
+            changeLanguage: "language/changeLanguage", 
+            changeKey: "language/changeKey"           
+        }),
+        attemptChangeLanguage(lang) {
+            this.changeLanguage(lang) 
+            this.$i18n.locale = lang 
+            this.changeKey() 
         },
         isActive(value) {
-            return this.active === value
+            return this.currentLanguage === value
+        },
+        setClass(val) {
+            return {
+                active: this.isActive(val),
+                language: true
+            }
         }
     }
 }
+
 </script>
 
 <style lang="scss">
-    .lang {
+    .language {
         font-weight: 300;
         font-size: 13px;
         text-transform: uppercase;

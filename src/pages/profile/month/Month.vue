@@ -57,7 +57,29 @@ export default {
           text1: "Количество очков за прошлый месяц:",
           text2: "Количество очков за этот месяц:"
         }
-      }
+      }, 
+      en: {
+        month: {
+          button: {
+            one: "1 Month",
+            six: "6 Of months",
+            twelve: "12 Of months"
+          },
+          text1: "Points for last month: ",
+          text2: "Points for this month: "
+        }
+      },
+      kz: {
+        month: {
+          button: {
+            one: "1 Ай",
+            six: "6 Ай",
+            twelve: "12 Ай"
+          },
+          text1: "Өткен айдағы ұпайлар: ",
+          text2: "Осы айдағы ұпайлар: "
+        }
+      },
     }
   }
 };
@@ -76,10 +98,12 @@ export default {
           margin-bottom: 20px;
         }
         &__button {
-            padding: 6px 17px;
+            padding: 6px 5px;
             border-radius: 33px;
+            text-align: center;
+            width: 110px;
             cursor: pointer;
-            &.active {
+            &:hover, &.active {
                 background: #fff;
             }
         }
