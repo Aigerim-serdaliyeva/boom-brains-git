@@ -6,7 +6,7 @@
             :options="chartOptions"
             :series="series"
         />
-    </div>    
+    </div>
 </template>
 
 <script>
@@ -28,29 +28,29 @@ export default {
                     "Память",
                     "Аккуратность",
                     "Внимание",
-                    "Логика",
-                ], 
+                    "Логика"
+                ],
                 tooltip: {
                     enabled: false
                 },
                 fill: {
-                    colors: ['#FF9900']
+                    colors: ["#FF9900"]
                 },
                 stroke: {
                     show: true,
                     width: 1,
-                    colors: ['#FF9900'],
+                    colors: ["#FF9900"],
                     dashArray: 0
                 },
                 markers: {
                     size: 3,
-                    colors: ['#FF9900'],
+                    colors: ["#FF9900"],
                     hover: {
                         size: 4
                     }
                 },
                 yaxis: {
-                    show: false,
+                    show: false
                 }
             }
         };
@@ -62,52 +62,49 @@ export default {
 };
 </script>
 
-<style lang=scss>
+<style lang="scss">
+.radar {
+    &__chart {
+        height: 450px;
+        margin-top: -10px;
+    }
+}
 
+.apexcharts {
+    &-menu-icon {
+        display: none !important;
+    }
+    &-datalabel {
+        font-size: 17px;
+        font-weight: normal;
+    }
+}
+
+@media screen and (max-width: 1200px) {
     .radar {
         &__chart {
-            height: 450px;
-            margin-top: -10px;
+            height: 370px;
         }
     }
-
     .apexcharts {
-        &-menu-icon {
-            display: none !important;
-        
+        &-canvas {
+            height: 300px !important;
+        }
+        &-svg {
         }
         &-datalabel {
-            font-size: 17px;
-            font-weight: normal;
+            font-size: 14px;
         }
     }
+}
 
-    @media screen and (max-width: 1200px) {
-        .radar {
-            &__chart {
-                height: 370px;
-            }
+@media screen and (max-width: 767px) {
+    .apexcharts {
+        &-canvas {
         }
-        .apexcharts {
-            &-canvas {
-                height: 300px !important;
-            }
-            &-svg {
-            }
-            &-datalabel {
-                font-size: 14px;
-            }
+        &-datalabel {
+            font-size: 12px;
         }
     }
-
-    @media screen and (max-width: 767px) {
-        .apexcharts {
-            &-canvas {
-            }
-            &-datalabel {
-                font-size: 12px;
-            }
-        }
-    }
-    
+}
 </style>

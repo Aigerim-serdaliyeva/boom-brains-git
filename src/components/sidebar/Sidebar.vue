@@ -10,7 +10,7 @@
                         class="sidebar__link"
                         active-class="active"
                         to="/profile"
-                        >{{ $t('menu.profile') }}</router-link
+                        >{{ $t("menu.profile") }}</router-link
                     >
                 </li>
                 <li>
@@ -18,7 +18,7 @@
                         class="sidebar__link"
                         active-class="active"
                         to="/game"
-                        >{{ $t('menu.game') }}</router-link
+                        >{{ $t("menu.game") }}</router-link
                     >
                 </li>
                 <li>
@@ -26,7 +26,7 @@
                         class="sidebar__link"
                         active-class="active"
                         to="/courses"
-                        >{{ $t('menu.courses') }}</router-link
+                        >{{ $t("menu.courses") }}</router-link
                     >
                 </li>
                 <li>
@@ -34,7 +34,7 @@
                         class="sidebar__link"
                         active-class="active"
                         to="/faq"
-                        >{{ $t('menu.faq') }}</router-link
+                        >{{ $t("menu.faq") }}</router-link
                     >
                 </li>
                 <li>
@@ -42,7 +42,7 @@
                         class="sidebar__link"
                         active-class="active"
                         to="/boom-brains"
-                        >{{ $t('menu.boombrains') }}</router-link
+                        >{{ $t("menu.boombrains") }}</router-link
                     >
                 </li>
             </ul>
@@ -52,12 +52,12 @@
 </template>
 
 <script>
-import Locale from '../Locale.vue'
+import Locale from "../Locale.vue";
 export default {
     props: {
         text: String
     },
-    components: { Locale},
+    components: { Locale },
     i18n: {
         messages: {
             ru: {
@@ -67,7 +67,7 @@ export default {
                     courses: "Курсы",
                     faq: "FAQ",
                     boombrains: "О BoomBrains"
-                },
+                }
             },
             en: {
                 menu: {
@@ -76,7 +76,7 @@ export default {
                     courses: "Courses",
                     faq: "FAQ",
                     boombrains: "About BoomBrains"
-                },
+                }
             },
             kz: {
                 menu: {
@@ -85,7 +85,7 @@ export default {
                     courses: "Курстар",
                     faq: "FAQ",
                     boombrains: "BoomBrains туралы"
-                },
+                }
             }
         }
     }
@@ -117,14 +117,14 @@ export default {
         font-size: 18px;
         font-weight: normal;
         display: block;
-        padding: 22px 15px;        
+        padding: 22px 15px;
         &.active {
             background: #427eb9;
             color: #fff;
         }
         &:hover {
             color: #fff;
-            background: rgba(#427eb9, .7);
+            background: rgba(#427eb9, 0.7);
         }
     }
 }
@@ -137,21 +137,21 @@ ul {
     }
 }
 
-    @media screen and (max-width: 1370px) {
-        .sidebar {
-            &__link {
-                padding: 18px 10px;
-            }
+@media screen and (max-width: 1370px) {
+    .sidebar {
+        &__link {
+            padding: 18px 10px;
         }
     }
+}
 
-    @media screen and (max-width: 1200px) {
-        .sidebar {
-            max-width: 210px;
-            &__link {
-                padding: 12px 8px;
-                font-size: 16px;
-            }
+@media screen and (max-width: 1200px) {
+    .sidebar {
+        max-width: 210px;
+        &__link {
+            padding: 12px 8px;
+            font-size: 16px;
         }
     }
+}
 </style>

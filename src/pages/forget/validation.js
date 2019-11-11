@@ -1,18 +1,11 @@
-import {
-    required,
-    minLength,
-    maxLength,
-    
-} from "vuelidate/lib/validators";
-
+import { required, minLength, maxLength } from "vuelidate/lib/validators";
 
 export const validateForget = {
     validations: {
         formData: {
             email: {
                 required,
-                maxLength: maxLength(64),
-                
+                maxLength: maxLength(64)
             }
         }
     }

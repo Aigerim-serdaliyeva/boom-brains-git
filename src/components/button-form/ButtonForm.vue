@@ -38,12 +38,16 @@ export default {
     cursor: pointer;
 
     &:hover {
-        background: linear-gradient(117.63deg, #5ACC02 -38.55%, #9EE666 52.34%, #5ACC02 135.96%);
+        background: linear-gradient(
+            117.63deg,
+            #5acc02 -38.55%,
+            #9ee666 52.34%,
+            #5acc02 135.96%
+        );
     }
     &:active {
         background: #489110;
         box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
-
 }
 </style>

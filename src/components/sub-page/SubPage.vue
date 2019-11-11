@@ -42,19 +42,19 @@ export default {
     }
 }
 
-    @media screen and (max-width: 1350px) {
-        .sub-page {            
-            padding: 20px;
+@media screen and (max-width: 1350px) {
+    .sub-page {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .sub-page {
+        padding: 15px 10px;
+
+        &__title {
+            font-size: 20px;
         }
     }
-
-    @media screen and (max-width: 991px) {
-        .sub-page {            
-            padding: 15px 10px;
-
-            &__title {
-                font-size: 20px;
-            }
-        }
-    }
+}
 </style>

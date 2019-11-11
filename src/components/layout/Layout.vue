@@ -8,12 +8,12 @@
                 <div class="col-lg-9">
                     <div class="layout__content">
                         <AppHeader />
-                        <main class="main">                            
+                        <main class="main">
                             <div :key="key">
-                                <transition  name="fade" mode="out-in">
+                                <transition name="fade" mode="out-in">
                                     <router-view />
-                                </transition> 
-                            </div>                                                       
+                                </transition>
+                            </div>
                         </main>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
 <script>
 import Sidebar from "../sidebar/Sidebar.vue";
 import AppHeader from "../header/AppHeader.vue";
-import {mapGetters} from "vuex"
+import { mapGetters } from "vuex";
 
 export default {
     components: {
@@ -34,47 +34,46 @@ export default {
     },
     computed: {
         ...mapGetters({
-            key: "language/key"   
+            key: "language/key"
         })
-    },
+    }
 };
-
 </script>
 
-<style lang="scss" >
-    .layout {
-        width: 100%;
-        padding: 90px 0;
-        color: #888888;
-        display: flex;
-        align-items: center;    
+<style lang="scss">
+.layout {
+    width: 100%;
+    padding: 90px 0;
+    color: #888888;
+    display: flex;
+    align-items: center;
 
+    &__content {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-left: -60px;
+    }
+}
+.main {
+    padding: 15px 15px;
+}
+
+@media screen and (max-width: 1370px) {
+    .layout {
         &__content {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-left: -60px;
-        }        
+            margin-left: -20px;
+        }
     }
     .main {
-        padding: 15px 15px;    
+        padding: 10px;
     }
+}
 
-    @media screen and (max-width: 1370px) {
-        .layout {
-            &__content {
-                margin-left: -20px;
-            }
-        }
-        .main {
-            padding: 10px;
-        }
+@media screen and (max-width: 1200px) {
+    .layout {
+        height: auto;
+        padding: 40px 0;
     }
-
-    @media screen and (max-width: 1200px) {
-        .layout {
-            height: auto;
-            padding: 40px 0;
-        }
-    }
+}
 </style>

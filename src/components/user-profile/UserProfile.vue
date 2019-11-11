@@ -5,7 +5,7 @@
         </div>
         <div class="user__content">
             <div class="user__name">
-                <input 
+                <input
                     class="user__input"
                     v-if="isEditMode"
                     v-model="userName"
@@ -13,31 +13,35 @@
                     ref="userInput"
                     @blur="changeUsername"
                     @keyup.enter="changeUsername"
-                >
+                />
                 <div v-else>
-                    <span class="user__name">{{userName}}</span>
-                    <img @click="showEditMode" src="@/assets/img/pen.png" alt="" />
+                    <span class="user__name">{{ userName }}</span>
+                    <img
+                        @click="showEditMode"
+                        src="@/assets/img/pen.png"
+                        alt=""
+                    />
                 </div>
             </div>
-            <div class="user__data"><span>Email:</span> {{email}}</div>
+            <div class="user__data"><span>Email:</span> {{ email }}</div>
             <div class="user__data"><span>id:</span>{{ id }}</div>
         </div>
     </div>
 </template>
 
 <script>
-import axios from "axios"
+import axios from "axios";
 export default {
     data() {
         return {
             userName: "",
             email: "",
             id: null,
-            isEditMode: false,
-        }
+            isEditMode: false
+        };
     },
     mounted() {
-        this.fetchInfo() 
+        this.fetchInfo();
     },
     methods: {
         showEditMode() {
@@ -50,27 +54,25 @@ export default {
         },
         async fetchInfo() {
             try {
-               const res = await axios.get("auth/user-info") 
-               const data = await res.data
-               const {email, username, uid} = data
+                const res = await axios.get("auth/user-info");
+                const data = await res.data;
+                const { email, username, uid } = data;
 
-               this.userName = username
-               this.email = email
-               this.id = uid
-            }
-            catch(error) {
-                throw error
+                this.userName = username;
+                this.email = email;
+                this.id = uid;
+            } catch (error) {
+                throw error;
             }
         },
         async changeUsername() {
             try {
-                await axios.post("auth/username", {username: this.userName})   
-                if (this.isEditMode) {                
+                await axios.post("auth/username", { username: this.userName });
+                if (this.isEditMode) {
                     this.isEditMode = false;
-                }   
-            }
-            catch(error) {
-                throw error
+                }
+            } catch (error) {
+                throw error;
             }
         }
     }

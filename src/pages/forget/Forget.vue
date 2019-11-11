@@ -6,28 +6,26 @@
 
         <InputForm>
             <input
-              class="input"
-              v-model="formData.email"
-              type="email"
-              placeholder="Email"
+                class="input"
+                v-model="formData.email"
+                type="email"
+                placeholder="Email"
             />
 
             <div v-if="submitted && !$v.formData.email.required" class="error">
                 Поле обязательно к заполнению
             </div>
 
-        
-            <div
-                class="error"
-                v-if="submitted && !$v.formData.email.maxLength"                
-            >
+            <div class="error" v-if="submitted && !$v.formData.email.maxLength">
                 Максимальное количество символов не должно превышать 64
             </div>
-            <div class="error">                
+            <div class="error">
                 <div v-if="serverErrors.length">
                     Проверьте пожалуйста правильность:
-                    <div v-for="item in serverErrors" :key="item.statusCode"> {{ item.message }} </div>
-                </div>                
+                    <div v-for="item in serverErrors" :key="item.statusCode">
+                        {{ item.message }}
+                    </div>
+                </div>
             </div>
         </InputForm>
 
@@ -39,13 +37,13 @@
                 >Регистрация</router-link
             >
         </div>
-        
+
         <ButtonForm type="submit" text="Подтвердить" />
     </FormAuth>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 import { mapActions } from "vuex";
 import Indicator from "../../components/indicator/Indicator.vue";
 import FormAuth from "../../components/form-auth/FormAuth.vue";
@@ -68,7 +66,7 @@ export default {
             submitted: false,
             serverErrors: [],
             formData: {
-                email: "",          
+                email: ""
             },
             spinnerSettings: {
                 spinnerColor: "#bada55",
@@ -77,34 +75,35 @@ export default {
             }
         };
     },
-    
+
     methods: {
         async attemptForget() {
             try {
                 this.spinnerSettings.loading = true;
 
-                const res = await axios.post('auth/reset-password', {email: this.formData.email})
-                const data = await res.data
+                const res = await axios.post("auth/reset-password", {
+                    email: this.formData.email
+                });
+                const data = await res.data;
 
-                if(data.errors) {
-                    this.serverErrors = data.errors
+                if (data.errors) {
+                    this.serverErrors = data.errors;
                 } else {
-                    this.$router.push("/login")
+                    this.$router.push("/login");
                 }
-            }
-            catch(error) {
-                throw error
+            } catch (error) {
+                throw error;
             } finally {
                 this.spinnerSettings.loading = false;
             }
         },
-          
+
         submitForm() {
             this.submitted = true;
 
             this.$v.$touch();
 
-            if (this.$v.$invalid) {                
+            if (this.$v.$invalid) {
                 return;
             }
             // return чтобы из функции передать throw в error boundry
@@ -114,5 +113,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

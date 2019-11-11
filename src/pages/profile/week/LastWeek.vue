@@ -1,11 +1,11 @@
 <template>
-        <apexchart
-            type=bar 
-            :options="chartOptions" 
-            :series="series"
-            height="100%"
-        >    
-        </apexchart> 
+    <apexchart
+        type="bar"
+        :options="chartOptions"
+        :series="series"
+        height="100%"
+    >
+    </apexchart>
 </template>
 
 <script>
@@ -14,12 +14,14 @@ import VueApexCharts from "vue-apexcharts";
 export default {
     data() {
         return {
-            series: [{
-                data: [44, 60]
-            }],
-            chartOptions: {  
+            series: [
+                {
+                    data: [44, 60]
+                }
+            ],
+            chartOptions: {
                 dataLabels: {
-                    enabled: true,
+                    enabled: true
                 },
                 tooltip: {
                     enabled: false
@@ -43,38 +45,32 @@ export default {
                 },
                 grid: {
                     row: {
-                        colors: ['#F1F1F1', '#EBEBEB']
+                        colors: ["#F1F1F1", "#EBEBEB"]
                     }
                 },
                 xaxis: {
-                    categories: [
-                        this.$t('week.last'),
-                        this.$t('week.this'),
-                    ],                    
+                    categories: [this.$t("week.last"), this.$t("week.this")]
                 },
                 yaxis: {
-                    tickAmount: 6,
+                    tickAmount: 6
                 }
             }
         };
     },
-    components: { 
-        apexchart: VueApexCharts,
+    components: {
+        apexchart: VueApexCharts
     }
 };
 </script>
 
 <style lang="scss">
-    .apexcharts {        
-        &-xaxis-label {
-
-        }
+.apexcharts {
+    &-xaxis-label {
     }
+}
 
-    @media screen and (max-width: 1370px) {
-        .apexcharts {
-            
-        }
+@media screen and (max-width: 1370px) {
+    .apexcharts {
     }
-
+}
 </style>
