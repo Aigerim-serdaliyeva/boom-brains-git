@@ -1,14 +1,8 @@
 <template>
     <div class="languages">
-        <a @click.prevent="attemptChangeLanguage('ru')" :class="setClass('ru')"
-            >ru</a
-        >
-        <a @click.prevent="attemptChangeLanguage('en')" :class="setClass('en')"
-            >en</a
-        >
-        <a @click.prevent="attemptChangeLanguage('kz')" :class="setClass('kz')"
-            >kz</a
-        >
+        <a @click.prevent="attemptChangeLanguage('ru')" :class="setClass('ru')">ru</a>
+        <a @click.prevent="attemptChangeLanguage('en')" :class="setClass('en')">en</a>
+        <a @click.prevent="attemptChangeLanguage('kz')" :class="setClass('kz')">kz</a>
     </div>
 </template>
 
@@ -34,7 +28,7 @@ export default {
         isActive(value) {
             return this.currentLanguage === value;
         },
-        setClass(val) {
+        setClass(val) {            
             return {
                 active: this.isActive(val),
                 language: true
@@ -45,6 +39,9 @@ export default {
 </script>
 
 <style lang="scss">
+.languages {        
+    margin-bottom: 15px;
+}
 .language {
     font-weight: 300;
     font-size: 13px;

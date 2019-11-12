@@ -1,9 +1,8 @@
 <template>
     <div class="game__section">
-        <!-- <Loading :spinnerSettings="spinnerSettings"> -->
-        <div class="row">
+        <div>
             <transition name="page" mode="out-in">
-                <component :is="currentComponent"></component>
+                <CurrentComponent />
             </transition>
         </div>
         <div class="row game__content" v-if="records.length">
@@ -14,14 +13,13 @@
             >
                 <div
                     class="game"
-                    @click="currentComponent = games[index].target"
+                    @click="selectComponent(game.gameName, index)"
                 >
                     <div class="game__data">
                         <h4 class="game__name">{{ game.name }}</h4>
                         <div class="game__record">
                             <img
                                 src="@/assets/img/game/record-white.png"
-                                alt=""
                             />{{ $t("record") }}: {{ game.record }}
                         </div>
                     </div>
@@ -31,94 +29,64 @@
                 </div>
             </div>
         </div>
-        <!-- </Loading> -->
     </div>
 </template>
 
 <script>
-import ColoredWords from "./ColoredWords.vue";
-import ColoredFigures from "./ColoredFigures.vue";
-import MemorySquare from "./MemorySquare.vue";
-import RememberWords from "./RememberWords.vue";
-import ShulteLetters from "./ShulteLetters.vue";
-import Equation from "./Equation.vue";
-import Calculate from "./Calculate.vue";
-import FindNumber from "./FindNumber.vue";
-import RememberNumber from "./RememberNumber.vue";
-import TableSchulte from "./TableSchulte.vue";
-import Loading from "../../components/loading/Loading.vue";
+import CurrentComponent from './CurrentComponent.vue'
 import { async } from "q";
 import axios from "axios";
+import {mapGetters, mapActions} from "vuex"
 
 export default {
     components: {
-        Loading,
-        TableSchulte,
-        RememberNumber,
-        FindNumber,
-        Calculate,
-        Equation,
-        ShulteLetters,
-        RememberWords,
-        MemorySquare,
-        ColoredFigures,
-        ColoredWords
+        CurrentComponent
     },
     data() {
         return {
-            currentComponent: "",
+            records: [],
             games: [
                 {
-                    url: require("@/assets/img/game/game-1.jpg"),
-                    target: "TableSchulte"
+                    url: require("@/assets/img/game/game-1.png")
                 },
                 {
-                    url: require("@/assets/img/game/game-2.jpg"),
-                    target: "RememberNumber"
+                    url: require("@/assets/img/game/game-2.png")
                 },
                 {
-                    url: require("@/assets/img/game/game-3.jpg"),
-                    target: "FindNumber"
+                    url: require("@/assets/img/game/game-3.png")
                 },
                 {
-                    url: require("@/assets/img/game/game-4.jpg"),
-                    target: "Calculate"
+                    url: require("@/assets/img/game/game-4.png")
                 },
                 {
-                    url: require("@/assets/img/game/game-5.jpg"),
-                    target: "Equation"
+                    url: require("@/assets/img/game/game-5.png")
                 },
                 {
-                    url: require("@/assets/img/game/game-6.jpg"),
-                    target: "ShulteLetters"
+                    url: require("@/assets/img/game/game-6.png")
                 },
                 {
-                    url: require("@/assets/img/game/game-7.jpg"),
-                    target: "RememberWords"
+                    url: require("@/assets/img/game/game-7.png")
                 },
                 {
-                    url: require("@/assets/img/game/game-8.jpg"),
-                    target: "MemorySquare"
+                    url: require("@/assets/img/game/game-8.png")
                 },
                 {
-                    url: require("@/assets/img/game/game-9.jpg"),
-                    target: "ColoredFigures"
+                    url: require("@/assets/img/game/game-9.png")
                 },
                 {
-                    url: require("@/assets/img/game/game-9.jpg"),
-                    target: "ColoredWords"
+                    url: require("@/assets/img/game/game-9.png")
                 }
-            ],
-            records: []
-            // spinnerSettings: {
-            //     spinnerColor: '#bada55',
-            //     loading: false,
-            //     size: 20
-            // }
+            ]
         };
     },
     mounted() {
         this.fetchRecords();
+    },
+    computed: {
+        ...mapGetters({
+            game: "gamesList/game",
+            index: "gamesList/index"
+        })
     },
     methods: {
         async fetchRecords() {
@@ -130,6 +98,14 @@ export default {
             } catch (error) {
                 throw error;
             }
+        },
+        ...mapActions({
+            fetchInfo: "gamesList/fetchInfo",
+            changeIndex: "gamesList/changeIndex"
+        }),
+        selectComponent(gameName, index) {
+            this.fetchInfo(gameName);
+            this.changeIndex(index);
         }
     }
 };

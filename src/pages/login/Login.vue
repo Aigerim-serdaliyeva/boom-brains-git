@@ -1,5 +1,5 @@
 <template>
-    <FormAuth @submitForm="submitForm">
+    <FormAuth @submitForm="submitForm" :title="$t('form.login')">
         <template v-slot:indicator v-if="spinnerSettings.loading">
             <Indicator :spinnerSettings="spinnerSettings" />
         </template>
@@ -13,11 +13,11 @@
             />
 
             <div v-if="submitted && !$v.formData.email.required" class="error">
-                Поле обязательно к заполнению
+                {{ $t("error.textRequired") }}
             </div>
 
             <div v-if="submitted && !$v.formData.email.maxLength" class="error">
-                Максимальное количество символов не должно превышать 64
+                {{ $t("error.textMax64") }}
             </div>
         </InputForm>
 
@@ -33,19 +33,19 @@
                 v-if="submitted && !$v.formData.password.required"
                 class="error"
             >
-                Поле обязательно к заполнению
+                {{ $t("error.textRequired") }}
             </div>
 
             <div
                 v-if="submitted && !$v.formData.password.maxLength"
                 class="error"
             >
-                Максимальное количество символов не должно превышать 32
+                {{ $t("error.textMax32") }}
             </div>
 
             <div class="error">
                 <div v-if="serverErrors.length">
-                    Проверьте пожалуйста правильность:
+                    {{ $t("error.textRight") }}
                     <div
                         v-for="item in filterServerErrors"
                         :key="item.statusCode"
@@ -58,21 +58,21 @@
 
         <div class="login__links">
             <router-link class="login__link" to="forget"
-                >Забыли пароль?</router-link
+                >{{ $t("form.forgetPassword") }}</router-link
             >
             <router-link class="login__link" to="registration"
-                >Регистрация</router-link
+                >{{ $t("form.registration") }}</router-link
             >
         </div>
 
-        <SocialIcons />
-        <ButtonForm type="submit" text="Войти" />
+        <Locale />
+        <ButtonForm type="submit" :text="$t('form.logIn')" />
     </FormAuth>
 </template>
 
 <script>
+import Locale from '../../components/Locale.vue'
 import Indicator from "../../components/indicator/Indicator.vue";
-import SocialIcons from "../../components/social-icons/SocialIcons.vue";
 import InputForm from "../../components/input-form/InputForm.vue";
 import FormAuth from "../../components/form-auth/FormAuth.vue";
 import ButtonForm from "../../components/button-form/ButtonForm.vue";
@@ -84,9 +84,9 @@ export default {
     components: {
         ButtonForm,
         FormAuth,
-        SocialIcons,
         InputForm,
-        Indicator
+        Indicator, 
+        Locale
     },
     data() {
         return {

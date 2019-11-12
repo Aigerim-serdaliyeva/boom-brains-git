@@ -12,6 +12,26 @@ export default new VueI18n({
     formatter,
     messages: {
         ru: {
+            form: {
+                login: "Войти на сайт",
+                forget: "Восстановление пароля",
+                forgetPassword: "Забыли пароль?",
+                registration: "Регистрация",
+                logIn: "Войти",
+                account: "У вас уже есть аккаунт?",
+                authorization: "Авторизация через соц сети",
+                confirm: "Подтвердить"
+            },
+            error: {
+                textRequired: "Поле обязательно к заполнению",
+                textMax64: "Максимальное количество символов не должно превышать 64",
+                textRight: "Проверьте пожалуйста правильность:",
+                textMax32: "Максимальное количество символов не должно превышать 32",
+                textMax16: "Максимальное количество символов не должно превышать 16",
+                textEmail: "Такой email уже используется",
+                textNikname: "Такой никнейм уже используется",
+                textPassword: "Пароли не совпадают"
+            },
             widget: {
                 week: "Недельная активность",
                 month: "Прогресс за месяц",
@@ -50,6 +70,26 @@ export default new VueI18n({
         },
 
         en: {
+            form: {
+                login: "Log in to the site",
+                forget: "Password recovery",
+                forgetPassword: "Forgot password?",
+                registration: "Registration",
+                logIn: "Login",
+                account: "Already have an account?",
+                authorization: "Authorization through social networks",
+                confirm: "Confirm"
+            },
+            error: {
+                textRequired: "This field is required",
+                textMax64: "The maximum number of characters must not exceed 64",
+                textRight: "Please check the correctness:",
+                textMax32: "The maximum number of characters must not exceed 32",
+                textMax16: "The maximum number of characters must not exceed 16",
+                textEmail: "This email is already in use",
+                textNikname: "This nickname is already in use",
+                textPassword: "Passwords do not match"
+            },
             widget: {
                 week: "Weekly activities",
                 month: "Monthly progress",
@@ -88,6 +128,26 @@ export default new VueI18n({
         },
 
         kz: {
+            form: {
+                login: "Сайтқа кіру",
+                forget: "Паролді қалпына келтіру",
+                forgetPassword: "Паролді ұмыттыңыз ба?",
+                registration: "Тіркелу",
+                logIn: "Кіру",
+                account: "Аккаунтыңыз бар ма?",
+                authorization: "Әлеуметтік желілер арқылы авторизациялау",
+                confirm: "Растау"
+            },
+            error: {
+                textRequired: "Кесте толтырылуға міндетті",
+                textMax64: "Символдардың саны 64-тен аспауы керек",
+                textRight: "Дұрыстығын тексеріңіз:",
+                textMax32: "Символдардың саны 32-тен аспауы керек",
+                textMax16: "Символдардың саны 16-тен аспауы керек",
+                textEmail: "Бұл email бұрыннан қолданылуда",
+                textNikname: "Бұл никнейм қолданыста",
+                textPassword: "Парольдер сәйкес келмейді"
+            },
             widget: {
                 week: "Апталық белсенділік",
                 month: "Ай сайынғы прогресс",

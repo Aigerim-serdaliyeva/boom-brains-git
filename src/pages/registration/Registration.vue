@@ -1,5 +1,5 @@
 <template>
-    <FormAuth @submitForm="submitForm" title="Регистрация">
+    <FormAuth @submitForm="submitForm" :title="$t('form.registration')">
         <template v-slot:indicator v-if="spinnerSettings.loading">
             <Indicator :spinnerSettings="spinnerSettings" />
         </template>
@@ -13,7 +13,7 @@
             />
 
             <div v-if="submitted && !$v.formData.email.required" class="error">
-                Поле обязательно к заполнению
+                {{ $t("error.textRequired") }}
             </div>
 
             <div
@@ -24,7 +24,7 @@
             </div>
 
             <div class="error" v-if="submitted && !$v.formData.email.maxLength">
-                Максимальное количество символов не должно превышать 64
+               {{ $t("error.textMax64") }}
             </div>
         </InputForm>
 
@@ -40,18 +40,18 @@
                 v-if="submitted && !$v.formData.username.required"
                 class="error"
             >
-                Поле обязательно к заполнению
+                {{ $t("error.textRequired") }}
             </div>
 
             <div
                 v-if="submitted && !$v.formData.username.isUnique"
                 :class="['error', { pending: $v.formData.username.$pending }]"
             >
-                Такой никнейм уже используется
+                {{ $t("error.textNikname") }}
             </div>
 
             <div v-if="submitted && !$v.formData.username.maxLength">
-                Максимальное количество символов не должно превышать 16
+                {{ $t("error.textMax16") }}
             </div>
         </InputForm>
 
@@ -67,14 +67,14 @@
                 v-if="submitted && !$v.formData.password.required"
                 class="error"
             >
-                Поле обязательно к заполнению
+                {{ $t("error.textRequired") }}
             </div>
 
             <div
                 v-if="submitted && !$v.formData.password.maxLength"
                 class="error"
             >
-                Максимальное количество символов не должно превышать 32
+                {{ $t("error.textMax32") }}
             </div>
         </InputForm>
 
@@ -90,25 +90,26 @@
                 v-if="submitted && !$v.formData.confirmPassword.sameAsPassword"
                 class="error"
             >
-                Пароли не совпадают
+                {{ $t("error.textPassword") }}
             </div>
         </InputForm>
 
         <div class="login__links login__links--min">
-            <span>У вас уже есть аккаунт?</span>
-            <router-link class="login__link" to="/login">Войти</router-link>
+            <span>{{ $t("form.account") }}</span>
+            <router-link class="login__link" to="/login">{{ $t("form.logIn") }}</router-link>
         </div>
 
-        <!-- <SocialIcons /> -->
-        <ButtonForm type="submit" text="Регистрация" />
+        <Locale />
+
+        <ButtonForm type="submit" :text="$t('form.registration')" />
     </FormAuth>
 </template>
 
 <script>
+import Locale from '../../components/Locale.vue'
 import { mapActions } from "vuex";
 import Indicator from "../../components/indicator/Indicator.vue";
 import FormAuth from "../../components/form-auth/FormAuth.vue";
-import SocialIcons from "../../components/social-icons/SocialIcons.vue";
 import InputForm from "../../components/input-form/InputForm.vue";
 import ButtonForm from "../../components/button-form/ButtonForm.vue";
 import { validateRegistration } from "./validation";
@@ -117,10 +118,10 @@ export default {
     mixins: [validateRegistration],
     components: {
         ButtonForm,
-        SocialIcons,
         InputForm,
         FormAuth,
-        Indicator
+        Indicator, 
+        Locale
     },
     data() {
         return {

@@ -4,9 +4,8 @@
         <div class="game-widget__header">
             <div class="game-widget__record">
                 <div class="game-widget__record__number">
-                    <img src="@/assets/img/game/record.png" alt="" /><span>{{
-                        youRecord
-                    }}</span>
+                    <img src="@/assets/img/game/record.png" alt="" />
+                    <span>{{youRecord}}</span>
                 </div>
                 <div class="game-widget__record__title">
                     {{ $t("record.youRecord") }}
@@ -15,14 +14,7 @@
             <div class="game-widget__record">
                 <div class="game-widget__record__number">
                     <img src="@/assets/img/game/record.png" alt="" />
-                </div>
-                <div class="game-widget__record__title">
-                    {{ $t("record.averageIndicator") }}
-                </div>
-            </div>
-            <div class="game-widget__record">
-                <div class="game-widget__record__number">
-                    <img src="@/assets/img/game/record.png" alt="" />
+                    <span>{{worldRecord}}</span>
                 </div>
                 <div class="game-widget__record__title">
                     {{ $t("record.worldRecord") }}
@@ -53,26 +45,9 @@ export default {
         youRecord: {
             type: Number
         },
-        averageIndicator: {
-            type: String
-            // default: "Средний показатель"
-        },
         worldRecord: {
-            type: String
-            // default: "Мировой рекорд"
+            type: Number
         },
-        gameRules: {
-            type: String
-            // default: "Правила игры:"
-        },
-        gameStimulates: {
-            type: String
-            // default: "Тренажер стимулирует:"
-        },
-        gameStimulatesText: {
-            type: String
-            // default: "Память, Внимание"
-        }
     },
     i18n: {
         messages: {
@@ -128,25 +103,30 @@ export default {
         font-weight: 500;
         font-size: 23px;
         text-align: center;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     &__header {
+        max-width: 300px;
+        width: 100%;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 10px;
+        margin: 0 auto 5px;
     }
 
     &__record {
         &__number {
             text-align: center;
+            img {
+                margin-right: 6px;
+            }
         }
     }
 
     &__content {
         background: #f1f1f1;
         border-radius: 8px;
-        padding: 20px 30px;
+        padding: 15px 20px 15px 20px;
     }
 
     &__block {

@@ -17,8 +17,7 @@
 export default {
     props: {
         title: {
-            type: String,
-            default: "Войти на сайт"
+            type: String
         }
     },
     methods: {

@@ -1,5 +1,5 @@
 <template>
-    <FormAuth @submitForm="submitForm" title="Восстановление пароля">
+    <FormAuth @submitForm="submitForm" :title="$t('form.forget')">
         <template v-slot:indicator v-if="spinnerSettings.loading">
             <Indicator :spinnerSettings="spinnerSettings" />
         </template>
@@ -13,15 +13,15 @@
             />
 
             <div v-if="submitted && !$v.formData.email.required" class="error">
-                Поле обязательно к заполнению
+                {{ $t("error.textRequired") }}
             </div>
 
             <div class="error" v-if="submitted && !$v.formData.email.maxLength">
-                Максимальное количество символов не должно превышать 64
+                {{ $t("error.textMax64") }}
             </div>
             <div class="error">
                 <div v-if="serverErrors.length">
-                    Проверьте пожалуйста правильность:
+                    {{ $t("error.textRight") }}
                     <div v-for="item in serverErrors" :key="item.statusCode">
                         {{ item.message }}
                     </div>
@@ -31,23 +31,25 @@
 
         <div class="login__links">
             <router-link class="login__link" to="login"
-                >Войти на сайт</router-link
+                >{{ $t("form.login") }}</router-link
             >
             <router-link class="login__link" to="registration"
-                >Регистрация</router-link
+                >{{ $t("form.registration") }}</router-link
             >
         </div>
 
-        <ButtonForm type="submit" text="Подтвердить" />
+        <Locale />
+
+        <ButtonForm type="submit" :text="$t('form.confirm')" />
     </FormAuth>
 </template>
 
 <script>
+import Locale from '../../components/Locale.vue'
 import axios from "axios";
 import { mapActions } from "vuex";
 import Indicator from "../../components/indicator/Indicator.vue";
 import FormAuth from "../../components/form-auth/FormAuth.vue";
-import SocialIcons from "../../components/social-icons/SocialIcons.vue";
 import InputForm from "../../components/input-form/InputForm.vue";
 import ButtonForm from "../../components/button-form/ButtonForm.vue";
 import { validateForget } from "./validation";
@@ -56,10 +58,10 @@ export default {
     mixins: [validateForget],
     components: {
         ButtonForm,
-        SocialIcons,
         InputForm,
         FormAuth,
-        Indicator
+        Indicator, 
+        Locale
     },
     data() {
         return {

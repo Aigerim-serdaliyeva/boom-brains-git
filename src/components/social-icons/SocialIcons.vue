@@ -12,7 +12,7 @@
         <a href="" class="social-link social-link--twitter"
             ><font-awesome-icon :icon="['fab', 'twitter']"
         /></a>
-        <div class="social-icons__title">Авторизация через соц сети</div>
+        <div class="social-icons__title">{{ $t("form.authorization") }}</div>
     </div>
 </template>
 
