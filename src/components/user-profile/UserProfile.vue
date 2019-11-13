@@ -19,7 +19,6 @@
                     <img
                         @click="showEditMode"
                         src="@/assets/img/pen.png"
-                        alt=""
                     />
                 </div>
             </div>
@@ -112,6 +111,7 @@ export default {
         margin-bottom: 10px;
         img {
             margin-left: 10px;
+            cursor: pointer;
         }
     }
 

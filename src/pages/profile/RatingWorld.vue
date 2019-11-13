@@ -1,7 +1,7 @@
 <template>
     <div class="rating" v-if="records.length">
-        <ul class="rating__world">
-            <li v-for="player in records" :key="player.position">
+        <ul class="rating__world rating__ul">
+            <li class="rating__list" v-for="player in records" :key="player.position" :class="{ active: player.username === userName }">
                 <span>{{ player.position }}. {{ player.username }}</span>
                 <span>{{ player.totalRecord }}</span>
             </li>
@@ -24,13 +24,26 @@ export default {
     data() {
         return {
             records: [],
-            myRecord: {}
+            myRecord: {},
+            userName: ""
         };
     },
     mounted() {
         this.fetchWorldRating();
+        this.fetchInfo();
     },
     methods: {
+        async fetchInfo() {
+            try {
+                const res = await axios.get("auth/user-info");
+                const data = await res.data;
+                const { username } = data;
+
+                this.userName = username;
+            } catch (error) {
+                throw error;
+            }
+        },
         async fetchWorldRating() {
             try {
                 const res = await axios.get("api/world-record");
@@ -49,16 +62,22 @@ export default {
 <style lang="scss">
 .rating {
     height: 100%;
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 300;
+        font-size: 13px;
+        &.active {
+            font-weight: bold;
+        }
+    }
+    &__ul {
+        overflow-y: auto;
+    }
     &__world {
         height: 80%;
         overflow-y: auto;
-        margin-bottom: 10px;
-        li {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 300;
-            font-size: 13px;
-        }
+        margin-bottom: 10px;        
     }
     &__player {
         li {

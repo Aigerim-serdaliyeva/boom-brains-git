@@ -1,14 +1,10 @@
 <template>
     <div class="rating" v-if="records.length">
-        <ul class="rating__world">
-            <li v-for="player in records" :key="player.position">
+        <ul class="rating__ul">
+            <li class="rating__list" v-for="player in records" :key="player.position" :class="{ active: player.username === userName }">
                 <span>{{ player.position }}. {{ player.username }}</span>
                 <span>{{ player.totalRecord }}</span>
             </li>
-        </ul>
-
-        <ul class="rating__player">
-            <!-- <li><span>{{ myRecord.position }}. {{ myRecord.username }}</span> <span>{{ myRecord.totalRecord }}</span></li> -->
         </ul>
     </div>
 </template>
@@ -21,13 +17,26 @@ export default {
     components: { SubPage },
     data() {
         return {
-            records: []
+            records: [],
+            userName: ""
         };
     },
     mounted() {
         this.fetchWorldRating();
+        this.fetchInfo();            
     },
-    methods: {
+    methods: {        
+        async fetchInfo() {
+            try {
+                const res = await axios.get("auth/user-info");
+                const data = await res.data;
+                const { username } = data;
+
+                this.userName = username;
+            } catch (error) {
+                throw error;
+            }
+        },
         async fetchWorldRating() {
             try {
                 const res = await axios.get("api/friend-record");
@@ -42,4 +51,6 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+    
+</style>
