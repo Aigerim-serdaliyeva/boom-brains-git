@@ -1,12 +1,16 @@
 <template>
-    <div class="month__chart">
-        <apexchart
-            type="area"
-            height="100%"
-            :series="series"
-            :options="chartOptions"
-        />
-    </div>
+    <div class="chart__min">
+      <div class="month__chart--min">
+          <apexchart
+              type="area"
+              height="100%"
+              :series="series"
+              :options="chartOptions"
+          />
+      </div>      
+        <div class="chart__min__os chart__min__os--y">{{ $t('chart.result') }}</div>
+        <div class="chart__min__os chart__min__os--x">{{ $t('chart.month') }}</div>
+    </div>    
 </template>
 
 <script>
@@ -18,23 +22,24 @@ export default {
         return {
             series: [
                 {
-                    name: "Series 1",
-                    data: [
-                        ["01/06/2019", 34],
-                        ["03/10/2019", 43],
-                        ["05/11/2019", 31],
-                        ["07/15/2019", 43],
-                        ["09/20/2019", 33],
-                        ["12/22/2019", 52]
-                    ]
+                  data: [
+                      ["06/06/2019", 34],
+                      ["07/10/2019", 43],
+                      ["08/11/2019", 31],
+                      ["09/15/2019", 43],
+                      ["10/20/2019", 33],
+                      ["11/22/2019", 52]
+                  ]
                 }
             ],
             chartOptions: {
+                dataLabels: {
+                  enabled: false
+                },  
                 fill: {
                     type: "gradient",
                     gradient: {
                         shade: "#06CC02",
-                        // gradientToColors: ['#FFD600', '#06CC02'],
                         shadeIntensity: 1,
                         opacityFrom: 1,
                         opacityTo: 1,
@@ -43,11 +48,11 @@ export default {
                             {
                                 offset: 0,
                                 color: "#06CC02",
-                                opacity: 0.7
+                                opacity: 0.8
                             },
                             {
-                                offset: 150,
-                                color: "#FFD600",
+                                offset: 170,
+                                color: "#fff",
                                 opacity: 0.7
                             }
                         ]
@@ -66,29 +71,16 @@ export default {
                     curve: "smooth"
                 },
                 markers: {
-                    size: 2,
+                    size: 0,
                     opacity: 0.9,
                     colors: ["#06CC02"],
                     strokeColor: "#fff",
-                    strokeWidth: 1,
-                    hover: {
-                        size: 4
-                    }
+                    strokeWidth: 1
                 },
                 xaxis: {
                     type: "datetime",
-                    // tickAmount: 30,
-                    // min: new Date("01/01/2019").getTime(),
-                    // max: new Date("01/31/2019").getTime(),
                     labels: {
-                        rotate: -45,
-                        rotateAlways: true,
-                        formatter: function(val, timestamp) {
-                            return $this
-                                .$moment(new Date(timestamp))
-                                .format("DD.MM");
-                            // }
-                        }
+                        show: false
                     }
                 },
                 yaxis: {
@@ -125,4 +117,80 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.chart {
+  &__min {    
+    position: relative;
+    &__os {
+      position: absolute;
+      font-size: 12px;
+      color: #888;
+      font-weight: 300;
+      &--y {
+        left: -20px;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+      }
+      &--x {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -5px;
+      }
+    }
+  }
+}
+  .month__chart {
+     &--min {
+        height: 170px;
+        width: 250px;
+        margin-left: -25px;
+        margin-bottom: 10px;
+    }    
+  }
+
+  @media screen and (max-width: 1370px) {
+
+    .chart {
+      &__min {    
+        &__os {
+          &--y {
+            left: -18px;
+          }
+          &--x {
+            bottom: -0px;
+          }
+        }
+      }
+    }
+
+    .month__chart {
+      &--min {
+          width: 220px;
+          margin-left: -25px;
+          margin-bottom: 10px;
+      }    
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+
+    .chart {
+      &__min {    
+        &__os {
+          font-size: 11px;
+          &--y {
+            left: -15px;
+          }
+        }
+      }
+    }
+
+    .month__chart {
+      &--min {
+          width: 200px;
+          margin-bottom: 5px;
+      }    
+    }
+  }
+ 
+</style>

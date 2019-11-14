@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import SubPage from "../../components/sub-page/SubPage.vue";
+import SubPage from '../../../components/sub-page/SubPage.vue'
 import VueApexCharts from "vue-apexcharts";
 
 export default {
@@ -63,16 +63,21 @@ export default {
                 plotOptions: {
                     pie: {
                         donut: {
-                            // size: '65%',
                             labels: {
                                 show: true,
                                 name: {
+                                    show: true,
                                     color: "#FD9300"
                                 },
                                 value: {
-                                    // Рекорд:
+                                    show: true,
                                     color: "#FD9300"
-                                }
+                                },
+                                // total: {
+                                //     show: true,
+                                //     color: "#FD9300",
+                                //     label: this.$t("chart.total")
+                                // }
                             }
                         }
                     }

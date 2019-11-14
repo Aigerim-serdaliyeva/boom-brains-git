@@ -24,11 +24,11 @@ export default {
             ],
             chartOptions: {
                 labels: [
-                    "Реакция",
-                    "Память",
-                    "Аккуратность",
-                    "Внимание",
-                    "Логика"
+                    this.$t("chart.reaction"),
+                    this.$t("chart.memory"),
+                    this.$t("chart.accuracy"),
+                    this.$t("chart.attention"),
+                    this.$t("chart.logics"),
                 ],
                 tooltip: {
                     enabled: false

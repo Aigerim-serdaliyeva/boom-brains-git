@@ -1,7 +1,8 @@
 <template>
     <div>
         <SubPage :title="$t('widget.week')">
-            <div class="row">
+            <NoDataChart v-if="!dataResponse" />
+            <div class="row" v-else>
                 <div class="col-md-4 col-sm-6 col-8">
                     <h2 class="apexchart__title">{{ $tc("title", 0) }}</h2>
                     <div class="week__chart">
@@ -20,20 +21,27 @@
                         </apexchart>
                     </div>
                 </div>
+                <div class="apexchart__text">{{ $t("text") }}</div>
             </div>
-            <div class="apexchart__text">{{ $t("text") }}</div>
         </SubPage>
     </div>
 </template>
 
 <script>
+import NoDataChart from '../../../components/NoDataChart.vue'
 import LastWeek from "./LastWeek.vue";
 import SubPage from "../../../components/sub-page/SubPage.vue";
 import VueApexCharts from "vue-apexcharts";
+import axios from "axios";
 
 export default {
     data() {
-        return {
+        return {            
+            dataResponse: {
+                prev: null,
+                cur: null,
+                week: null,
+            },
             series: [
                 {
                     data: [44, 35, 7, 67, 13, 20, 25]
@@ -91,10 +99,30 @@ export default {
     components: {
         SubPage,
         apexchart: VueApexCharts,
-        LastWeek
+        LastWeek, NoDataChart
     },
     mounted() {
-        console.log(this.$i18n.locale);
+        this.fetchWeek();
+    },
+    methods: {
+        async fetchWeek() {
+            try {
+                const res = await axios.get("api/week");
+                const data = await res.data;
+                const { prev, cur, week } = data;
+
+                if(!data) {
+                    this.dataResponse = false
+                    return
+                }
+
+                this.dataResponse.prev = prev;
+                this.dataResponse.cur = cur;
+                this.dataResponse.week = week;
+            } catch (error) {
+                throw error;
+            }
+        }
     },
     i18n: {
         messages: {

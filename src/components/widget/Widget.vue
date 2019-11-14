@@ -57,16 +57,21 @@ export default {
 
 @media screen and (max-width: 1370px) {
     .widget {
-        padding: 15px 15px 10px;
+        padding: 10px 10px 10px;
+        &__title {
+            margin-bottom: 5px;
+        }
+        &__content {
+            &__title {
+                font-size: 12px;
+            }
+        }
     }
 }
 
 @media screen and (max-width: 1200px) {
     .widget {
-        padding: 10px;
-        &__title {
-            margin-bottom: 10px;
-        }
+        padding: 7px 10px;
     }
 }
 </style>

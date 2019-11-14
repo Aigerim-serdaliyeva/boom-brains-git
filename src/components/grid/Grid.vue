@@ -19,13 +19,11 @@ export default {
 
 @media screen and (max-width: 1370px) {
     .grid {
-        height: 620px;
+        height: 660px;
     }
 }
 
 @media screen and (max-width: 1200px) {
-    .grid {
-        height: 550px;
-    }
+    
 }
 </style>

@@ -9,7 +9,7 @@ export const profileChildren = [
     },
     {
         path: "game-data",
-        component: () => import("../../pages/profile/GameData.vue")
+        component: () => import("../../pages/profile/game-data/GameData.vue")
     },
     {
         path: "rating-friends",
@@ -21,7 +21,7 @@ export const profileChildren = [
     },
     {
         path: "age",
-        component: () => import("../../pages/profile/Age.vue")
+        component: () => import("../../pages/profile/age/Age.vue")
     },
     {
         path: "records",

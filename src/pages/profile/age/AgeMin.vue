@@ -1,19 +1,19 @@
 <template>
-    <SubPage :title="$t('widget.age')">
-        <div class="age__chart">
+    <div class="chart__min">
+        <div class="age__chart--min">
             <apexchart
                 type="bar"
                 height="100%"
                 :options="chartOptions"
                 :series="series"
             />
-        </div>
-        <div class="apexchart__text">{{ $t("age.text") }}</div>
-    </SubPage>
+        </div>      
+        <div class="chart__min__os chart__min__os--y">{{ $t('chart.indicators') }}</div>
+        <div class="chart__min__os chart__min__os--x">{{ $t('chart.age') }}</div>
+      </div> 
 </template>
 
 <script>
-import SubPage from "../../components/sub-page/SubPage.vue";
 import VueApexCharts from "vue-apexcharts";
 export default {
     data() {
@@ -31,10 +31,10 @@ export default {
                 tooltip: {
                     enabled: false
                 },
-                chart: {
-                    // id: 'basic-bar'
-                },
                 xaxis: {
+                  labels: {
+                        show: false
+                    },
                     categories: [
                         this.$tc("years", "10-15"),
                         this.$tc("years", "15-20"),
@@ -65,35 +65,37 @@ export default {
         };
     },
     components: {
-        SubPage,
         apexchart: VueApexCharts
-    },
-    i18n: {
-        messages: {
-            ru: {
-                age: {
-                    text:
-                        "По нашим данным наибольшая активность мозга проявляется в возрасте от 17 до 35 лет. Существую “люди исключения” с достаточными тренировками мозговой деятельности некоторые люди поддерживают его активность в хорошей форме даже до 50-60 лет."
-                }
-            },
-            en: {
-                age: {
-                    text: ""
-                }
-            },
-            kz: {
-                age: {
-                    text:
-                        "Біздің мәліметтеріміз бойынша, мидың ең жоғары белсенділігі 17-ден 35 жасқа дейін байқалады. Кейбір адамдар миын жаттықтыру арқылы, 50-60 жасқа дейін өзін жақсы деңгейде ұстайды."
-                }
-            }
-        }
     }
 };
 </script>
 
 <style lang="scss">
 .age__chart {
-    height: 350px;
+    &--min {
+      height: 170px;
+        width: 250px;
+        margin-left: -20px;
+        margin-bottom: 10px;
+    }
 }
+
+@media screen and (max-width: 1370px) {
+  .age__chart {
+    &--min {
+        width: 230px;
+        margin-bottom: 10px;
+    }    
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .age__chart {
+      &--min {
+          width: 200px;
+          margin-bottom: 5px;
+      }    
+    }
+  }
 </style>

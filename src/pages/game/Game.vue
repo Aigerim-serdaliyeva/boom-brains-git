@@ -1,6 +1,6 @@
 <template>
     <div class="game__section">
-        <div>
+        <div :key="key">
             <transition name="page" mode="out-in">
                 <CurrentComponent />
             </transition>
@@ -85,10 +85,16 @@ export default {
     computed: {
         ...mapGetters({
             game: "gamesList/game",
-            index: "gamesList/index"
+            index: "gamesList/index",
+            key: "language/key"
         })
     },
     methods: {
+        ...mapActions({
+            fetchInfo: "gamesList/fetchInfo",
+            changeIndex: "gamesList/changeIndex",
+            changeKey: "language/changeKey"
+        }),
         async fetchRecords() {
             try {
                 const res = await axios.get("api/games-list");
@@ -99,13 +105,10 @@ export default {
                 throw error;
             }
         },
-        ...mapActions({
-            fetchInfo: "gamesList/fetchInfo",
-            changeIndex: "gamesList/changeIndex"
-        }),
         selectComponent(gameName, index) {
             this.fetchInfo(gameName);
             this.changeIndex(index);
+            this.changeKey();
         }
     }
 };

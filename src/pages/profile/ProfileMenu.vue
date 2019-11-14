@@ -7,7 +7,8 @@
             >
                 <router-link to="/profile/week">
                     <div class="widget__img">
-                        <img src="@/assets/img/week.png" alt="" />
+                        <WeekMin />
+                        <!-- <img src="@/assets/img/week.png" alt="" /> -->
                     </div>
                 </router-link>
             </Widget>
@@ -22,7 +23,8 @@
             >
                 <router-link to="/profile/month">
                     <div class="widget__img">
-                        <img src="@/assets/img/month.png" alt="" />
+                        <MonthMin />
+                        <!-- <img src="@/assets/img/month.png" alt="" /> -->
                     </div>
                 </router-link>
             </Widget>
@@ -37,7 +39,8 @@
             >
                 <router-link to="/profile/game-data">
                     <div class="widget__img">
-                        <img src="@/assets/img/game-data.png" alt="" />
+                        <GameDataMin />
+                        <!-- <img src="@/assets/img/game-data.png" alt="" /> -->
                     </div>
                 </router-link>
             </Widget>
@@ -74,7 +77,8 @@
             >
                 <router-link to="/profile/age">
                     <div class="widget__img">
-                        <img src="@/assets/img/age.png" alt="" />
+                        <AgeMin />
+                        <!-- <img src="@/assets/img/age.png" alt="" /> -->
                     </div>
                 </router-link>
             </Widget>
@@ -111,6 +115,10 @@
 </template>
 
 <script>
+import GameDataMin from './game-data/GameDataMin.vue'
+import AgeMin from './age/AgeMin.vue'
+import MonthMin from './month/MonthMin.vue'
+import WeekMin from './week/WeekMin.vue'
 import RatingFriends from "./RatingFriends.vue";
 import RatingWorld from "./RatingWorld.vue";
 import Records from "./Records.vue";
@@ -124,7 +132,7 @@ export default {
         Radar,
         Records,
         RatingWorld,
-        RatingFriends
+        RatingFriends, WeekMin, MonthMin, AgeMin, GameDataMin
     },
     i18n: {
         messages: {

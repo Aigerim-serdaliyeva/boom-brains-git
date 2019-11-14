@@ -64,6 +64,18 @@ export default new VueI18n({
                 last: "Прошлая неделя",
                 this: "Эта неделя"
             },
+            chart: {
+                result: "Результат",
+                month: "Месяц",
+                age: "Возраст",               
+                indicators: "Показатели",
+                total: "Общий",
+                reaction: "Реакция",
+                memory: "Память",
+                accuracy: "Аккуратность",
+                attention: "Внимание",
+                logics: "Логика"
+            },
             years: "{count} лет",
             exit: "Выход",
             record: "Рекорд"
@@ -122,6 +134,18 @@ export default new VueI18n({
                 last: "Last week",
                 this: "This week"
             },
+            chart: {
+                result: "Result",
+                month: "Month",
+                age: "Age",               
+                indicators: "Indicators",
+                total: "Total",
+                reaction: "Reaction",
+                memory: "Memory",
+                accuracy: "Accuracy",
+                attention: "Attention",
+                logics: "Logics"
+            },
             years: "{count} years",
             exit: "Exit",
             record: "Record"
@@ -179,6 +203,18 @@ export default new VueI18n({
                 sun: "жб",
                 last: "Өткен апта",
                 this: "Осы апта"
+            },
+            chart: {
+                result: "Нәтиже",
+                month: "Ай",
+                age: "Жасы",               
+                indicators: "Көрсеткіштер",
+                total: "Барлығы",
+                reaction: "Реакция",
+                memory: "Жад",
+                accuracy: "Ұқыптылық",
+                attention: "Назар аудару",
+                logics: "Логика"
             },
             years: "{count} жас",
             exit: "Шығу",

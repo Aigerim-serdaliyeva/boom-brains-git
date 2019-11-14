@@ -30,6 +30,7 @@
 
 <script>
 import axios from "axios";
+import { mapGetters, mapActions } from "vuex";
 export default {
     data() {
         return {
@@ -43,6 +44,9 @@ export default {
         this.fetchInfo();
     },
     methods: {
+        ...mapActions({
+            changeKey: "language/changeKey"
+        }),
         showEditMode() {
             this.isEditMode = true;
             setTimeout(() => {
@@ -69,6 +73,7 @@ export default {
                 await axios.post("auth/username", { username: this.userName });
                 if (this.isEditMode) {
                     this.isEditMode = false;
+                    this.changeKey();
                 }
             } catch (error) {
                 throw error;

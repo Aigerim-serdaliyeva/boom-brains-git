@@ -68,11 +68,6 @@ export default {
                     width: 0,
                     curve: "smooth"
                 },
-                yaxis: {
-                    title: {
-                        text: "Результат"
-                    }
-                },
                 markers: {
                     size: 2,
                     opacity: 0.9,
@@ -95,7 +90,6 @@ export default {
                             return $this
                                 .$moment(new Date(timestamp))
                                 .format("DD.MM");
-                            // }
                         }
                     }
                 },
