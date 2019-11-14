@@ -155,14 +155,13 @@ export default {
             }
         },
         // валидация vuelidate не возвращает промис , поэтому делаем отдельную проверку
-        validPromise() {
+        waitForValidation() {
             return new Promise(resolve => {
                 const unwatch = this.$watch(
-                    () => !this.$v.$invalid,
-                    isValid => {
-                        if (isValid) {
-                            unwatch();
-                            resolve();
+                    () => !this.$v.$pending,
+                    isNotPending => {
+                        if (isNotPending) {                            
+                            resolve(!this.$v.$invalid);
                         }
                     },
                     { immediate: true }
@@ -170,14 +169,13 @@ export default {
             });
         },
         async submitForm() {
-            this.submitted = true;
+            this.submitted = true;            
 
-            this.$v.$touch();
-
-            await this.validPromise();
-
-            // return чтобы из функции передать throw в error boundry
-            return this.attemptRegister();
+            const isValid = await this.waitForValidation();
+            if (isValid) {
+                // return чтобы из функции передать throw в error boundry
+                return this.attemptRegister();
+            }
         }
     }
 };

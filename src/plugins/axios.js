@@ -1,6 +1,5 @@
 import axios from "axios";
 import { store } from "../store";
-import swal from "sweetalert";
 
 axios.defaults.baseURL =
     process.env.NODE_ENV === "production"
