@@ -40,7 +40,7 @@ export default {
             dataResponse: {
                 prev: null,
                 cur: null,
-                week: null,
+              
             },
             series: [
                 {
@@ -52,7 +52,14 @@ export default {
                     id: "basic-bar"
                 },
                 dataLabels: {
-                    enabled: true
+                    enabled: true,
+                    style: {
+                        colors: ['#fff']
+                    },
+                    formatter: function (val) {
+                        return val + "мин"
+                    },
+                    offsetX: 0,
                 },
                 tooltip: {
                     enabled: false
@@ -118,7 +125,14 @@ export default {
 
                 this.dataResponse.prev = prev;
                 this.dataResponse.cur = cur;
-                this.dataResponse.week = week;
+
+                let fetchedWeek = week.slice();
+                fetchedWeek = fetchedWeek.map(({total}) => total);
+                
+
+                this.series = [{
+                    data: fetchedWeek
+                }]
             } catch (error) {
                 throw error;
             }
