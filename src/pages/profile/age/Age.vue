@@ -1,6 +1,7 @@
 <template>
     <SubPage :title="$t('widget.age')">
         <div class="age__chart">
+            <div class="age__chart__text">{{ $t("chart.averageIndicator") }}</div>
             <apexchart
                 type="bar"
                 height="100%"
@@ -98,5 +99,16 @@ export default {
 <style lang="scss">
 .age__chart {
     height: 350px;
+    position: relative;
+    margin: 30px 0 0 20px;
+    &__text {
+        font-size: 11px;
+        font-weight: 500;
+        max-width: 60px;
+        text-align: center;
+        position: absolute;
+        top: -15px;
+        left: -15px;
+    }
 }
 </style>

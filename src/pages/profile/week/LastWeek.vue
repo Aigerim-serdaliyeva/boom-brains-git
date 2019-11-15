@@ -16,12 +16,39 @@ export default {
         return {
             series: [
                 {
-                    data: [44, 60]
+                    data: [128, 30]
                 }
             ],
             chartOptions: {
                 dataLabels: {
-                    enabled: true
+                    enabled: true,
+                    orientation: 'vertical',
+                    rotateAlways: true,
+                    textAnchor: 'middle',
+                    trim: true,
+                    formatter: function(minutes) {
+                        var dHours = Math.floor(minutes / 60);
+                        var dMinutes = minutes % 60;
+                        var time = "";
+
+                        if (dHours > 0) {
+                            time += dHours + " час ";
+                        } 
+                        if (dHours > 0 && dMinutes > 0) {
+                            time = dHours + ' час ' + dMinutes + " мин";
+                        }    
+                        if (time === "") {
+                            time = minutes + '\n мин';
+                        }
+                        return time;
+                        // return time.replace('\n','<br/>');
+                    },
+                    style: {
+                        fontSize: '14px',
+                        color: "#fff",
+                        whiteSpace: 'pre' 
+                    },
+                    // offsetX: 0,
                 },
                 tooltip: {
                     enabled: false
@@ -35,8 +62,10 @@ export default {
                                 return "#6F7CA8";
                             } else if (value > 30 && value <= 40) {
                                 return "#5689B2";
-                            } else if (value <= 10) {
+                            } else if (value <= 10 && value > 1) {
                                 return "#E93E76";
+                            } else if (value <= 1) {
+                                return "#888";
                             } else {
                                 return "#12ACCE";
                             }
@@ -49,7 +78,18 @@ export default {
                     }
                 },
                 xaxis: {
-                    categories: [this.$t("week.last"), this.$t("week.this")]
+                    categories: [this.$t("week.last"), this.$t("week.this")],
+                    labels: {
+                        show: true,
+                        trim: false,
+                        rotate: -45,
+                        // rotateAlways: true,
+                        // hideOverlappingLabels: true,
+                        floating: true,
+                        style: {
+                            whiteSpace: "normal"
+                        }
+                    }
                 },
                 yaxis: {
                     tickAmount: 6

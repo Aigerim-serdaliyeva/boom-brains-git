@@ -74,7 +74,8 @@ export default new VueI18n({
                 memory: "Память",
                 accuracy: "Аккуратность",
                 attention: "Внимание",
-                logics: "Логика"
+                logics: "Логика",
+                averageIndicator: "Средний показатель"
             },
             years: "{count} лет",
             exit: "Выход",
@@ -144,7 +145,8 @@ export default new VueI18n({
                 memory: "Memory",
                 accuracy: "Accuracy",
                 attention: "Attention",
-                logics: "Logics"
+                logics: "Logics",
+                averageIndicator: "Average indicator"
             },
             years: "{count} years",
             exit: "Exit",
@@ -214,7 +216,8 @@ export default new VueI18n({
                 memory: "Жад",
                 accuracy: "Ұқыптылық",
                 attention: "Назар аудару",
-                logics: "Логика"
+                logics: "Логика",
+                averageIndicator: "Орташа көрсеткіші"
             },
             years: "{count} жас",
             exit: "Шығу",

@@ -94,9 +94,7 @@ a {
     display: none !important;
   }
   &-bar-area {
-    &:hover {
-      // display: none;
-    }
+    min-height: 10px !important;
   }
 }
 

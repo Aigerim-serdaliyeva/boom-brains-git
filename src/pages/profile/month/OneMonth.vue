@@ -101,7 +101,7 @@ export default {
                     reversed: false,
                     logarithmic: false,
                     tickAmount: 6,
-                    decimalsInFloat: undefined,
+                    // decimalsInFloat: undefined,
                     labels: {
                         show: true,
                         align: "right",

@@ -34,6 +34,23 @@ import SubPage from "../../../components/sub-page/SubPage.vue";
 import VueApexCharts from "vue-apexcharts";
 import axios from "axios";
 
+function displayTime(minutes) {
+    var dHours = Math.floor(minutes / 60);
+    var dMinutes = minutes % 60;
+    var time = "";
+
+    if (dHours > 0) {
+        time += dHours + " час";
+    } 
+    if (dHours > 0 && dMinutes > 0) {
+        time = dHours + " час" + dMinutes + " мин";
+    }    
+    if (time === "") {
+        time = minutes + " мин";
+    }
+    return time;
+}
+
 export default {
     data() {
         return {            
@@ -53,13 +70,31 @@ export default {
                 },
                 dataLabels: {
                     enabled: true,
+                    orientation: 'vertical',
+                    textAnchor: 'middle',
+                    formatter: function(minutes) {
+                        var dHours = Math.floor(minutes / 60);
+                        var dMinutes = minutes % 60;
+                        var time = "";
+
+                        if (dHours > 0) {
+                            time += dHours + " час ";
+                        } 
+                        if (dHours > 0 && dMinutes > 0) {
+                            time = dHours + ' час ' + dMinutes + " мин";
+                        }    
+                        if (time === "") {
+                            time = minutes + '\n мин';
+                        }
+                        return time;
+                        // return time.replace('\n','<br/>');
+                    },
                     style: {
-                        colors: ['#fff']
+                        fontSize: '14px',
+                        color: "#fff",
+                        whiteSpace: 'pre' 
                     },
-                    formatter: function (val) {
-                        return val + "мин"
-                    },
-                    offsetX: 0,
+                     offsetX: 0,
                 },
                 tooltip: {
                     enabled: false
@@ -73,8 +108,10 @@ export default {
                                 return "#6F7CA8";
                             } else if (value > 30 && value <= 40) {
                                 return "#5689B2";
-                            } else if (value <= 10) {
+                            } else if (value <= 10 && value > 1) {
                                 return "#E93E76";
+                            } else if (value <= 1) {
+                                return "#888";
                             } else {
                                 return "#12ACCE";
                             }
@@ -127,8 +164,7 @@ export default {
                 this.dataResponse.cur = cur;
 
                 let fetchedWeek = week.slice();
-                fetchedWeek = fetchedWeek.map(({total}) => total);
-                
+                fetchedWeek = fetchedWeek.map(({total}) => total);                
 
                 this.series = [{
                     data: fetchedWeek

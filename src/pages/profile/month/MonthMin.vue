@@ -154,10 +154,10 @@ export default {
       &__min {    
         &__os {
           &--y {
-            left: -18px;
+            left: -15px;
           }
           &--x {
-            bottom: -0px;
+            bottom: 3px;
           }
         }
       }
