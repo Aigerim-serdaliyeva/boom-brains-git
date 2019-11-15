@@ -10,6 +10,7 @@
 
 <script>
 import VueApexCharts from "vue-apexcharts";
+import axios from "axios";
 
 export default {
     data() {
@@ -96,6 +97,27 @@ export default {
                 }
             }
         };
+    },
+    mounted() {
+        this.fetchWeek();
+    },
+    methods: {
+        async fetchWeek() {
+            try {
+                const res = await axios.get("api/week");
+                const data = await res.data;
+                const { prev, cur } = data;
+
+                let fetchedPrev = prev ? prev.total : 0;              
+                let fetchedCurrent = cur ? cur.total : 0;           
+
+                this.series = [{
+                    data: [fetchedPrev, fetchedCurrent]
+                }]
+            } catch (error) {
+                throw error;
+            }
+        }
     },
     components: {
         apexchart: VueApexCharts

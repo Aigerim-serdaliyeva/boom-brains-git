@@ -45,13 +45,13 @@ export default new VueI18n({
                 tableShulte: "Таблица шульте",
                 rememberNumber: "Запомни число",
                 findNumber: "Найди число",
-                calculate: "Вычисли",
-                equation: "Определи знак",
-                shulteLetters: "shulteLetters",
-                rememberWords: "rememberWords",
-                memorySquare: "memorySquare",
-                coloredFigures: "coloredFigures",
-                coloredWords: "coloredWords"
+                calculate: "Вычисление",
+                equation: "Уравнение",
+                shulteLetters: "Буквы Шульте",
+                rememberWords: "Запомни Слова",
+                memorySquare: "Площадь памяти",
+                coloredFigures: "Цветные фигуры",
+                coloredWords: "Цветные слова"
             },
             week: {
                 mon: "пн",
@@ -113,16 +113,16 @@ export default new VueI18n({
                 ratingworld: "World ranking"
             },
             game: {
-                tableShulte: "",
-                rememberNumber: "",
-                findNumber: "",
-                calculate: "",
-                equation: "",
-                shulteLetters: "shulteLetters",
-                rememberWords: "rememberWords",
-                memorySquare: "memorySquare",
-                coloredFigures: "coloredFigures",
-                coloredWords: "coloredWords"
+                tableShulte: "Shulte Table",
+                rememberNumber: "Remember Number",
+                findNumber:  "Find Number",
+                calculate: "Calculation",
+                equation: "Equation",
+                shulteLetters: "Shulte Letters",
+                rememberWords: "Remember Words",
+                memorySquare: "Memory Square",
+                coloredFigures: "Colored Figures",
+                coloredWords: "Colored Words"
             },
             week: {
                 mon: "mon",
@@ -184,16 +184,16 @@ export default new VueI18n({
                 ratingworld: "Әлемдік рейтинг"
             },
             game: {
-                tableShulte: "",
-                rememberNumber: "",
-                findNumber: "",
-                calculate: "",
-                equation: "",
-                shulteLetters: "shulteLetters",
-                rememberWords: "rememberWords",
-                memorySquare: "memorySquare",
-                coloredFigures: "coloredFigures",
-                coloredWords: "coloredWords"
+                tableShulte: "Таблица шульте",
+                rememberNumber: "Санды жатта",
+                findNumber: "Санды тап",
+                calculate: "Есепте",
+                equation: "Теңестір",
+                shulteLetters: "Шульте Әріптер",
+                rememberWords: "Сөздерді Жатта",
+                memorySquare: "Жад алаңы",
+                coloredFigures: "Түсті фигуралар",
+                coloredWords: "Түсті сөздер"
             },
             week: {
                 mon: "дс",

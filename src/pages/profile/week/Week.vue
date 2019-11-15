@@ -56,8 +56,7 @@ export default {
         return {            
             dataResponse: {
                 prev: null,
-                cur: null,
-              
+                cur: null,              
             },
             series: [
                 {

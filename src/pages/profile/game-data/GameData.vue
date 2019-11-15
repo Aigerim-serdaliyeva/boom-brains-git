@@ -20,6 +20,7 @@
 <script>
 import SubPage from '../../../components/sub-page/SubPage.vue'
 import VueApexCharts from "vue-apexcharts";
+import axios from "axios";
 
 export default {
     components: {
@@ -28,14 +29,19 @@ export default {
     },
     data() {
         return {
-            series: [65, 55, 41, 17, 15],
+            series: [],
             chartOptions: {
                 labels: [
                     this.$t("game.tableShulte"),
                     this.$t("game.rememberNumber"),
                     this.$t("game.findNumber"),
                     this.$t("game.calculate"),
-                    this.$t("game.equation")
+                    this.$t("game.equation"),
+                    this.$t("game.shulteLetters"),
+                    this.$t("game.rememberWords"),
+                    this.$t("game.memorySquare"),
+                    this.$t("game.coloredFigures"),
+                    this.$t("game.coloredWords")
                 ],
                 fill: {
                     colors: [
@@ -104,7 +110,26 @@ export default {
                 }
             }
         }
-    }
+    },
+    mounted() {
+        this.fetchGameData();
+    },
+    methods: {
+        async fetchGameData() {
+            try {
+                const res = await axios.get("api/game-data");
+                const data = await res.data;
+                const { names, records } = data;      
+
+                this.series = records
+
+                this.chartOptions.labels = names
+
+            } catch (error) {
+                throw error;
+            }
+        }
+    },
 };
 </script>
 

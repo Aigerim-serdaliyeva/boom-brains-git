@@ -4,7 +4,7 @@ import { store } from "../store";
 axios.defaults.baseURL =
     process.env.NODE_ENV === "production"
         ? "https://boom-brains-api.kdo.one"
-        : "http://localhost:3000";
+        : "https://boom-brains-api.kdo.one";
 
 axios.interceptors.request.use(config => {
     const accessToken = store.getters["auth/accessToken"];
