@@ -37,7 +37,7 @@ export default new VueI18n({
                 month: "Прогресс за месяц",
                 gamedata: "Данные по играм",
                 ratingfriends: "Рейтинг Cреди друзей",
-                age: "Возрастрная статистика",
+                age: "Возрастная статистика",
                 records: "Рекорды",
                 ratingworld: "Мировой Рейтинг"
             },
@@ -75,7 +75,8 @@ export default new VueI18n({
                 accuracy: "Аккуратность",
                 attention: "Внимание",
                 logics: "Логика",
-                averageIndicator: "Средний показатель"
+                averageIndicator: "Средний показатель",
+                noData: "Нет данных"
             },
             years: "{count} лет",
             exit: "Выход",
@@ -146,7 +147,8 @@ export default new VueI18n({
                 accuracy: "Accuracy",
                 attention: "Attention",
                 logics: "Logics",
-                averageIndicator: "Average indicator"
+                averageIndicator: "Average indicator",
+                noData: "There is no data"
             },
             years: "{count} years",
             exit: "Exit",
@@ -217,7 +219,8 @@ export default new VueI18n({
                 accuracy: "Ұқыптылық",
                 attention: "Назар аудару",
                 logics: "Логика",
-                averageIndicator: "Орташа көрсеткіші"
+                averageIndicator: "Орташа көрсеткіші",
+                noData: "Мәлімет жоқ"
             },
             years: "{count} жас",
             exit: "Шығу",

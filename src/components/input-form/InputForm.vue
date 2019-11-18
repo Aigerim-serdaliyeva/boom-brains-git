@@ -61,4 +61,15 @@ export default {
         opacity: 1;
     }
 }
+
+@media screen and (max-width: 1370px) {
+    .input-div {
+        margin-bottom: 15px;
+    }
+
+    .input,
+    .textarea {
+        padding: 10px 10px;
+    }
+}
 </style>

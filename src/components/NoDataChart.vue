@@ -1,6 +1,6 @@
 <template>
     <div class="chart">
-      <h4 class="chart__title">Нет данных</h4>
+      <h4 class="chart__title">{{ $t("chart.noData") }}</h4>
     </div>
 </template>
 
@@ -22,8 +22,7 @@ export default {
     align-items: center;
     justify-content: center;
     &__title {
-      font-weight: 300;
-      // text-transform: uppercase;
+      font-weight: 500;
       font-size: 16px;
     }
   }

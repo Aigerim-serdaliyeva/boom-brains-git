@@ -31,11 +31,11 @@ export const gamesList = {
     actions: {
       async fetchInfo({ commit }, gameName) {
           try {
-              const res = await axios.post("api/game-info", {
-                game: gameName
-              });
-              const data = await res.data;              
-              commit(FETCH_INFO, data);              
+            const res = await axios.post("api/game-info", {
+              game: gameName
+            });
+            const data = await res.data;              
+            commit(FETCH_INFO, data);              
           } catch (err) {
               throw err;
           }

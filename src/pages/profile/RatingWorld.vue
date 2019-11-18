@@ -75,9 +75,10 @@ export default {
         overflow-y: auto;
     }
     &__world {
-        height: 80%;
-        overflow-y: auto;
-        margin-bottom: 10px;        
+        height: 85%;
+        // overflow-y: auto;
+        margin-bottom: 10px;       
+        overflow: hidden; 
     }
     &__player {
         li {

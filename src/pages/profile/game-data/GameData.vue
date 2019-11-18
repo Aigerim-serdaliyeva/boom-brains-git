@@ -1,6 +1,7 @@
 <template>
     <SubPage :title="$t('widget.gamedata')">
-        <div class="row justify-content-center align-items-center">
+        <NoDataChart v-if="!series" />
+        <div v-else class="row justify-content-center align-items-center">
             <div class="col-xl-4 col-lg-6 col-md-5 col-sm-6">
                 <div class="game-data__chart">
                     <apexchart
@@ -10,14 +11,17 @@
                     />
                 </div>
             </div>
-        </div>
-        <div class="apexchart__text">{{ $t("game.text1") }}</div>
-        <br />
-        <div class="apexchart__text">{{ $t("game.text2") }}</div>
+            <div class="col-12">
+                <div class="apexchart__text">{{ $t("game.text1") }}</div>
+                <br />
+                <div class="apexchart__text">{{ $t("game.text2") }}</div>
+            </div>
+        </div>        
     </SubPage>
 </template>
 
 <script>
+import NoDataChart from '../../../components/NoDataChart.vue'
 import SubPage from '../../../components/sub-page/SubPage.vue'
 import VueApexCharts from "vue-apexcharts";
 import axios from "axios";
@@ -25,7 +29,8 @@ import axios from "axios";
 export default {
     components: {
         SubPage,
-        apexchart: VueApexCharts
+        apexchart: VueApexCharts, 
+        NoDataChart
     },
     data() {
         return {
@@ -50,7 +55,11 @@ export default {
                         "#5ACC02",
                         "#11ADCF",
                         "#5D17BF",
-                        "#FDDF76"
+                        "#FAF118",
+                        "#9D348D",
+                        "#8B74BC",
+                        "#37BFAF",
+                        "#008E5B"
                     ]
                 },
                 responsive: [
@@ -96,7 +105,7 @@ export default {
             ru: {
                 game: {
                     text1:
-                        "Все тренажены направленны на тренировку различных функций мозга мы советуем равномерно распределять время между тренажерами.",
+                        "Все тренажеры направленны на тренировку различных функций мозга мы советуем равномерно распределять время между тренажерами.",
                     text2:
                         "Используя различные тренажеры, вы лучше стимулируете мозг. По нашим показателям люди использующие разнообразные тренажеры показывают более сильный прогресс в результатах чем люди использующие всего один."
                 }
@@ -121,11 +130,14 @@ export default {
                 const data = await res.data;
                 const { names, records } = data;      
 
+                if(!data) {
+                    this.series = false
+                    return
+                }
                 this.series = records
-
                 this.chartOptions.labels = names
-
-            } catch (error) {
+            } 
+            catch (error) {
                 throw error;
             }
         }

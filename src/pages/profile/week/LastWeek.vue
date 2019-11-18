@@ -36,10 +36,10 @@ export default {
                             time += dHours + " час ";
                         } 
                         if (dHours > 0 && dMinutes > 0) {
-                            time = dHours + ' час ' + dMinutes + " мин";
+                            time = dHours + 'час ' + dMinutes + "мин";
                         }    
                         if (time === "") {
-                            time = minutes + '\n мин';
+                            time = minutes + '\nмин';
                         }
                         return time;
                         // return time.replace('\n','<br/>');

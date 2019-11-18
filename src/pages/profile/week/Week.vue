@@ -51,6 +51,14 @@ function displayTime(minutes) {
     return time;
 }
 
+function break_lines(chartContext, config){
+	chartContext.w.globals.dom.baseEl.week__chart('.apexcharts-bar-area tspan').forEach((el)=>{
+		var index = Array.prototype.indexOf.call(el.parentNode.childNodes, el);
+		el.setAttribute('x', el.parentNode.getAttribute('x'));
+		if(index) el.setAttribute('dy', '1.2em');
+	});
+}
+
 export default {
     data() {
         return {            
@@ -67,6 +75,10 @@ export default {
                 chart: {
                     id: "basic-bar"
                 },
+                events: {
+                    mounted: break_lines,
+                    updated: break_lines,
+                },
                 dataLabels: {
                     enabled: true,
                     orientation: 'vertical',
@@ -77,13 +89,13 @@ export default {
                         var time = "";
 
                         if (dHours > 0) {
-                            time += dHours + " час ";
+                            time += dHours + "час ";
                         } 
                         if (dHours > 0 && dMinutes > 0) {
-                            time = dHours + ' час ' + dMinutes + " мин";
+                            time = dHours + 'час ' + dMinutes + "мин";
                         }    
                         if (time === "") {
-                            time = minutes + '\n мин';
+                            time = minutes + 'мин';
                         }
                         return time;
                         // return time.replace('\n','<br/>');

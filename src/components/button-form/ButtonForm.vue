@@ -50,4 +50,10 @@ export default {
         box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
 }
+
+    @media screen and (max-width: 1370px) {
+        .button {
+            padding: 12px 60px;
+        }
+    }
 </style>

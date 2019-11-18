@@ -68,7 +68,29 @@ export default {
 
     &__content {
         max-width: 294px;
+        margin: 0 auto;
         width: 100%;
     }
 }
+
+@media screen and (max-width: 1370px) {
+    .form {
+        &__img {
+            margin-bottom: 25px;
+        }
+        &__title {
+            margin-bottom: 25px;
+        }
+        &__block {
+            padding: 25px 40px 40px;
+        }
+    }
+}
+
+    @media screen and (max-width: 1300px) {
+        .form {
+            height: auto;
+            padding: 60px 0;
+        }
+    }
 </style>

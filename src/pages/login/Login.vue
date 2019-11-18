@@ -160,32 +160,5 @@ export default {
 </script>
 
 <style lang="scss">
-.login {
-    &__links {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 25px;
-        color: #b4b4b4;
-        font-size: 14px;
-        &--min {
-            padding: 0 25px;
-        }
-    }
-    &__link {
-        color: #b4b4b4;
-        text-decoration: underline;
-        font-size: 14px;
-        font-weight: normal;
-    }
-}
 
-.error {
-    padding-top: 0.5rem;
-    font-size: 0.8rem;
-    text-align: center;
-    color: #f57f6c;
-}
-.pending {
-    display: none;
-}
 </style>

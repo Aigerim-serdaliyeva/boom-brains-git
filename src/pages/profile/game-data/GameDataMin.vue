@@ -10,6 +10,7 @@
 
 <script>
 import VueApexCharts from "vue-apexcharts";
+import axios from "axios";
 
 export default {
     components: {
@@ -17,17 +18,22 @@ export default {
     },
     data() {
         return {
-            series: [65, 55, 41, 17, 15],
-            chartOptions: {      
+            series: [],
+            chartOptions: {
                 dataLabels: {
                   enabled: false
-                },        
+                }, 
                 labels: [
                     this.$t("game.tableShulte"),
                     this.$t("game.rememberNumber"),
                     this.$t("game.findNumber"),
                     this.$t("game.calculate"),
-                    this.$t("game.equation")
+                    this.$t("game.equation"),
+                    this.$t("game.shulteLetters"),
+                    this.$t("game.rememberWords"),
+                    this.$t("game.memorySquare"),
+                    this.$t("game.coloredFigures"),
+                    this.$t("game.coloredWords")
                 ],
                 fill: {
                     colors: [
@@ -36,34 +42,37 @@ export default {
                         "#5ACC02",
                         "#11ADCF",
                         "#5D17BF",
-                        "#FDDF76"
+                        "#FAF118",
+                        "#9D348D",
+                        "#8B74BC",
+                        "#37BFAF",
+                        "#008E5B"
                     ]
                 },
                 responsive: [
                     {
-                        // breakpoint: 480,
+                        breakpoint: 480,
                         options: {
                             chart: {
-                                // width: 200
+                                width: 200
                             },
                             legend: {
-                                // position: "bottom"
+                                position: "bottom"
                             }
                         }
                     }
                 ],
                 plotOptions: {
                     pie: {
-                        expandOnClick: false,
                         donut: {
                             labels: {
                                 show: true,
                                 name: {
-                                  show: true,
-                                  color: "#FD9300"
+                                    show: true,
+                                    color: "#FD9300"
                                 },
                                 value: {
-                                  show: true,
+                                    show: true,
                                     color: "#FD9300"
                                 },
                                 total: {
@@ -77,7 +86,25 @@ export default {
                 }
             }
         };
-    }
+    },
+    mounted() {
+        this.fetchGameData();
+    },
+    methods: {
+        async fetchGameData() {
+            try {
+                const res = await axios.get("api/game-data");
+                const data = await res.data;
+                const { names, records } = data;      
+
+                this.series = records
+                this.chartOptions.labels = names
+            } 
+            catch (error) {
+                throw error;
+            }
+        }
+    },
 };
 </script>
 
@@ -94,6 +121,9 @@ export default {
           }
           &-legend {
               display: none !important;
+          }
+          &-datalabels-group {
+            //   position: relative;
           }
           &-datalabel {
             &-label {
