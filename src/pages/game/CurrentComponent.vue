@@ -10,7 +10,7 @@
                     <img :src="games[index].url2" />
                     </div>
                     <div class="col-lg-8 col-md-9">
-                        <GameWidget :title="game" :youRecord="record" :worldRecord="worldRecords[0].record">
+                        <GameWidget :title="gameName" :youRecord="record" :worldRecord="worldRecords[0].record">
                             <template v-slot:rules>
                                 <p class="game-widget__block__text">
                                     {{games[index].text}}
@@ -90,6 +90,7 @@ export default {
     computed: {
       ...mapGetters({
           game: "gamesList/game",
+          gameName: "gamesList/gameName",
           index: "gamesList/index",
           record: "gamesList/record",
           worldRecords: "gamesList/worldRecords",

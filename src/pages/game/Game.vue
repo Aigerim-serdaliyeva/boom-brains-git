@@ -1,6 +1,6 @@
 <template>
     <div class="game__section">
-        <div :key="key">
+        <div>
             <transition name="page" mode="out-in">
                 <CurrentComponent />
             </transition>
@@ -85,15 +85,13 @@ export default {
     computed: {
         ...mapGetters({
             game: "gamesList/game",
-            index: "gamesList/index",
-            key: "language/key"
+            index: "gamesList/index"
         })
     },
     methods: {
         ...mapActions({
             fetchInfo: "gamesList/fetchInfo",
-            changeIndex: "gamesList/changeIndex",
-            changeKey: "language/changeKey"
+            changeIndex: "gamesList/changeIndex"
         }),
         async fetchRecords() {
             try {
@@ -108,7 +106,6 @@ export default {
         selectComponent(gameName, index) {
             this.fetchInfo(gameName);
             this.changeIndex(index);
-            this.changeKey();
         }
     }
 };

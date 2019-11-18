@@ -7,20 +7,23 @@ export const gamesList = {
     namespaced: true,
     state: {
       game: null,
+      gameName: null,
       record: null,
       worldRecords: {},
       index: null
     },
     getters: {
       game: ({ game }) => game,
+      gameName: ({ gameName }) => gameName,
       worldRecords: ({ worldRecords }) => worldRecords,
       record: ({ record }) => record,
       index: ({ index }) => index,
     },
     mutations: {
       [FETCH_INFO] (state, payload) {
-        const {game, worldRecords, record} = payload;
-        state.game = game;       
+        const {game, gameName, worldRecords, record} = payload;
+        state.game = game;   
+        state.gameName = gameName;    
         state.record = record;
         state.worldRecords = worldRecords;
       },
