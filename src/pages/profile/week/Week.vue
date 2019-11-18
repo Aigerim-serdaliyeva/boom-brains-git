@@ -4,13 +4,13 @@
             <NoDataChart v-if="!dataResponse" />
             <div class="row" v-else>
                 <div class="col-md-4 col-sm-6 col-8">
-                    <h2 class="apexchart__title">{{ $tc("title", 0) }}</h2>
+                    <h2 class="apexchart__title">{{ $tc("week.title", 0) }}</h2>
                     <div class="week__chart">
                         <LastWeek />
                     </div>
                 </div>
                 <div class="col-md-8 h-100">
-                    <h2 class="apexchart__title">{{ $tc("title", 1) }}</h2>
+                    <h2 class="apexchart__title">{{ $tc("week.title", 1) }}</h2>
                     <div class="week__chart">
                         <apexchart
                             type="bar"
@@ -21,7 +21,7 @@
                         </apexchart>
                     </div>
                 </div>
-                <div class="apexchart__text">{{ $t("text") }}</div>
+                <div class="apexchart__text">{{ $t("week.text") }}</div>
             </div>
         </SubPage>
     </div>
@@ -185,26 +185,6 @@ export default {
             }
         }
     },
-    i18n: {
-        messages: {
-            ru: {
-                title:
-                    "Дни тренировок на этой неделе | Сравнение с пред идущей",
-                text:
-                    "По нашим показателям у людей которые уделяют тренажерам около 10 минут в день и более, наблюдается значительное улучшение результатов. Но не стоит забывать что для улучшения работоспособности мозга нужны не только тренировки но и отдых"
-            },
-            en: {
-                title: "Training days this week | Comparison with the previous",
-                text: ""
-            },
-            kz: {
-                title:
-                    "Осы аптадағы жаттығу күндері | Алдыңғы аптамен салыстыру",
-                text:
-                    "Біздің көрсеткіштер бойынша, тренажерларға күніне 10 минут немесе одан да көп уақыт бөлетін адамдарда нәтижелер айтарлықтай жақсарады. Бірақ мидың жұмысын жақсарту үшін сізге жаттығу ғана емес, сонымен қатар релаксация қажет екенін ұмытпаңыз"
-            }
-        }
-    }
 };
 </script>
 

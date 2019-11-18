@@ -72,37 +72,37 @@ export default {
     i18n: {
         messages: {
             ru: {
-                month: {
-                    button: {
-                        one: "1 Месяц",
-                        six: "6 Месяцев",
-                        twelve: "12 Месяцев"
-                    },
-                    text1: "Количество очков за прошлый месяц:",
-                    text2: "Количество очков за этот месяц:"
-                }
+                // month: {
+                //     button: {
+                //         one: "1 Месяц",
+                //         six: "6 Месяцев",
+                //         twelve: "12 Месяцев"
+                //     },
+                //     text1: "Количество очков за прошлый месяц:",
+                //     text2: "Количество очков за этот месяц:"
+                // }
             },
             en: {
-                month: {
-                    button: {
-                        one: "1 Month",
-                        six: "6 Of months",
-                        twelve: "12 Of months"
-                    },
-                    text1: "Points for last month: ",
-                    text2: "Points for this month: "
-                }
+                // month: {
+                //     button: {
+                //         one: "1 Month",
+                //         six: "6 Of months",
+                //         twelve: "12 Of months"
+                //     },
+                //     text1: "Points for last month: ",
+                //     text2: "Points for this month: "
+                // }
             },
             kz: {
-                month: {
-                    button: {
-                        one: "1 Ай",
-                        six: "6 Ай",
-                        twelve: "12 Ай"
-                    },
-                    text1: "Өткен айдағы ұпайлар: ",
-                    text2: "Осы айдағы ұпайлар: "
-                }
+                // month: {
+                //     button: {
+                //         one: "1 Ай",
+                //         six: "6 Ай",
+                //         twelve: "12 Ай"
+                //     },
+                //     text1: "Өткен айдағы ұпайлар: ",
+                //     text2: "Осы айдағы ұпайлар: "
+                // }
             }
         }
     }

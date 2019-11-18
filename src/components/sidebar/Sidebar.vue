@@ -57,38 +57,7 @@ export default {
     props: {
         text: String
     },
-    components: { Locale },
-    i18n: {
-        messages: {
-            ru: {
-                menu: {
-                    profile: "Ваш профиль",
-                    game: "Игры",
-                    courses: "Курсы",
-                    faq: "FAQ",
-                    boombrains: "О BoomBrains"
-                }
-            },
-            en: {
-                menu: {
-                    profile: "Your profile",
-                    game: "Games",
-                    courses: "Courses",
-                    faq: "FAQ",
-                    boombrains: "About BoomBrains"
-                }
-            },
-            kz: {
-                menu: {
-                    profile: "Сіздің профиліңіз",
-                    game: "Ойындар",
-                    courses: "Курстар",
-                    faq: "FAQ",
-                    boombrains: "BoomBrains туралы"
-                }
-            }
-        }
-    }
+    components: { Locale },    
 };
 </script>
 

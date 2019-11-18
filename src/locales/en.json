@@ -1,0 +1,96 @@
+{
+  "menu": {
+    "profile": "Your profile",
+    "game": "Games",
+    "courses": "Courses",
+    "faq": "FAQ",
+    "boombrains": "About BoomBrains"
+  },
+  "form": {
+    "login": "Log in to the site",
+    "forget": "Password recovery",
+    "forgetPassword": "Forgot password?",
+    "registration": "Registration",
+    "logIn": "Login",
+    "account": "Already have an account?",
+    "authorization": "Authorization through social networks",
+    "confirm": "Confirm"
+  },
+  "error": {
+    "textRequired": "This field is required",
+    "textMax64": "The maximum number of characters must not exceed 64",
+    "textRight": "Please check the correctness:",
+    "textMax32": "The maximum number of characters must not exceed 32",
+    "textMax16": "The maximum number of characters must not exceed 16",
+    "textEmail": "This email is already in use",
+    "textNikname": "This nickname is already in use",
+    "textPassword": "Passwords do not match"
+  },
+  "widget": {
+    "week": "Weekly activities",
+    "month": "Monthly progress",
+    "gamedata": "Game data",
+    "ratingfriends": "Rating among friends",
+    "age": "Age statistics",
+    "records": "Highscores",
+    "ratingworld": "World ranking"
+  },
+  "game": {
+    "tableShulte": "Shulte Table",
+    "rememberNumber": "Remember Number",
+    "findNumber":  "Find Number",
+    "calculate": "Calculation",
+    "equation": "Equation",
+    "shulteLetters": "Shulte Letters",
+    "rememberWords": "Remember Words",
+    "memorySquare": "Memory Square",
+    "coloredFigures": "Colored Figures",
+    "coloredWords": "Colored Words"
+  },
+  "week": {
+    "mon": "mon",
+    "tue": "tue",
+    "wed": "wed",
+    "thu": "thu",
+    "fri": "fri",
+    "sat": "sat",
+    "sun": "sun",
+    "last": "Last week",
+    "this": "This week",
+    "title": "Training days this week | Comparison with the previous",
+    "text": ""
+  },
+  "month": {
+      "button": {
+          "one": "1 Month",
+          "six": "6 Of months",
+          "twelve": "12 Of months"
+      },
+      "text1": "Points for last month: ",
+      "text2": "Points for this month: "
+  },
+  "gameData": {
+    "text1": "",
+    "text2": ""
+  },
+  "age": {
+    "text": ""
+  },
+  "chart": {
+    "result": "Result",
+    "month": "Month",
+    "age": "Age",               
+    "indicators": "Indicators",
+    "total": "Total",
+    "reaction": "Reaction",
+    "memory": "Memory",
+    "accuracy": "Accuracy",
+    "attention": "Attention",
+    "logics": "Logics",
+    "averageIndicator": "Average indicator",
+    "noData": "There is no data"
+  },
+  "years": "{count} years",
+  "exit": "Exit",
+  "record": "Record"  
+}

@@ -8,7 +8,6 @@
                 <router-link to="/profile/week">
                     <div class="widget__img">
                         <WeekMin />
-                        <!-- <img src="@/assets/img/week.png" alt="" /> -->
                     </div>
                 </router-link>
             </Widget>
@@ -24,7 +23,6 @@
                 <router-link to="/profile/month">
                     <div class="widget__img">
                         <MonthMin />
-                        <!-- <img src="@/assets/img/month.png" alt="" /> -->
                     </div>
                 </router-link>
             </Widget>
@@ -40,7 +38,6 @@
                 <router-link to="/profile/game-data">
                     <div class="widget__img">
                         <GameDataMin />
-                        <!-- <img src="@/assets/img/game-data.png" alt="" /> -->
                     </div>
                 </router-link>
             </Widget>
@@ -48,9 +45,6 @@
                 :title="$t('widget.ratingfriends')"
                 :style="{ top: '0', left: '75%', height: '50%', width: '25%' }"
             >
-                <!-- <router-link to="/profile/rating-friends">
-                    text
-                </router-link> -->
                 <RatingFriends />
             </Widget>
             <Widget
@@ -62,9 +56,6 @@
                 }"
             >
                 <Radar />
-                <!-- <router-link to="/profile/radar">  
-                    <Radar />                
-                </router-link> -->
             </Widget>
             <Widget
                 :title="$t('widget.age')"
@@ -78,7 +69,6 @@
                 <router-link to="/profile/age">
                     <div class="widget__img">
                         <AgeMin />
-                        <!-- <img src="@/assets/img/age.png" alt="" /> -->
                     </div>
                 </router-link>
             </Widget>
@@ -92,9 +82,6 @@
                 }"
             >
                 <Records />
-                <!-- <router-link to="/profile/records">  
-                text       
-                </router-link> -->
             </Widget>
             <Widget
                 :title="$t('widget.ratingworld')"
@@ -105,9 +92,6 @@
                     width: '25%'
                 }"
             >
-                <!-- <router-link to="/profile/rating-world">
-                    text
-                </router-link> -->
                 <RatingWorld />
             </Widget>
         </Grid>
@@ -133,12 +117,6 @@ export default {
         Records,
         RatingWorld,
         RatingFriends, WeekMin, MonthMin, AgeMin, GameDataMin
-    },
-    i18n: {
-        messages: {
-            ru: {},
-            en: {}
-        }
     }
 };
 </script>
