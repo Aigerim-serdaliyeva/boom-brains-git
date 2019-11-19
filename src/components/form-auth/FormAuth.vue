@@ -1,8 +1,8 @@
 <template>
     <form class="form" @submit.prevent="submitForm">
+        <slot name="indicator" />
         <div class="form__img"><img src="@/assets/img/logo.png" /></div>
-        <div class="absolute-handler">
-            <slot name="indicator" />
+        <div class="absolute-handler">            
             <div class="form__block">
                 <h1 class="form__title">{{ title }}</h1>
                 <div class="form__content">
