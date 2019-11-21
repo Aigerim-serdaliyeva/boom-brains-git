@@ -1,10 +1,15 @@
 <template>
     <div class="game-data__chart--min">
-        <apexchart
-            type="donut"
-            :options="chartOptions"
-            :series="series"
-        />
+        <div class="game-data__img" v-if="!series">
+            <img src="@/assets/img/game-data.png" alt="">
+        </div>
+        <div v-else>
+            <apexchart
+                type="donut"
+                :options="chartOptions"
+                :series="series"
+            />
+        </div>        
     </div>
 </template>
 
@@ -110,6 +115,15 @@ export default {
 
 <style lang="scss">
 .game-data {
+    &__img {
+        position: relative;
+        img {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 15px;
+        }
+    }
     &__chart--min {
       height: 220px;
       width: 220px;

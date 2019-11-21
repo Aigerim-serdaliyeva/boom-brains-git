@@ -45,7 +45,17 @@
     "rememberWords": "Remember Words",
     "memorySquare": "Memory Square",
     "coloredFigures": "Colored Figures",
-    "coloredWords": "Colored Words"
+    "coloredWords": "Colored Words",
+    "textShulteTable": "Table Schulte es un juego para desarrollar tu velocidad mental, tu objetivo será seleccionar los números en orden ascendente.",
+    "textRememberNumber": "Es un juego para desarrollar tu memoria",
+    "textFindNumber": "Es el juego en el cual tendrás que mejorar tu velocidad visual y tu concentración encontrando el cuadrado con el número correcto.",
+    "textCalculation": "Calcular es el juego en el que tienes que encontrar la solución a la operación matemática y pulsar sobre el botón correcto.",
+    "textEquation": "Ecuación-establecer el orden de las operaciones aritméticas de la lista para que coincida con la respuesta. Usted necesita decidir lo más rápidamente posible con el fin de lograr un gran resultado.",
+    "textShulteLetters": "Alfabeto Schulte - recolecta alfabetos por orden",
+    "textRememberWords": "Recordar Palabras - es un juego para tu memoria. Debe recordar las palabras que se muestran en la pantalla y hacer clic lo más rápido posible.",
+    "textMemorySquare": "Plaza de la memoria - debe recordar la posición de los cuadrados naranjas que se muestran en la matriz y tocar los cuadrados lo más rápido posible.",
+    "textColoredFigures": "Figuras de colores - debe encontrar las figuras de colores más comunes y tocar lo más rápido posible.",
+    "textColoredWords": "Palabras de colores - se le mostrará un color con un nombre diferente en la parte superior de la pantalla. De la lista a continuación, debe buscar y tocar el nombre del color dado lo más rápido posible."
   },
   "week": {
     "mon": "mon",
@@ -58,7 +68,7 @@
     "last": "Last week",
     "this": "This week",
     "title": "Training days this week | Comparison with the previous",
-    "text": ""
+    "text": "According to our indicators, people who give simulators about 10 minutes a day or more have a significant improvement in results. But do not forget that to improve the performance of the brain, not only training but also relaxation is needed"
   },
   "month": {
       "button": {
@@ -70,11 +80,11 @@
       "text2": "Points for this month: "
   },
   "gameData": {
-    "text1": "",
-    "text2": ""
+    "text1": "All simulators are aimed at training various brain functions. We advise you to evenly distribute the time between the simulators.",
+    "text2": "Using various simulators, you better stimulate the brain. According to our indicators, people using a variety of simulators show stronger progress in results than people using just one."
   },
   "age": {
-    "text": ""
+    "text": "According to our data, the highest brain activity occurs between the ages of 17 and 35 years. There are “people of exclusion” with sufficient brain training, some people maintain their activity in good shape even up to 50-60 years."
   },
   "chart": {
     "result": "Result",
@@ -88,7 +98,9 @@
     "attention": "Attention",
     "logics": "Logics",
     "averageIndicator": "Average indicator",
-    "noData": "There is no data"
+    "noData": "There is no data",
+    "hour": "hour",
+    "min": "min"
   },
   "years": "{count} years",
   "exit": "Exit",
