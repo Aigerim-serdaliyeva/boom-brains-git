@@ -40,13 +40,10 @@ function displayTime(minutes) {
     var time = "";
 
     if (dHours > 0) {
-        time += dHours + " час";
+        time += dHours + " час ";
     } 
-    if (dHours > 0 && dMinutes > 0) {
-        time = dHours + " час" + dMinutes + " мин";
-    }    
-    if (time === "") {
-        time = minutes + " мин";
+    if (dMinutes > 0) {
+        time += dMinutes + "\n мин";
     }
     return time;
 }
@@ -77,20 +74,7 @@ export default {
                             return
                         }
 
-                        var dHours = Math.floor(minutes / 60);
-                        var dMinutes = minutes % 60;
-                        var time = "";
-
-                        if (dHours > 0) {
-                            time += dHours + "час";
-                        } 
-                        if (dHours > 0 && dMinutes > 0) {
-                            time = dHours + "час" + dMinutes + "мин";
-                        }    
-                        if (time === "") {
-                            time = minutes + "мин";
-                        }
-                        return time;
+                        return displayTime(minutes);
                         // return time.replace('\n','<br/>');
                     },
                     style: {

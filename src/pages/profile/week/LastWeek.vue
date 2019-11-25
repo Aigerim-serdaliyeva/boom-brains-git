@@ -12,6 +12,20 @@
 import VueApexCharts from "vue-apexcharts";
 import axios from "axios";
 
+function displayTime(minutes) {
+    var dHours = Math.floor(minutes / 60);
+    var dMinutes = minutes % 60;
+    var time = "";
+
+    if (dHours > 0) {
+        time += dHours + " час ";
+    } 
+    if (dMinutes > 0) {
+        time += dMinutes + "\n мин";
+    }
+    return time;
+}
+
 export default {
     data() {
         return {
@@ -31,22 +45,7 @@ export default {
                         if (minutes === 1 || minutes === 0) {
                             return
                         }
-
-                        var dHours = Math.floor(minutes / 60);
-                        var dMinutes = minutes % 60;
-                        var time = "";
-
-                        if (dHours > 0) {
-                            time += dHours + " час ";
-                        } 
-                        if (dHours > 0 && dMinutes > 0) {
-                            time = dHours + 'час ' + dMinutes + "мин";
-                        }    
-                        if (time === "") {
-                            time = minutes + '\nмин';
-                        }
-                        return time;
-                        // return time.replace('\n','<br/>');
+                        return displayTime(minutes);
                     },
                     style: {
                         fontSize: '14px',
