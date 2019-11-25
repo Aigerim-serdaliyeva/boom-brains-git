@@ -1,46 +1,56 @@
 <template>
     <SubPage :title="$t('widget.month')">
-        <div class="months">
-            <div class="month">
-                <div
-                    v-for="item in months"
-                    :key="item.id"
-                    @click="currentComponent = item.target"
-                    :class="[
-                        'month__button',
-                        { active: currentComponent === item.target }
-                    ]"
-                >
-                    {{ item.button }}
+        <NoDataChart v-if="!dataResponse" />
+        <div v-else>
+            <div class="months">
+                <div class="month">
+                    <div
+                        v-for="item in months"
+                        :key="item.id"
+                        @click="currentComponent = item.target"
+                        :class="[
+                            'month__button',
+                            { active: currentComponent === item.target }
+                        ]"
+                    >
+                        {{ item.button }}
+                    </div>
                 </div>
+                <transition name="page" mode="out-in">
+                    <div class="months__content">
+                        <component :is="currentComponent" />
+                    </div>
+                </transition>
             </div>
-            <transition name="page" mode="out-in">
-                <div class="months__content">
-                    <component :is="currentComponent" />
+            <div class="d-flex justify-content-between">
+                <div class="apexchart__text">
+                    {{ $t("month.text1") }} <span>{{ dataResponse.prevTotal }}</span>
                 </div>
-            </transition>
-        </div>
-        <div class="d-flex justify-content-between">
-            <div class="apexchart__text">
-                {{ $t("month.text1") }} <span>74999</span>
-            </div>
-            <div class="apexchart__text">
-                {{ $t("month.text2") }} <span>4999</span>
+                <div class="apexchart__text">
+                    {{ $t("month.text2") }} <span>{{ dataResponse.currentTotal }}</span>
+                </div>
             </div>
         </div>
     </SubPage>
 </template>
 
 <script>
+import NoDataChart from '../../../components/NoDataChart.vue'
 import TwelveMonth from "./TwelveMonth.vue";
 import SixMonth from "./SixMonth.vue";
 import OneMonth from "./OneMonth.vue";
 import SubPage from "../../../components/sub-page/SubPage.vue";
 import VueApexCharts from "vue-apexcharts";
+import axios from 'axios';
 
 export default {
     data() {
         return {
+            dataResponse: {
+                currentMonth: null,
+                currentTotal: null,
+                prevTotal: null,
+            },
             currentComponent: "OneMonth",
             activetab: 0,
             months: [
@@ -67,45 +77,31 @@ export default {
         apexchart: VueApexCharts,
         OneMonth,
         SixMonth,
-        TwelveMonth
+        TwelveMonth, 
+        NoDataChart
+    }, 
+    mounted() {
+        this.fetchCurrentMongth();
     },
-    i18n: {
-        messages: {
-            ru: {
-                // month: {
-                //     button: {
-                //         one: "1 Месяц",
-                //         six: "6 Месяцев",
-                //         twelve: "12 Месяцев"
-                //     },
-                //     text1: "Количество очков за прошлый месяц:",
-                //     text2: "Количество очков за этот месяц:"
-                // }
-            },
-            en: {
-                // month: {
-                //     button: {
-                //         one: "1 Month",
-                //         six: "6 Of months",
-                //         twelve: "12 Of months"
-                //     },
-                //     text1: "Points for last month: ",
-                //     text2: "Points for this month: "
-                // }
-            },
-            kz: {
-                // month: {
-                //     button: {
-                //         one: "1 Ай",
-                //         six: "6 Ай",
-                //         twelve: "12 Ай"
-                //     },
-                //     text1: "Өткен айдағы ұпайлар: ",
-                //     text2: "Осы айдағы ұпайлар: "
-                // }
+    methods: {
+        async fetchCurrentMongth() {
+            try {
+                const res = await axios.get("api/month");
+                const data = await res.data;
+                const { currentMonth, prevTotal, currentTotal } = data;
+
+                if(!data) {
+                    this.dataResponse = false
+                    return
+                }
+                this.dataResponse.currentMonth = currentMonth;
+                this.dataResponse.prevTotal = prevTotal;
+                this.dataResponse.currentTotal = currentTotal;
+            } catch (error) {
+                throw error;
             }
         }
-    }
+    },
 };
 </script>
 
@@ -135,6 +131,13 @@ export default {
 }
 .apexcharts {
     position: relative;
+    &-xaxis-label {
+        font-size: 11px;
+    }
+    &-tooltip {
+        background: #E5E5E5;
+        color: #427eb9;
+    }
 }
 
 @media screen and (max-width: 1370px) {

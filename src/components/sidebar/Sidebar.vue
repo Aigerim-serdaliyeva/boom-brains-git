@@ -21,7 +21,7 @@
                         >{{ $t("menu.game") }}</router-link
                     >
                 </li>
-                <li>
+                <!-- <li>
                     <router-link
                         class="sidebar__link"
                         active-class="active"
@@ -44,7 +44,7 @@
                         to="/boom-brains"
                         >{{ $t("menu.boombrains") }}</router-link
                     >
-                </li>
+                </li> -->
             </ul>
         </div>
         <Locale />

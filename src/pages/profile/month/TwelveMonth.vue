@@ -11,6 +11,7 @@
 
 <script>
 import VueApexCharts from "vue-apexcharts";
+import axios from 'axios';
 
 export default {
     data() {
@@ -18,14 +19,9 @@ export default {
         return {
             series: [
                 {
-                    name: "Series 1",
+                    name: '',
                     data: [
-                        ["01/06/2019", 34],
-                        ["03/10/2019", 43],
-                        ["05/11/2019", 31],
-                        ["07/15/2019", 43],
-                        ["09/20/2019", 33],
-                        ["12/22/2019", 52]
+                        // ["01/06/2019", 34],
                     ]
                 }
             ],
@@ -53,8 +49,15 @@ export default {
                         ]
                     }
                 },
-                tooltip: {
+                dataLabels: {
                     enabled: false
+                },
+                tooltip: {
+                    custom: function({series, seriesIndex, dataPointIndex, w}) {
+                        return '<div class="arrow_box">' +
+                            '<span>' + series[seriesIndex][dataPointIndex] + '</span>' +
+                            '</div>'
+                    } 
                 },
                 grid: {
                     row: {
@@ -77,16 +80,14 @@ export default {
                 },
                 xaxis: {
                     type: "datetime",
-                    // tickAmount: 30,
-                    // min: new Date("01/01/2019").getTime(),
-                    // max: new Date("01/31/2019").getTime(),
+                    tickAmount: 11,
                     labels: {
-                        rotate: -45,
+                        rotate: -30,
                         rotateAlways: true,
                         formatter: function(val, timestamp) {
                             return $this
                                 .$moment(new Date(timestamp))
-                                .format("DD.MM");
+                                .format("MM.YYYY");
                             // }
                         }
                     }
@@ -121,7 +122,27 @@ export default {
     },
     components: {
         apexchart: VueApexCharts
-    }
+    },
+    mounted() {
+        this.fetchTwelveMongth();
+    },
+    methods: {
+        async fetchTwelveMongth() {
+            try {
+                const res = await axios.get("api/month");
+                const data = await res.data;
+                const { twelveMonth } = data;
+
+                let fetchedTwelveMongth = twelveMonth.slice();  
+
+                this.series = [{
+                    data: fetchedTwelveMongth
+                }]
+            } catch (error) {
+                throw error;
+            }
+        }
+    },
 };
 </script>
 

@@ -1,4 +1,4 @@
-<template>
+<template>    
     <div class="month__chart">
         <apexchart
             type="area"
@@ -6,26 +6,23 @@
             height="100%"
             :options="options"
         />
-    </div>
+    </div>  
 </template>
 
 <script>
 import VueApexCharts from "vue-apexcharts";
+import axios from 'axios';
 
 export default {
     data() {
         const $this = this;
-        return {
+        return {   
+            dataLength: null,
             series: [
                 {
-                    name: "Series 1",
+                    name: '',
                     data: [
-                        ["05/06/2019", 34],
-                        ["05/08/2019", 43],
-                        ["05/11/2019", 31],
-                        ["05/14/2019", 43],
-                        ["05/16/2019", 33],
-                        ["05/19/2019", 52]
+                        // ["05/06/2019", 34],
                     ]
                 }
             ],
@@ -34,8 +31,22 @@ export default {
                     // height: 'auto'
                     // height: '100%'
                 },
-                tooltip: {
+                dataLabels: {
                     enabled: false
+                },
+                tooltip: {
+                    // enabled: true,
+                    // shared: true,
+                    // followCursor: false,
+                    // intersect: false,
+                    // inverseOrder: true,
+                    // custom: undefined,
+                    // theme: false,       
+                    custom: function({series, seriesIndex, dataPointIndex, w}) {
+                        return '<div class="arrow_box">' +
+                            '<span>' + series[seriesIndex][dataPointIndex] + '</span>' +
+                            '</div>'
+                    }             
                 },
                 fill: {
                     type: "gradient",
@@ -80,12 +91,14 @@ export default {
                 },
                 xaxis: {
                     type: "datetime",
-                    // tickAmount: 30,
-                    // min: new Date("01/01/2019").getTime(),
-                    // max: new Date("01/31/2019").getTime(),
+                    tickAmount: 29,
                     labels: {
+                        show: true,
                         rotate: -45,
                         rotateAlways: true,
+                        hideOverlappingLabels: true,
+                        showDuplicates: false,
+                        trim: false,
                         formatter: function(val, timestamp) {
                             return $this
                                 .$moment(new Date(timestamp))
@@ -121,10 +134,38 @@ export default {
             }
         };
     },
+    mounted() {
+        this.fetchCurrentMongth();
+    },
+    methods: {
+        async fetchCurrentMongth() {
+            try {
+                const res = await axios.get("api/month");
+                const data = await res.data;
+                const { currentMonth } = data;
+
+                if(!currentMonth) {
+                    return
+                }
+
+                let fetchedCurrentMongth = currentMonth.slice();  
+                console.log(fetchedCurrentMongth)
+                let dataLength = currentMonth.length;
+                this.dataLength = dataLength - 1;
+
+                this.series = [{
+                    data: fetchedCurrentMongth
+                }]
+            } catch (error) {
+                throw error;
+            }
+        }
+    },
     components: {
         apexchart: VueApexCharts
     }
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+</style>

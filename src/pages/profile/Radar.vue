@@ -11,6 +11,7 @@
 
 <script>
 import SubPage from "../../components/sub-page/SubPage.vue";
+import axios from 'axios';
 
 import VueApexCharts from "vue-apexcharts";
 export default {
@@ -19,7 +20,8 @@ export default {
             series: [
                 {
                     name: "Series 1",
-                    data: [20, 110, 50, 40, 100]
+                    data: []
+                    // data: [20, 110, 50, 40, 100]
                 }
             ],
             chartOptions: {
@@ -58,7 +60,26 @@ export default {
     components: {
         apexchart: VueApexCharts,
         SubPage
-    }
+    },
+    mounted() {
+        this.fetchRadar();
+    },
+    methods: {
+        async fetchRadar() {
+            try {
+                const res = await axios.get("api/radar");
+                const data = await res.data;
+
+                let fetchedRadar = data.slice();         
+
+                this.series = [{
+                    data: fetchedRadar
+                }]
+            } catch (error) {
+                throw error;
+            }
+        }
+    },
 };
 </script>
 

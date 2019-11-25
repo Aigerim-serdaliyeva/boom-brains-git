@@ -28,6 +28,10 @@ export default {
                     textAnchor: 'middle',
                     trim: true,
                     formatter: function(minutes) {
+                        if (minutes === 1 || minutes === 0) {
+                            return
+                        }
+
                         var dHours = Math.floor(minutes / 60);
                         var dMinutes = minutes % 60;
                         var time = "";

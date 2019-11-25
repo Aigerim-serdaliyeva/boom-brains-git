@@ -58,6 +58,7 @@ export default {
                 prev: null,
                 cur: null,              
             },
+            
             series: [
                 {
                     data: [44, 35, 7, 67, 13, 20, 25]
@@ -72,6 +73,10 @@ export default {
                     orientation: 'vertical',
                     textAnchor: 'middle',
                     formatter: function(minutes) {
+                        if (minutes === 1 || minutes === 0) {
+                            return
+                        }
+
                         var dHours = Math.floor(minutes / 60);
                         var dMinutes = minutes % 60;
                         var time = "";
