@@ -1,15 +1,15 @@
 <template>
     <div v-if="game" class="container">
-        <div class="row ">
+        <div class="row align-items-stretch">
             <div class="col-md-3" >
                 <img :src="games[index].url1" />
             </div>
             <div class="col-md-9">
                 <div class="row align-items-center game-widget__content">
-                    <div class="col-lg-4 col-md-3 align-items-center justify-content-center d-flex">                        
+                    <div class="col-xxl-4 col-xl-3 col-md-3 align-items-center justify-content-center d-flex">                        
                         <img :src="games[index].url2" />
                     </div>
-                    <div class="col-lg-8 col-md-9">
+                    <div class="col-xxl-8 col-xl-9 col-md-9">
                         <GameWidget :title="gameName" :youRecord="record" :worldRecord="worldRecords[0].record">
                             <template v-slot:rules>
                                 <p class="game-widget__block__text">
