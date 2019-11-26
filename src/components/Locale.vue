@@ -12,18 +12,21 @@ import { mapGetters, mapActions } from "vuex";
 export default {
     computed: {
         ...mapGetters({
-            currentLanguage: "language/currentLanguage"
+            currentLanguage: "language/currentLanguage",
+            game: "gamesList/game"
         })
     },
     methods: {
         ...mapActions({
             changeLanguage: "language/changeLanguage",
-            changeKey: "language/changeKey"
+            changeKey: "language/changeKey",
+            fetchInfo: "gamesList/fetchInfo",
         }),
         attemptChangeLanguage(lang) {
             this.changeLanguage(lang);
             this.$i18n.locale = lang;
             this.changeKey();
+            this.updateGameName()
         },
         isActive(value) {
             return this.currentLanguage === value;
@@ -33,6 +36,11 @@ export default {
                 active: this.isActive(val),
                 language: true
             };
+        },
+        async updateGameName() {
+            if(this.game) {
+                await this.fetchInfo(this.game)
+            }
         }
     }
 };
